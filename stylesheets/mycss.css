@@ -1,0 +1,11 @@
+.xsb_style a {
+	padding:0 10px;
+	transition: color 0.5s;
+}
+.xsb_style a:hover{
+	color: #FAE;
+	text-decoration: none;
+}
+.bb {
+	border: 1px solid #FAE;
+}
