@@ -7,15 +7,33 @@
 	<link href="css/article.css" rel="stylesheet">
 	<link href="https://www.zybuluo.com/static/assets/e5248927.base.lib.min.css" rel="stylesheet" media="screen">
     <link href="https://www.zybuluo.com/static/assets/mdeditor/551e8f17.layout.min.css" rel="stylesheet" media="screen">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript">
+		var loc = window.location;
+		var id = loc.href.split(/#/g)[1];
+		console.log(id);
+		var src = 'md/' + id + '.html';
+		function loadUser() {
+			$.ajax({
+				type: "GET",
+				url: src,
+				success: function(template) {
+				    var rendered = Mustache.render(template, {name: "Luke"});
+				    $('#target').html(rendered);
+				},
+				error: function() {
+					$('#target').html('>_< 没有找到该文章,<a href="/"> 返回首页 </a>');	
+				}
+			});
+		}
+		loadUser();
+	</script>
     <style type="text/css">
 		.container {
 			width: 980px;
+			padding: 20px 0;
 			margin: 0 auto;
-		}
-		.container iframe{
-			width: 100%;
-			height: auto
-			padding: 10px 0;
 		}
     </style>
 </head>
@@ -25,244 +43,7 @@
 		<div class="back"> <a href="/"> &lt; </a></div>
 		文章页面
 	</header>
-	<div class="container">
-		<div class="md-section-divider"></div>
-
-<div class="md-section-divider"></div>
-
-<h1 data-anchor-id="szqg" id="欢迎使用-cmd-markdown-编辑阅读器">欢迎使用 Cmd Markdown 编辑阅读器</h1>
-
-<hr>
-
-<p data-anchor-id="y1kb">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：</p>
-
-<blockquote data-anchor-id="5c58" class="white-blockquote">
-  <ul>
-  <li>整理知识，学习笔记</li>
-  <li>发布日记，杂文，所见所想</li>
-  <li>撰写发布技术文稿（代码支持）</li>
-  <li>撰写发布学术论文（LaTeX 公式支持）</li>
-  </ul>
-</blockquote>
-
-<p data-anchor-id="k39r"><img src="https://www.zybuluo.com/static/img/logo.png" alt="cmd-markdown-logo" title=""></p>
-
-<p data-anchor-id="ur6w">除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="a4ie" id="windowsmaclinux-全平台客户端"><a href="https://www.zybuluo.com/cmd/" target="_blank">Windows/Mac/Linux 全平台客户端</a></h3>
-
-<blockquote data-anchor-id="78u2" class="white-blockquote">
-  <p>请保留此份 Cmd Markdown 的欢迎稿兼使用说明，如需撰写新稿件，点击顶部工具栏右侧的 <i class="icon-file"></i> <strong>新文稿</strong> 或者使用快捷键 <code>Ctrl+Alt+N</code>。</p>
-</blockquote>
-
-<hr>
-
-<div class="md-section-divider"></div>
-
-<h2 data-anchor-id="izd7" id="什么是-markdown">什么是 Markdown</h2>
-
-<p data-anchor-id="xwdi">Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong> 或者 <em>斜体</em> 某些文字，更棒的是，它还可以</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="j4ps" id="1-制作一份待办事宜-todo-列表">1. 制作一份待办事宜 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#13-待办事宜-todo-列表" target="_blank">Todo 列表</a></h3>
-
-<ul data-anchor-id="swgv">
-<li class="todo-list-item"><i class="icon-check-empty"></i>支持以 PDF 格式导出文稿</li>
-<li class="todo-list-item"><i class="icon-check-empty"></i>改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
-<li class="todo-list-item"><i class="icon-check-sign"></i>新增 Todo 列表功能</li>
-<li class="todo-list-item"><i class="icon-check-sign"></i>修复 LaTex 公式渲染问题</li>
-<li class="todo-list-item"><i class="icon-check-sign"></i>新增 LaTex 公式编号功能</li>
-</ul>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="6wps" id="2-书写一个质能守恒公式1">2. 书写一个质能守恒公式<a href="#fn:latex" id="fnref:latex" title="查看注脚" class="footnote">[1]</a></h3>
-
-<p data-anchor-id="5kgh"><span class="MathJax_Preview"></span><div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-1-Frame"><nobr><span class="math" id="MathJax-Span-1" style="width: 4.641em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.616em; height: 0px; font-size: 128%;"><span style="position: absolute; clip: rect(1.467em 1000.002em 2.639em -0.437em); top: -2.488em; left: 0.002em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: STIXGeneral-Italic;">E<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span class="mo" id="MathJax-Span-4" style="font-family: STIXGeneral-Regular; padding-left: 0.295em;">=</span><span class="mi" id="MathJax-Span-5" style="font-family: STIXGeneral-Italic; padding-left: 0.295em;">m</span><span class="msubsup" id="MathJax-Span-6"><span style="display: inline-block; position: relative; width: 0.979em; height: 0px;"><span style="position: absolute; clip: rect(1.907em 1000.002em 2.639em -0.388em); top: -2.488em; left: 0.002em;"><span class="mi" id="MathJax-Span-7" style="font-family: STIXGeneral-Italic;">c</span><span style="display: inline-block; width: 0px; height: 2.493em;"></span></span><span style="position: absolute; top: -2.781em; left: 0.491em;"><span class="mn" id="MathJax-Span-8" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.395em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.493em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.253em; vertical-align: -0.059em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-1">E=mc^2</script></p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="r5an" id="3-高亮一段代码2">3. 高亮一段代码<a href="#fn:code" id="fnref:code" title="查看注脚" class="footnote">[2]</a></h3>
-
-<div class="md-section-divider"></div>
-
-<pre class="prettyprint linenums prettyprinted" data-anchor-id="rpuf"><ol class="linenums"><li class="L0"><code class="language-python"><span class="lit">@requires_authorization</span></code></li><li class="L1"><code class="language-python"><span class="kwd">class</span><span class="pln"> </span><span class="typ">SomeClass</span><span class="pun">:</span></code></li><li class="L2"><code class="language-python"><span class="pln">    </span><span class="kwd">pass</span></code></li><li class="L3"><code class="language-python"></code></li><li class="L4"><code class="language-python"><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span></code></li><li class="L5"><code class="language-python"><span class="pln">    </span><span class="com"># A comment</span></code></li><li class="L6"><code class="language-python"><span class="pln">    </span><span class="kwd">print</span><span class="pln"> </span><span class="str">'hello world'</span></code></li></ol></pre>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="idlx" id="4-高效绘制-流程图">4. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图" target="_blank">流程图</a></h3>
-
-<div class="md-section-divider"></div>
-
-<div class="flow-diagram theme theme-white" data-anchor-id="igrc"><svg height="419.712890625" version="1.1" width="188.5703125" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="51.6875" height="36.5" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="st" transform="matrix(1,0,0,1,56.9414,25.1426)"></rect><text x="10" y="18.25" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="stt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,56.9414,25.1426)"><tspan dy="5.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Start</tspan></text><rect x="0" y="0" width="121.734375" height="36.5" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="op" transform="matrix(1,0,0,1,21.918,136.7852)"></rect><text x="10" y="18.25" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="opt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,21.918,136.7852)"><tspan dy="5.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Your Operation</tspan></text><path fill="#ffffff" stroke="#000000" d="M39.392578125,19.6962890625L0,39.392578125L78.78515625,78.78515625L157.5703125,39.392578125L78.78515625,0L0,39.392578125" stroke-width="2" id="cond" class="flowchart" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,4,227.2852)"></path><text x="44.392578125" y="39.392578125" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="condt" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,4,227.2852)"><tspan dy="5.244140625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Yes or No?</tspan></text><rect x="0" y="0" width="46.703125" height="36.5" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" class="flowchart" id="e" transform="matrix(1,0,0,1,59.4336,381.2129)"></rect><text x="10" y="18.25" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" id="et" class="flowchartt" font-size="15px" transform="matrix(1,0,0,1,59.4336,381.2129)"><tspan dy="5.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">End</tspan></text><path fill="none" stroke="#000000" d="M82.78515625,61.642578125C82.78515625,61.642578125,82.78515625,119.817493500188,82.78515625,133.79310793602417" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M82.78515625,173.28515625C82.78515625,173.28515625,82.78515625,212.93925619125366,82.78515625,224.28559533460066" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#000000" d="M82.78515625,306.0703125C82.78515625,306.0703125,82.78515625,364.245227875188,82.78515625,378.22084231102417" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="87.78515625" y="316.0703125" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">yes</tspan></text><path fill="none" stroke="#000000" d="M161.5703125,266.677734375C161.5703125,266.677734375,186.5703125,266.677734375,186.5703125,266.677734375C186.5703125,266.677734375,186.5703125,111.78515625,186.5703125,111.78515625C186.5703125,111.78515625,82.78515625,111.78515625,82.78515625,111.78515625C82.78515625,111.78515625,82.78515625,127.15860080718994,82.78515625,133.79440402425826" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="166.5703125" y="256.677734375" text-anchor="start" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px"><tspan dy="5.248046875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">no</tspan></text></svg></div>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="etc3" id="5-高效绘制-序列图">5. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图" target="_blank">序列图</a></h3>
-
-<div class="md-section-divider"></div>
-
-<div class="sequence-diagram theme theme-white" data-anchor-id="i7pa"><svg height="260" version="1.1" width="485.296875" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock55" markerHeight="5" markerWidth="5" orient="auto" refX="2.5" refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000" fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="10" y="20" width="68.03125" height="38" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="20" y="30" width="48.03125" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="44.015625" y="39" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Alice</tspan></text><rect x="10" y="202" width="68.03125" height="38" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="20" y="212" width="48.03125" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="44.015625" y="221" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Alice</tspan></text><path fill="none" stroke="#000000" d="M44.015625,58L44.015625,202" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="260.453125" y="20" width="48.8125" height="38" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="270.453125" y="30" width="28.8125" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="284.859375" y="39" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob</tspan></text><rect x="260.453125" y="202" width="48.8125" height="38" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="270.453125" y="212" width="28.8125" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="284.859375" y="221" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob</tspan></text><path fill="none" stroke="#000000" d="M284.859375,58L284.859375,202" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="54.015625" y="74" width="220.84375" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="164.4375" y="83" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Hello Bob, how are you?</tspan></text><path fill="none" stroke="#000000" d="M44.015625,96C44.015625,96,245.350555351004,96,279.85668843362237,96" stroke-width="2" marker-end="url(#raphael-marker-endblock55)" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="304.859375" y="116" width="106.03125" height="28" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="309.859375" y="121" width="96.03125" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="357.875" y="130" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob thinks</tspan></text><rect x="82.8125" y="160" width="163.25" height="18" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="164.4375" y="169" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: 'Andale Mono', monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">I am good thanks!</tspan></text><path fill="none" stroke="#000000" d="M284.859375,182C284.859375,182,83.524444648996,182,49.01831156637763,182" stroke-width="2" marker-end="url(#raphael-marker-endblock55)" stroke-dasharray="6,2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg></div>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="q4iw" id="6-绘制表格">6. 绘制表格</h3>
-
-<table data-anchor-id="ap2z" class="table table-striped-white table-bordered">
-<thead>
-<tr>
- <th>项目</th>
- <th style="text-align:right;">价格</th>
- <th style="text-align:center;">数量</th>
-</tr>
-</thead>
-<tbody><tr>
- <td>计算机</td>
- <td style="text-align:right;"><span>$</span>1600</td>
- <td style="text-align:center;">5</td>
-</tr>
-<tr>
- <td>手机</td>
- <td style="text-align:right;"><span>$</span>12</td>
- <td style="text-align:center;">12</td>
-</tr>
-<tr>
- <td>管线</td>
- <td style="text-align:right;"><span>$</span>1</td>
- <td style="text-align:center;">234</td>
-</tr>
-</tbody></table>
-
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="rvqz" id="7-更详细语法说明">7. 更详细语法说明</h3>
-
-<p data-anchor-id="shcr">想要查看更详细的语法说明，可以参考我们准备的 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank">Cmd Markdown 简明语法手册</a>，进阶用户可以参考 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册" target="_blank">Cmd Markdown 高阶语法手册</a> 了解更多高级功能。</p>
-
-<p data-anchor-id="64ea">总而言之，不同于其它 <em>所见即所得</em> 的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。<strong>Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。</strong> 目前它已经成为世界上最大的技术分享网站 GitHub 和 技术问答网站 StackOverFlow 的御用书写格式。</p>
-
-<hr>
-
-<div class="md-section-divider"></div>
-
-<h2 data-anchor-id="asj3" id="什么是-cmd-markdown">什么是 Cmd Markdown</h2>
-
-<p data-anchor-id="7tqo">您可以使用很多工具书写 Markdown，但是 Cmd Markdown 是这个星球上我们已知的、最好的 Markdown 工具——没有之一 ：）因为深信文字的力量，所以我们和你一样，对流畅书写，分享思想和知识，以及阅读体验有极致的追求，我们把对于这些诉求的回应整合在 Cmd Markdown，并且一次，两次，三次，乃至无数次地提升这个工具的体验，最终将它演化成一个 <strong>编辑/发布/阅读</strong> Markdown 的在线平台——您可以在任何地方，任何系统/设备上管理这里的文字。</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="avhu" id="1-实时同步预览">1. 实时同步预览</h3>
-
-<p data-anchor-id="bzxn">我们将 Cmd Markdown 的主界面一分为二，左边为<strong>编辑区</strong>，右边为<strong>预览区</strong>，在编辑区的操作会实时地渲染到预览区方便查看最终的版面效果，并且如果你在其中一个区拖动滚动条，我们有一个巧妙的算法把另一个区的滚动条同步到等价的位置，超酷！</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="p97a" id="2-编辑工具栏">2. 编辑工具栏</h3>
-
-<p data-anchor-id="98di">也许您还是一个 Markdown 语法的新手，在您完全熟悉它之前，我们在 <strong>编辑区</strong> 的顶部放置了一个如下图所示的工具栏，您可以使用鼠标在工具栏上调整格式，不过我们仍旧鼓励你使用键盘标记格式，提高书写的流畅度。</p>
-
-<p data-anchor-id="pbu9"><img src="https://www.zybuluo.com/static/img/toolbar-editor.png" alt="tool-editor" title=""></p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="qg9e" id="3-编辑模式">3. 编辑模式</h3>
-
-<p data-anchor-id="akl8">完全心无旁骛的方式编辑文字：点击 <strong>编辑工具栏</strong> 最右测的拉伸按钮或者按下 <code>Ctrl + M</code>，将 Cmd Markdown 切换到独立的编辑模式，这是一个极度简洁的写作环境，所有可能会引起分心的元素都已经被挪除，超清爽！</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="xdi3" id="4-实时的云端文稿">4. 实时的云端文稿</h3>
-
-<p data-anchor-id="y1lf">为了保障数据安全，Cmd Markdown 会将您每一次击键的内容保存至云端，同时在 <strong>编辑工具栏</strong> 的最右侧提示 <code>已保存</code> 的字样。无需担心浏览器崩溃，机器掉电或者地震，海啸——在编辑的过程中随时关闭浏览器或者机器，下一次回到 Cmd Markdown 的时候继续写作。</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="q5l6" id="5-离线模式">5. 离线模式</h3>
-
-<p data-anchor-id="1wgp">在网络环境不稳定的情况下记录文字一样很安全！在您写作的时候，如果电脑突然失去网络连接，Cmd Markdown 会智能切换至离线模式，将您后续键入的文字保存在本地，直到网络恢复再将他们传送至云端，即使在网络恢复前关闭浏览器或者电脑，一样没有问题，等到下次开启 Cmd Markdown 的时候，她会提醒您将离线保存的文字传送至云端。简而言之，我们尽最大的努力保障您文字的安全。</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="stss" id="6-管理工具栏">6. 管理工具栏</h3>
-
-<p data-anchor-id="ktpi">为了便于管理您的文稿，在 <strong>预览区</strong> 的顶部放置了如下所示的 <strong>管理工具栏</strong>：</p>
-
-<p data-anchor-id="k5cj"><img src="https://www.zybuluo.com/static/img/toolbar-manager.jpg" alt="tool-manager" title=""></p>
-
-<p data-anchor-id="zs21">通过管理工具栏可以：</p>
-
-<p data-anchor-id="0wlh"><i class="icon-share"></i> 发布：将当前的文稿生成固定链接，在网络上发布，分享 <br>
-<i class="icon-file"></i> 新建：开始撰写一篇新的文稿 <br>
-<i class="icon-trash"></i> 删除：删除当前的文稿 <br>
-<i class="icon-cloud"></i> 导出：将当前的文稿转化为 Markdown 文本或者 Html 格式，并导出到本地 <br>
-<i class="icon-reorder"></i> 列表：所有新增和过往的文稿都可以在这里查看、操作 <br>
-<i class="icon-pencil"></i> 模式：切换 普通/Vim/Emacs 编辑模式</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="ezja" id="7-阅读工具栏">7. 阅读工具栏</h3>
-
-<p data-anchor-id="pgzm"><img src="https://www.zybuluo.com/static/img/toolbar-reader.jpg" alt="tool-manager" title=""></p>
-
-<p data-anchor-id="rq45">通过 <strong>预览区</strong> 右上角的 <strong>阅读工具栏</strong>，可以查看当前文稿的目录并增强阅读体验。</p>
-
-<p data-anchor-id="lm47">工具栏上的五个图标依次为：</p>
-
-<p data-anchor-id="bhb9"><i class="icon-list"></i> 目录：快速导航当前文稿的目录结构以跳转到感兴趣的段落 <br>
-<i class="icon-chevron-sign-left"></i> 视图：互换左边编辑区和右边预览区的位置 <br>
-<i class="icon-adjust"></i> 主题：内置了黑白两种模式的主题，试试 <strong>黑色主题</strong>，超炫！ <br>
-<i class="icon-desktop"></i> 阅读：心无旁骛的阅读模式提供超一流的阅读体验 <br>
-<i class="icon-fullscreen"></i> 全屏：简洁，简洁，再简洁，一个完全沉浸式的写作和阅读环境</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="be70" id="8-阅读模式">8. 阅读模式</h3>
-
-<p data-anchor-id="cavl">在 <strong>阅读工具栏</strong> 点击 <i class="icon-desktop"></i> 或者按下 <code>Ctrl+Alt+M</code> 随即进入独立的阅读模式界面，我们在版面渲染上的每一个细节：字体，字号，行间距，前背景色都倾注了大量的时间，努力提升阅读的体验和品质。</p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="asrc" id="9-标签分类和搜索">9. 标签、分类和搜索</h3>
-
-<p data-anchor-id="e6ls">在编辑区任意行首位置输入以下格式的文字可以标签当前文档：</p>
-
-<p data-anchor-id="nxn6"><code>未分类</code></p>
-
-<p data-anchor-id="o6rm">标签以后的文稿在【文件列表】（Ctrl+Alt+F）里会按照标签分类，用户可以同时使用键盘或者鼠标浏览查看，或者在【文件列表】的搜索文本框内搜索标题关键字过滤文稿，如下图所示：</p>
-
-<p data-anchor-id="5bap"><img src="https://www.zybuluo.com/static/img/file-list.png" alt="file-list" title=""></p>
-
-<div class="md-section-divider"></div>
-
-<h3 data-anchor-id="fjv2" id="10-文稿发布和分享">10. 文稿发布和分享</h3>
-
-<p data-anchor-id="gb3v">在您使用 Cmd Markdown 记录，创作，整理，阅读文稿的同时，我们不仅希望它是一个有力的工具，更希望您的思想和知识通过这个平台，连同优质的阅读体验，将他们分享给有相同志趣的人，进而鼓励更多的人来到这里记录分享他们的思想和知识，尝试点击 <i class="icon-share"></i> (Ctrl+Alt+P) 发布这份文档给好友吧！</p>
-
-<hr>
-
-<p data-anchor-id="0nnc">再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！</p>
-
-<p data-anchor-id="opne">作者 <a href="http://weibo.com/ghosert" target="_blank">@ghosert</a> <br>
-2015 年 06月 15日    </p>
-
-<div class="footnotes" data-anchor-id="wzh6">
-<hr>
-<small>
-
-<span id="fn:latex">[1] </span>支持 <strong>LaTeX</strong> 编辑显示支持，例如：<span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-9" style="width: 6.296em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.886em; height: 0px; font-size: 128%;"><span style="position: absolute; clip: rect(1.522em 1000.003em 2.987em -0.431em); top: -2.493em; left: 0.003em;"><span class="mrow" id="MathJax-Span-10"><span class="munderover" id="MathJax-Span-11"><span style="display: inline-block; position: relative; width: 2.064em; height: 0px;"><span style="position: absolute; clip: rect(1.522em 1000.003em 2.878em -0.431em); top: -2.439em; left: 0.003em;"><span class="mo" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 2.444em;"></span></span><span style="position: absolute; clip: rect(1.902em 1000.003em 2.553em -0.486em); top: -2.873em; left: 0.925em;"><span class="mi" id="MathJax-Span-13" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 2.39em;"></span></span><span style="position: absolute; clip: rect(1.739em 1000.003em 2.553em -0.431em); top: -2.113em; left: 0.925em;"><span class="texatom" id="MathJax-Span-14"><span class="mrow" id="MathJax-Span-15"><span class="mi" id="MathJax-Span-16" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-17" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-18" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 2.39em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-19" style="padding-left: 0.165em;"><span style="display: inline-block; position: relative; width: 0.817em; height: 0px;"><span style="position: absolute; clip: rect(1.902em 1000.003em 2.661em -0.486em); top: -2.493em; left: 0.003em;"><span class="mi" id="MathJax-Span-20" style="font-family: STIXGeneral-Italic;">a</span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span><span style="position: absolute; top: -2.222em; left: 0.545em;"><span class="mi" id="MathJax-Span-21" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 2.39em;"></span></span></span></span><span class="mo" id="MathJax-Span-22" style="font-family: STIXGeneral-Regular; padding-left: 0.328em;">=</span><span class="mn" id="MathJax-Span-23" style="font-family: STIXGeneral-Regular; padding-left: 0.328em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.531em; vertical-align: -0.483em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">\sum_{i=1}^n a_i=0</script>， 访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank">MathJax</a> 参考更多使用方法。 <a href="#fnref:latex" title="回到文稿" class="reversefootnote">↩</a><br>
-
-<span id="fn:code">[2] </span>代码高亮功能支持包括 Java, Python, JavaScript 在内的，<strong>四十一</strong>种主流编程语言。 <a href="#fnref:code" title="回到文稿" class="reversefootnote">↩</a><br>
-
-</small>
-</div>
-
-
-
-
+	<div class="container" id="target">
 
 	</div>
 	<footer>
