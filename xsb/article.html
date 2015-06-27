@@ -21,13 +21,13 @@
 				type: "GET",
 				url: src,
 				success: function(template) {
-				    var rendered = Mustache.render(template, {name: "Luke"});
+				    var rendered = Mustache.render(template, {});
 				    $('#target').html(rendered);
 				    // 评论区
-	    			var template = $('#template').html();
-					Mustache.parse(template);
-					var rendered = Mustache.render(template, {title: blogTitle, url: loc, id:id});
-					$('footer').html(rendered);
+	    			var tpl = $('#template').html();
+					Mustache.parse(tpl);
+					var re = Mustache.render(tpl, {title: blogTitle, url: loc, id:id});
+					$('footer').html(re);
 				},
 				error: function() {
 					$('#target').html('>_< 没有找到该文章,<a href="/"> 返回首页 </a>');	
@@ -62,14 +62,14 @@
 </body>
 <!-- 多看评论 -->
 <script type="text/javascript">
-	var duoshuoQuery = {short_name:"xishengbo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
+		var duoshuoQuery = {short_name:"xishengbo"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
 </html>
