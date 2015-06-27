@@ -10,6 +10,18 @@
     <script type="text/javascript" src="js/mustache.js"></script>
     <script id="template" type="x-tmpl-mustache">
 		<div class="ds-thread" data-thread-key="my19940202@{{id}}" data-title="{{title}}" data-url="{{url}}"></div>
+		<!-- 多看评论 -->
+		<script type="text/javascript">
+				var duoshuoQuery = {short_name:"xishengbo"};
+				(function() {
+					var ds = document.createElement('script');
+					ds.type = 'text/javascript';ds.async = true;
+					ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+					ds.charset = 'UTF-8';
+					(document.getElementsByTagName('head')[0] 
+					 || document.getElementsByTagName('body')[0]).appendChild(ds);
+				})();
+		</script>
 	</script>
     <style type="text/css">
     	body {
@@ -35,18 +47,6 @@
 	</footer>
 	<div class="container">还是自己写css 样式吧 用别人就是别扭</div>
 </body>
-<!-- 多看评论 -->
-<script type="text/javascript">
-		var duoshuoQuery = {short_name:"xishengbo"};
-		(function() {
-			var ds = document.createElement('script');
-			ds.type = 'text/javascript';ds.async = true;
-			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-			ds.charset = 'UTF-8';
-			(document.getElementsByTagName('head')[0] 
-			 || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-</script>
 <script type="text/javascript">
 		var loc = window.location;
 		var id = loc.href.split(/#/g)[1];
