@@ -15,6 +15,6 @@ var dataList = {
 		{title:'css这是第1篇文章', date:'2015-06-28', curl:'./article.html#12'}
 	],
 	_else:[
-		{title:'else这是第1篇文章', date:'2015-06-28', curl:'./article.html#12'}
+		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'}
 	]
 };
