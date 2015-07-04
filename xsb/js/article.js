@@ -7,7 +7,8 @@ var dataList = {
 
 	],
 	_linux:[
-		{title:'linux这是第1篇文章', date:'2015-06-28', curl:'./article.html#12'}
+		{title:'linux这是第1篇文章', date:'2015-06-28', curl:'./article.html#12'},
+		{title:'我的git使用', date:'2015-07-04 23:07', curl:'md/git.html'}
 	],
 	_ios:[
 		{title:'寒假时的ios记录', date:'2015-06-28', curl:'./article.html#ios1'}
