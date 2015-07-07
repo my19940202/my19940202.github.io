@@ -11,17 +11,19 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">&gt;_&lt;</h1>
+      <div class="middle_img">
+        <img width="150" height="150" src="images/meimei.gif" alt="奚圣波的头像">
+      </div>
       <h2 class="project-tagline">奚圣波的个人网站 我就随便记记</h2>
     </section>
     <section class="main-content xsb_style">
-		<p>category</p>
-		<a href="/xsb/article_list.html?js">js</a>
-		<a href="/xsb/article_list.html?linux">linux</a>
-		<a href="/xsb/article_list.html?ios">ios</a>
-    <a href="/xsb/article_list.html?css">css</a>
-		<a href="/xsb/article_list.html?else">else</a>
-    <a href="/xsb/article.html#aboutme">about me</a>
+  		<p>category</p>
+  		<a href="/xsb/article_list.html?js">js</a>
+  		<a href="/xsb/article_list.html?linux">linux</a>
+  		<a href="/xsb/article_list.html?ios">ios</a>
+      <a href="/xsb/article_list.html?css">css</a>
+  		<a href="/xsb/article_list.html?else">else</a>
+      <a href="/xsb/article.html#aboutme">about me</a>
 
 <!-- mycode  start-->
 
@@ -32,5 +34,18 @@
       </footer>
     </section>
   </body>
+  <script type="text/javascript">
+  var doc = document;
+    var img  = doc.getElementsByTagName('img')[0];
+    var img_arr = [
+      'images/meimei.gif',
+      'images/1.jpg',
+      'images/eggpain.jpg'
+    ];
+    var max = img_arr.length - 1;
+    var min = 0;
+    var x = Math.floor(Math.random() * (max - min + 1)) + min;
+    img.src = img_arr[x];
+  </script>
 </html>
 
