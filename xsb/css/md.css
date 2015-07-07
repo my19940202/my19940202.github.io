@@ -1,8 +1,8 @@
 body {
-  width: 45em;
+  width: 100%;
   border: 1px solid #ddd;
   outline: 1300px solid #fff;
-  margin: 16px auto;
+  margin: 0 auto;
 }
 body .markdown-body
 {

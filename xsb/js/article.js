@@ -7,7 +7,7 @@ var dataList = {
 
 	],
 	_linux:[
-		{title:'我的git使用(和linux关系还是比较大的)', date:'2015-07-04 23:07', curl:'md/git.html'}
+		{title:'我的git使用(和linux关系还是比较大的)', date:'2015-07-04 23:07', curl:'./article_tpl.html#git'}
 	],
 	_ios:[
 		{title:'寒假时的ios记录', date:'2015-06-28', curl:'./article.html#ios1'}
@@ -16,6 +16,7 @@ var dataList = {
 		{title:'resetcss', date:'2015-06-28', curl:'./article.html#resetcss'}
 	],
 	_else:[
-		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'}
+		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'},
+		{title:'租房笔记', date:'2015-07-07', curl:'./article_tpl.html#room'}
 	]
 };
