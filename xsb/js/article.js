@@ -13,7 +13,8 @@ var dataList = {
 		{title:'寒假时的ios记录', date:'2015-06-28', curl:'./article.html#ios1'}
 	],
 	_css:[
-		{title:'resetcss', date:'2015-06-28', curl:'./article.html#resetcss'}
+		{title:'resetcss', date:'2015-06-28', curl:'./article.html#resetcss'},
+		{title:'尺寸单位的概念整理', date:'2015-07-11', curl:'./article.html#px'}
 	],
 	_else:[
 		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'},
