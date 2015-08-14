@@ -16,7 +16,7 @@ var dataList = {
 		{title:'resetcss', date:'2015-06-28', curl:'./article.html#resetcss'},
 		{title:'尺寸单位的概念整理', date:'2015-07-11', curl:'./article.html#px'},
 		{title:'易遗忘css知识点', date:'2015-07-14', curl:'./example/select.html'},
-		{title:'css动画学习笔记demo from慕课网下载', date:'2015-07-21', curl:'./example/css3_animation'}
+		{title:'css动画学习笔记demo from慕课网下载', date:'2015-07-21', curl:'./example/css3_animation/index.html'}
 	],
 	_else:[
 		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'},
