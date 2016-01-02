@@ -21,6 +21,7 @@ var dataList = {
 	_else:[
 		{title:'杂记', date:'2015-06-27', curl:'./article.html#2'},
 		{title:'租房笔记', date:'2015-07-07', curl:'./article_tpl.html#room'},
-		{title:'诶哟我大四了', date:'2015-09-09', curl:'./article_tpl.html#dasi'}
+		{title:'诶哟我大四了', date:'2015-09-09', curl:'./article_tpl.html#dasi'},
+		{title:'2015总结', date:'2016-01-01', curl:'./article_tpl.html#2015all'}
 	]
 };
