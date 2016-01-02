@@ -49,7 +49,11 @@
 </body>
 <script type="text/javascript">
 		var loc = window.location;
-		var id = loc.href.split(/#/g)[1];
+		var tmpid = id = loc.split(/#/g)[1];
+		// 区分线上和线下
+		if (loc.match('my19940202.github.io')) {
+			tmpid = id + 'ongithub.io';
+		}
 		var blogTitle = loc.href.split(/#/g)[2];
 		document.title = blogTitle;
 		var src = 'md/' + id + '.html';
@@ -63,7 +67,7 @@
 				    // 评论区
 	    			var tpl = $('#template').html();
 					Mustache.parse(tpl);
-					var re = Mustache.render(tpl, {title: blogTitle, url: loc, id:id});
+					var re = Mustache.render(tpl, {title: blogTitle, url: loc, id: tmpid});
 					$('footer').html(re);
 				},
 				error: function() {
