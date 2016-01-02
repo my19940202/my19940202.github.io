@@ -57,7 +57,7 @@
 		var loc = window.location.href;
 		var id = loc.split(/#/g)[1];
 		if (loc.match('my19940202.github.io')) {
-			id = id + 'ongithub.io';
+			tmpid = id + 'ongithub.io';
 		}
 		var blogTitle = loc.split(/#/g)[2];
 		document.title = blogTitle;
@@ -72,7 +72,7 @@
 				    // 评论区
 	    			var tpl = $('#template').html();
 					Mustache.parse(tpl);
-					var re = Mustache.render(tpl, {title: blogTitle, url: loc, id:id});
+					var re = Mustache.render(tpl, {title: blogTitle, url: loc, id: tmpid});
 					$('footer').html(re);
 				},
 				error: function() {
