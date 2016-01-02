@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<style type="text/css">
+		/*.automiddle {
+			margin: 0 auto;
+		}*/
+	</style>
+</head>
+<body>
+	
+<div class="container">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">首页</a>
+			<ul class="nav">
+				<li class="active"><a href="#">注册页面</a></li>
+				<li><a href="article.html">文章页面</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="span4 offset3" style="margin-top: 50px;">
+		 	<div class="control-group">
+		    	<label class="control-label" for="inputEmail">帐号</label>
+		    	<div class="controls">
+		      		<input type="text" id="inputEmail" placeholder="帐号">
+		    	</div>
+		  	</div>
+		 	<div class="control-group">
+				<label class="control-label" for="inputPassword">密码</label>
+			    <div class="controls">
+					<input type="password" id="inputPassword" placeholder="密码长度至少为六位">
+			    </div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn" id="submitBtn">注册</button>
+				</div>
+			</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	var submitBtn = document.getElementById('submitBtn');
+	submitBtn.onclick = function () {
+		var pwd = document.getElementById('inputPassword');
+		if (pwd.value) {
+			if (pwd.value.length < 6) {
+				alert('密码长度至少为六位');
+			}
+			else {
+				window.location.href = window.location.href.replace('reg.html', 'article.html');
+			}
+		}
+	};
+
+
+
+</script>
+</html>
