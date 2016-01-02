@@ -56,6 +56,9 @@
 <script type="text/javascript">
 		var loc = window.location;
 		var id = loc.href.split(/#/g)[1];
+		if (loc.match('my19940202.github.io')) {
+			id = id + 'ongithub.io';
+		}
 		var blogTitle = loc.href.split(/#/g)[2];
 		document.title = blogTitle;
 		var src = 'md/' + id + '.html';
