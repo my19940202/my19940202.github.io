@@ -54,12 +54,12 @@
 	<div class="container">还是自己写css 样式吧 用别人就是别扭</div>
 </body>
 <script type="text/javascript">
-		var loc = window.location;
-		var id = loc.href.split(/#/g)[1];
+		var loc = window.location.href;
+		var id = loc.split(/#/g)[1];
 		if (loc.match('my19940202.github.io')) {
 			id = id + 'ongithub.io';
 		}
-		var blogTitle = loc.href.split(/#/g)[2];
+		var blogTitle = loc.split(/#/g)[2];
 		document.title = blogTitle;
 		var src = 'md/' + id + '.html';
 		function loadUser() {
