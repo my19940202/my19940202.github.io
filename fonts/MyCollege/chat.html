@@ -1,21 +1,20 @@
-<!--#include file="conn.asp"-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>������ҳ</title>
+  <meta charset="UTF-8">
+<title>个人网页</title>
 <meta charset="utf-8" />
-	<title>Brain Storm - Free CSS template by ChocoTemplates.com</title>
-	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
-	
-	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
-	<!--[if lt IE 9]>
-		<script src="js/modernizr.custom.js"></script>
-	<![endif]-->
-	<script src="js/jquery.flexslider-min.js" type="text/javascript"></script>
-	<script src="js/functions.js" type="text/javascript"></script>
+  <title>Brain Storm - Free CSS template by ChocoTemplates.com</title>
+  <link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+  
+  <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="js/modernizr.custom.js"></script>
+  <![endif]-->
+  <script src="js/jquery.flexslider-min.js" type="text/javascript"></script>
+  <script src="js/functions.js" type="text/javascript"></script>
 </head>
 
 <body onload="jss();">
@@ -26,42 +25,42 @@ sql="insert into us(us) values('"&now()&"')"
 conn.execute(sql)
 set rs=server.CreateObject("adodb.recordset")
 rs.open "select * from us",conn,1,1
-response.Cookies("user")="�ο�"&rs.recordcount+1
+response.Cookies("user")="游客"&rs.recordcount+1
 rs.close
 end if
 %>
 <p>&nbsp;<div id="wrapper">
-		<!-- header -->
+    <!-- header -->
 <header class="header">
-			<div class="shell">
-				<h1 id="logo"><a href="#">BrainStorm</a></h1>
-				
-				<!-- navigation -->
-				<nav id="navigation">
-					<ul>
-						<li>
-							<a href="home.html">��ҳ</a>
-						</li>
-						<li>
-					  <a href="my university.html">�ҵĴ�ѧ</a></li>
-						<li>
-						<a href="mailing.html">ͨѶ¼</a></li>
-						<li>
-				    <a href="sport.html">�����˶�</a></li>
-						<li class="active">
-							<a href="">������</a>
-						</li>
-					</ul>
-					<div class="cl">&nbsp;</div>
-				</nav>
-				<!-- end of navigation -->
-			</div>
-		</header>
-		<!-- end of header -->
+      <div class="shell">
+        <h1 id="logo"><a href="#">BrainStorm</a></h1>
+        
+        <!-- navigation -->
+        <nav id="navigation">
+          <ul>
+            <li>
+              <a href="home.html">首页</a>
+            </li>
+            <li>
+            <a href="my university.html">我的大学</a></li>
+            <li>
+            <a href="mailing.html">通讯录</a></li>
+            <li>
+            <a href="sport.html">体育运动</a></li>
+            <li class="active">
+              <a href="">聊天室</a>
+            </li>
+          </ul>
+          <div class="cl">&nbsp;</div>
+        </nav>
+        <!-- end of navigation -->
+      </div>
+    </header>
+    <!-- end of header -->
 </p>
     <p>
   <Script language="javascript" src="js.js"></script>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;״̬��<span id="zt"></span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;状态：<span id="zt"></span><br />
 <br />
 &nbsp; 
 &nbsp; 
@@ -137,7 +136,7 @@ end if
 &nbsp; 
 <textarea name="textarea" id="textarea" onpropertychange="this.scrollTop=this.scrollHeight" onfocus="this.scrollTop=this.scrollHeight"  readonly="readonly" cols="60" rows="20" ></textarea>
   <br />
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �������ݣ�
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 匿名身份：
   <input type="text" name="us" id="us" value="<%=request.Cookies("user")%>" />
   <br />
   &nbsp; 
@@ -213,35 +212,35 @@ end if
   &nbsp; 
   &nbsp; 
   <input name="t" type="text" id="t" onkeydown="if(event.keyCode==13) jsc();" size="60"/>
-  <input type="button" onclick="jsc();" name="button" id="button" value="����" />
-  <input type="button" name="button2" id="button2" onclick="cclse()" value="����" />
+  <input type="button" onclick="jsc();" name="button" id="button" value="发送" />
+  <input type="button" name="button2" id="button2" onclick="cclse()" value="清屏" />
 </p>
     <p>&nbsp;</p>
                                 <div id="tt"></div>
 <div class="cl">&nbsp;</div>
-				</section>
-			</div>
-			<!-- end of main -->
-		</div>
-		<!-- end of shell -->
-		<div id="footer-push"></div>
-	</div>
-	<!-- wrapper -->
+        </section>
+      </div>
+      <!-- end of main -->
+    </div>
+    <!-- end of shell -->
+    <div id="footer-push"></div>
+  </div>
+  <!-- wrapper -->
 
-	<!-- footer -->
-	<div id="footer">
+  <!-- footer -->
+  <div id="footer">
   <div class="shell">
-			<!-- footer-cols -->
-			<section class="footer-cols">
-				<div class="col">
-					<h3>�������ӣ�</h3>
-					<p><a href="http://sports.sina.com.cn/">��������</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="http://mail.163.com/">163����</a>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="http://www.youku.com/">�ſ�</a></p>
-					<p><a href="http://sports.sohu.com/">�Ѻ�����</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="http://www.126.com/"> 126����</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<a href="http://www.tudou.com/">����</a></p>
-				  <p><a href="http://sports.163.com/">��������</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="https://mail.qq.com/">QQ����</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.letv.com/">����</a></p>
+      <!-- footer-cols -->
+      <section class="footer-cols">
+        <div class="col">
+          <h3>友情链接：</h3>
+          <p><a href="http://sports.sina.com.cn/">新浪体育</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="http://mail.163.com/">163邮箱</a>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="http://www.youku.com/">优酷</a></p>
+          <p><a href="http://sports.sohu.com/">搜狐体育</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="http://www.126.com/"> 126邮箱</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<a href="http://www.tudou.com/">土豆</a></p>
+          <p><a href="http://sports.163.com/">网易体育</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="https://mail.qq.com/">QQ邮箱</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.letv.com/">乐视</a></p>
               </div>
-				<div class="col">
+        <div class="col">
 <h3>
-					  <SCRIPT language=javascript>
+            <SCRIPT language=javascript>
 function g(formname) {
 var url = "http://www.baidu.com/baidu";
 if (formname.s[1].checked) {
@@ -254,33 +253,33 @@ formname.action = url;
 return true;
 }
                       </SCRIPT>
-	                  <a href="http://www.njmu.edu.cn"><img src="css/images/logo1.png" width="216" height="51" border="0"></a></h3>
-				  <form name="f1" onSubmit="return g(this)">
+                    <a href="http://www.njmu.edu.cn"><img src="css/images/logo1.png" width="216" height="51" border="0"></a></h3>
+          <form name="f1" onSubmit="return g(this)">
 </td>
 <td>
   <p>
   <input name=word class="field" size="30" maxlength="100">
-  <input type="submit" class="submit-btn" value="�ٶ�����">
+  <input type="submit" class="submit-btn" value="百度搜索">
   <br>
     <input name=tn type=hidden value="bds">
     <input name=cl type=hidden value="3">
     <input name=ct type=hidden>
-    <input name=si type=hidden value="file:///E:/ѧϰ/��ҳ�ز�/201415061/html%20-%20����/home">
-    <input name=s type=radio> վ������
-    <input name=s type=radio checked> վ������  </p></td></tr></table>
+    <input name=si type=hidden value="file:///E:/学习/网页素材/201415061/html%20-%20副本/home">
+    <input name=s type=radio> 站外搜索
+    <input name=s type=radio checked> 站内搜索  </p></td></tr></table>
 </form>
-			  </div>
-			  <div class="col contact">
-					<h3>��ҳ������<strong></strong>��</h3>
-					<h4>��Ȩ����</h4>
-				  <a href="#"><span class="copy">&copy;Copyright 2014 |  Design by LXH</span></a>				</div>
-				<div class="cl">&nbsp;</div>
-			</section>
-			<!-- end of footer-cols -->
-			<p class="copy">&nbsp;</p>
-			<div class="cl">&nbsp;</div>
-	  </div>
+        </div>
+        <div class="col contact">
+          <h3>网页制作人<strong></strong>：</h3>
+          <h4>版权所有</h4>
+          <a href="#"><span class="copy">&copy;Copyright 2014 |  Design by LXH</span></a>       </div>
+        <div class="cl">&nbsp;</div>
+      </section>
+      <!-- end of footer-cols -->
+      <p class="copy">&nbsp;</p>
+      <div class="cl">&nbsp;</div>
+    </div>
 </div>
-	<!-- end of footer -->
+  <!-- end of footer -->
 </body>
 </html>
