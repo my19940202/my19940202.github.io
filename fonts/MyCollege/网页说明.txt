@@ -1,2 +1,0 @@
-1、配置IIS服务器
-2、修改MyCollege1\MyCollege\MyCollege\Web.config中关于access数据表在本地的路径。
