@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="波波的github page">
 <meta property="og:description" content="整理了自己常用到一些Linux命令，自己使用的较多
 类型命令作用文件操作tar -zcvf target.tar.gz sourcefile压缩文件操作tar -zxvf target.tar.gz解压缩文件操作du -hs path查看文件大小（Mb单位）文件操作cp -r xx yy递归方式拷贝（拷贝所有文件和文件夹）文件操作scp -r username@servername:/path/f">
-<meta property="og:updated_time" content="2016-01-21T08:12:44.000Z">
+<meta property="og:updated_time" content="2016-01-22T04:37:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 常用命令整理">
 <meta name="twitter:description" content="整理了自己常用到一些Linux命令，自己使用的较多
@@ -261,7 +261,7 @@
 
       
         <span itemprop="articleBody"><p><strong>整理了自己常用到一些Linux命令，自己使用的较多</strong></p>
-<table style="font-size:12px;"><thead><tr><td>类型</td><td>命令</td><td>作用<tbody><tr><td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩</td></tr><tr><td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩</td></tr><tr><td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）</td></tr><tr><td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）</td></tr><tr><td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)</td></tr><tr><td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’</td></tr><tr><td>字符处理</td><td>grep -o ‘xxx’ data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td></tr><tr><td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk</td></tr><tr><td>字符处理</td><td>sed -n ‘5,10p’ data.txt <br>sed -n ‘10p’ data.txt<br>cat nohup.out| head -n 100<br>cat nohup.out| tail -n 100 </td><td>看5-10行，看第10行,头100，尾100</td></tr><tr><td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中</td></tr><tr><td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作</td></tr><tr><td>其他</td><td>ps -ax</td><td>查看所有进程</td></tr><tr><td>其他</td><td>crontab -e</td><td>定时任务配置</td></tr></tbody></td></tr></thead></table>
+<table border="1"><thead><tr><td>类型</td><td>命令</td><td>作用<tbody><tr><td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩</td></tr><tr><td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩</td></tr><tr><td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）</td></tr><tr><td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）</td></tr><tr><td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)</td></tr><tr><td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’</td></tr><tr><td>字符处理</td><td>grep -o ‘xxx’ data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td></tr><tr><td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk</td></tr><tr><td>字符处理</td><td>sed -n ‘5,10p’ data.txt <br>sed -n ‘10p’ data.txt<br>cat nohup.out| head -n 100<br>cat nohup.out| tail -n 100 </td><td>看5-10行，看第10行,头100，尾100</td></tr><tr><td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中</td></tr><tr><td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作</td></tr><tr><td>其他</td><td>ps -ax</td><td>查看所有进程</td></tr><tr><td>其他</td><td>crontab -e</td><td>定时任务配置</td></tr><tr><td>其他</td><td>date +%Y-%m-%d <br>date -d yesterday +%Y%m%d <br>date -d tomorrow +%Y%m%d <br>date -d ‘30 days ago’ +%Y%m%d</td><td>时间获取</td></tr></tbody></td></tr></thead></table>
 
 <!-- 
 <table border="1">
@@ -318,6 +318,17 @@
         <tr>
             <td>其他</td><td>crontab -e</td><td>定时任务配置</td>
         </tr>
+        <tr>
+            <td>其他</td>
+            <td>
+                date +%Y-%m-%d <br/>
+                date -d yesterday +%Y%m%d <br/>
+                date -d tomorrow +%Y%m%d <br/>
+                date -d '30 days ago' +%Y%m%d
+            </td>
+            <td>时间获取</td>
+        </tr>
+
 
     </tbody>
 
