@@ -187,15 +187,215 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/24/js-tip/" itemprop="url">
+                  js Array&Object深浅拷贝问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-02-24T17:30:19+08:00" content="2016-02-24">
+              2016-02-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/24/js-tip/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/js-tip/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
       
-        
-        
-        
       
 
       
+        
+          <span itemprop="articleBody">
+            
+              <p><strong>集中整理一下js 不少的注意事项 遇到比较蛋疼事情，过后就忘了，有必要及时记录整理</strong></p>
+<p>###array<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br><span class="line"><span class="comment">// ["a", 2, 3, 4] ["a", 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.slice(<span class="number">0</span>, a.length);</span><br><span class="line"><span class="comment">// 或者也可以 b = a.concat();</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br><span class="line"><span class="comment">// ["a", 2, 3, 4] [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;name:<span class="string">'yy'</span>,age:<span class="number">26</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line">b.name = a.name;</span><br><span class="line">b.age = a.age;</span><br><span class="line">a.name = <span class="string">'xx'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//Object &#123; name="yy", age=26&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//Object &#123; name="xx", age=26&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深 遍历每个属性</span></span><br><span class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">		result[key] = <span class="keyword">typeof</span> source[key]===<span class="string">'object'</span>? deepCopy(source[key]): source[key];</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 参考博客:</strong>&lt;<a href="http://www.cnblogs.com/yichengbo/archive/2014/07/10/3835882.html" target="_blank" rel="external">http://www.cnblogs.com/yichengbo/archive/2014/07/10/3835882.html</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/01/回家的第一天/" itemprop="url">
+                  回家的第一天
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-02-01T09:43:50+08:00" content="2016-02-01">
+              2016-02-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/总结/" itemprop="url" rel="index">
+                    <span itemprop="name">总结</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/01/回家的第一天/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/回家的第一天/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>前天晚上回了家，</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -322,6 +522,113 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/21/Linux-常用命令整理/" itemprop="url">
+                  Linux 常用命令整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-01-21T14:13:31+08:00" content="2016-01-21">
+              2016-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/21/Linux-常用命令整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/Linux-常用命令整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p><strong>整理了自己常用到一些Linux命令，自己使用的较多</strong></p>
+<table border="1"><thead><tr><td>类型</td><td>命令</td><td>作用<tbody><tr><td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩</td></tr><tr><td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩</td></tr><tr><td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）</td></tr><tr><td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）</td></tr><tr><td>文件操作</td><td>wget <a href="http://a.com/b.jpg" target="_blank" rel="external">http://a.com/b.jpg</a> -P pic/</td><td>wget 指定文件存放的目录</td></tr><tr><td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)</td></tr><tr><td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’</td></tr><tr><td>字符处理</td><td>grep -o ‘xxx’ data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td></tr><tr><td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk</td></tr><tr><td>字符处理</td><td>sed -n ‘5,10p’ data.txt <br>sed -n ‘10p’ data.txt<br>cat nohup.out| head -n 100<br>cat nohup.out| tail -n 100 </td><td>看5-10行，看第10行,头100，尾100</td></tr><tr><td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中</td></tr><tr><td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作</td></tr><tr><td>其他</td><td>ps -ax</td><td>查看所有进程</td></tr><tr><td>其他</td><td>crontab -e</td><td>定时任务配置</td></tr><tr><td>其他</td><td>date +%Y-%m-%d <br>date -d yesterday +%Y%m%d <br>date -d tomorrow +%Y%m%d <br>date -d ‘30 days ago’ +%Y%m%d</td><td>时间获取</td></tr></tbody></td></tr></thead></table><br>&lt;!–<br><table border="1"><br>    <thead><br>        <tr><br>            <td>类型</td><td>命令</td><td>作用</td><br>        </tr><br>    </thead><br>    <tbody><br>        <tr><br>            <td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩</td><br>        </tr><br>        <tr><br>            <td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩</td><br>        </tr><br>        <tr><br>            <td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）</td><br>        </tr><br>        <tr><br>            <td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）</td><br>        </tr><br>        <tr><br>            <td>文件操作</td><td>wget <a href="http://a.com/b.jpg" target="_blank" rel="external">http://a.com/b.jpg</a> -P pic/</td><td>wget 指定文件存放的目录</td><br>        </tr><br><br>        <tr><br>            <td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)</td><br>        </tr><br>        <tr><br>            <td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’</td><br>        </tr><br>        <tr><br>            <td>字符处理</td><td>grep -o ‘xxx’ data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td><br>        </tr><br>        <tr><br>            <td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk</td><br>        </tr><br>        <tr><br>            <td>字符处理</td><br>            <td><br>            sed -n ‘5,10p’ data.txt <br><br>            sed -n ‘10p’ data.txt<br><br>            cat nohup.out| head -n 100<br><br>            cat nohup.out| tail -n 100<br>            </td><br>            <td>看5-10行，看第10行,头100，尾100</td><br>        </tr><br>        <tr><br>            <td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中</td><br>        </tr><br>        <tr><br>            <td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作</td><br>        </tr><br><br>        <tr><br>            <td>其他</td><td>ps -ax</td><td>查看所有进程</td><br>        </tr><br>        <tr><br>            <td>其他</td><td>crontab -e</td><td>定时任务配置</td><br>        </tr><br>        <tr><br>            <td>其他</td><br>            <td><br>                date +%Y-%m-%d <br><br>                date -d yesterday +%Y%m%d <br><br>                date -d tomorrow +%Y%m%d <br><br>                date -d ‘30 days ago’ +%Y%m%d<br>            </td><br>            <td>时间获取</td><br>        </tr><br><br><br>    </tbody><br><br></table>
+
+<p> –&gt;</p>
+<p><strong> 本来在编辑的时候，markdown 无法使用表格自己就用了html的表格，发现原文的换行会被转换成’&lt;br/&gt;’, 以后在markdown里面用到table元素需要注意这点</strong></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/02/大四了/" itemprop="url">
                   大四了
                 </a>
@@ -382,7 +689,7 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="u8BF6_u5440__u5927_u56DB_u4E86_23_23__u6807_u9898"><a href="#u8BF6_u5440__u5927_u56DB_u4E86_23_23__u6807_u9898" class="headerlink" title="诶呀 大四了## 标题"></a>诶呀 大四了## 标题</h1><h2 id="u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0"><a href="#u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0" class="headerlink" title="标签（空格分隔）： 杂记"></a>标签（空格分隔）： 杂记</h2><hr>
+              <h1 id="u5367_u69FD__u5927_u56DB_u4E86_23_23__u6807_u9898"><a href="#u5367_u69FD__u5927_u56DB_u4E86_23_23__u6807_u9898" class="headerlink" title="卧槽 大四了## 标题"></a>卧槽 大四了## 标题</h1><h2 id="u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0"><a href="#u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0" class="headerlink" title="标签（空格分隔）： 杂记"></a>标签（空格分隔）： 杂记</h2><hr>
 <p>记得几个星期之前，经理找我谈了一下，我们部门好像就留我一个实习生，想想还是挺高兴的。但是现在部门就我一个实习生了，我还是相当蛋疼的。后来我才知道，我这个位置也是因为另外某个正式工提出了离职的申请，感觉自己的offer确实来的侥幸（一方面是前者，另外一面是组里没有其他的正规FE对于我前端的工作给出专业的评价）</p>
 <blockquote>
 <ul>
@@ -916,14 +1223,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
