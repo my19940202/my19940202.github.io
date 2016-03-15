@@ -210,6 +210,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/15/chrome-extension/" itemprop="url">
+                  chrome_extension
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-03-15T15:50:31+08:00" content="2016-03-15">
+              2016-03-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/15/chrome-extension/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/chrome-extension/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#chrome插件练手</p>
+<p>##需求<br>隔壁组在做关于广告位相关信息的统计工作，需要开发一段js，标注百度广告位的信息如广告位的宽高,坐标，以及tu(计费的id)，为了方便他们使用，我试着学着写个小chrome插件，完成他们的需求，顺便也了解了chrome插件开发的流程</p>
+<p>##具体流程<br>最简单的chrome extension 需要 icon.png,manifest.json,popup.html,popup.js这四个文件<br></p>
+<table><thead><tr><td>file</td><td>usage</td></tr></thead><tbody><tr><td>icon.png</td><td>插件的logo</td></tr><tr><td>manifest.json</td><td>插件配置文件</td></tr><tr><td>popup.html</td><td>点击chrome插件按钮,popup.html即为弹出部分内容</td></tr><tr><td>popup.js</td><td>popup.html用到的js</td></tr></tbody></table>
+
+<p><strong>manifest.json</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"百度广告位标注"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"This extension demonstrates a browser action with kittens."</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0"</span>,</span><br><span class="line">  <span class="comment">//请求权限，所有站点都允许</span></span><br><span class="line">  <span class="string">"permissions"</span>: [</span><br><span class="line">    <span class="string">"tabs"</span>,<span class="string">"http://*/*"</span>,<span class="string">"https://*/*"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"browser_action"</span>: &#123;</span><br><span class="line">    <span class="string">"default_icon"</span>: <span class="string">"icon.png"</span>,</span><br><span class="line">    <span class="string">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//在matches中指定的url后,自动执行指定的js</span></span><br><span class="line">  <span class="string">"content_scripts"</span>: [&#123;</span><br><span class="line">       <span class="string">"matches"</span>: [<span class="string">"http://*/*"</span>,<span class="string">"https://*/*"</span>], <span class="comment">//满足什么样的条件执行该插件</span></span><br><span class="line">       <span class="comment">//执行的js脚本</span></span><br><span class="line">       <span class="string">"js"</span>: [<span class="string">"test.js"</span>],</span><br><span class="line">       <span class="comment">//脚本执行合适执行,3个值: document_start | document_idel | document_end</span></span><br><span class="line">       <span class="string">"run_at"</span>: <span class="string">"document_end"</span></span><br><span class="line">      <span class="comment">// "all_frames": true</span></span><br><span class="line">  &#125;] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>test.js</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这次处理的百度广告位比较简单，都是pos.baidu.com下面的iframe，筛选起来比较方便</span></span><br><span class="line"><span class="keyword">var</span> htmlArr = [];</span><br><span class="line"><span class="keyword">var</span> htmlStr = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">var</span> maskAds = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line">	<span class="keyword">var</span> lst = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>)</span><br><span class="line">	<span class="keyword">var</span> ids = <span class="string">""</span></span><br><span class="line">	<span class="comment">// 给所有广告位iframe 加上遮罩层</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;lst.length;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="string">'src'</span> <span class="keyword">in</span> lst[i] &amp;&amp; <span class="string">'height'</span> <span class="keyword">in</span> lst[i] &amp;&amp; <span class="string">'width'</span> <span class="keyword">in</span> lst[i]) &#123;</span><br><span class="line">			<span class="keyword">var</span> src = lst[i].src</span><br><span class="line">			<span class="keyword">if</span> (src.indexOf(<span class="string">"pos.baidu.com"</span>) &gt; <span class="number">0</span> &amp;&amp; lst[i].width &gt; <span class="number">0</span> &amp;&amp; lst[i].height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				ids = ids + <span class="string">"\n"</span> + lst[i].id;</span><br><span class="line">				<span class="comment">// lst[i].style.cssText = 'border: 1px solid red;';</span></span><br><span class="line">				<span class="keyword">var</span> tmp = &#123;</span><br><span class="line">					left: lst[i].offsetLeft,</span><br><span class="line">					top: lst[i].offsetTop,</span><br><span class="line">					height: lst[i].offsetHeight,</span><br><span class="line">					width: lst[i].offsetWidth</span><br><span class="line">				&#125;;</span><br><span class="line">				<span class="comment">// 获取tu</span></span><br><span class="line">				<span class="keyword">var</span> tmpsrc = <span class="built_in">decodeURIComponent</span>(lst[i].src);</span><br><span class="line">				<span class="keyword">if</span> (tmpsrc.indexOf(<span class="string">'&amp;di'</span>) &gt; -<span class="number">1</span> &amp;&amp; tmpsrc.indexOf(<span class="string">'&amp;dri'</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">					<span class="keyword">var</span> tu = tmpsrc.split(<span class="string">'&amp;di='</span>)[<span class="number">1</span>].split(<span class="string">'&amp;dri'</span>)[<span class="number">0</span>];</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">var</span> prefixStyle = <span class="string">'z-index:999;text-align:center;color:#FFF;position:absolute;background:rgba(0,0,0,0.5);font-size:12px;width:100%;line-height:'</span> </span><br><span class="line">				+ tmp[<span class="string">'height'</span>] + <span class="string">'px;height:'</span> </span><br><span class="line">				+ tmp[<span class="string">'height'</span>] +<span class="string">'px;width:'</span> </span><br><span class="line">				+ tmp[<span class="string">'width'</span>] + <span class="string">'px;'</span>;</span><br><span class="line">				<span class="keyword">var</span> style = <span class="string">'width:'</span> + tmp[<span class="string">'width'</span>] + <span class="string">'px;'</span></span><br><span class="line">							+ <span class="string">'height:'</span> + tmp[<span class="string">'height'</span>] + <span class="string">'px;'</span></span><br><span class="line">							+ <span class="string">'left:'</span> + tmp[<span class="string">'left'</span>] + <span class="string">'px;'</span></span><br><span class="line">							+ <span class="string">'top:'</span> + tmp[<span class="string">'top'</span>] + <span class="string">'px;'</span>;</span><br><span class="line">				<span class="keyword">var</span> innerText = style.replace(<span class="regexp">/px;/g</span>, <span class="string">','</span>) + <span class="string">'tu='</span> + tu;</span><br><span class="line">				<span class="keyword">var</span> adsinfoDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">				adsinfoDiv.style.cssText = prefixStyle;</span><br><span class="line">				adsinfoDiv.innerHTML = innerText;</span><br><span class="line">				<span class="keyword">var</span> parentNode = lst[i].parentElement;</span><br><span class="line">				parentNode.insertBefore(adsinfoDiv,lst[i]);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 延迟2秒，等站点的广告全部加载完全，这样获取元素的offsetLeft，offsetTop也许会准确一点（暂时没有验证）</span></span><br><span class="line">setTimeout(maskAds, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>popup.html</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">	* <span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width:200px;height:30px;font-size: 16px;font-weight: bold;"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">h1</span>&gt;</span>标注iframe百度广告位的chrome插件<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>	</span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>popup.js 我都暂时没有用上，目前已经完成需求</p>
+<p>效果图片<br><img width="500" src="http://ww3.sinaimg.cn/mw690/b359f54bgw1f1xuga8gehj20om0mkdj6.jpg" alt=""><br><img width="500" src="http://ww1.sinaimg.cn/mw690/b359f54bgw1f1xug9mzepj219s0l2tg0.jpg" alt=""></p>
+<p>具体源码放在git上，希望对chrome 插件刚开始学习的同学起到帮助作用 &gt;&gt; <a href="https://github.com/my19940202/chrome_extension" target="_blank" rel="external">https://github.com/my19940202/chrome_extension</a></p>
+<p><hr><br><strong>参考资料</strong> <a href="https://crxdoc-zh.appspot.com/extensions/getstarted" target="_blank" rel="external">https://crxdoc-zh.appspot.com/extensions/getstarted</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/02/iterm2-imgcat/" itemprop="url">
                   iterm2 imgcat
                 </a>
@@ -1251,127 +1365,14 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/02/test-post/" itemprop="url">
-                  2015的年终总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-01-02T13:46:00+08:00" content="2016-01-02">
-              2016-01-02
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/02/test-post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/test-post/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="2015_u7684_u5E74_u7EC8_u603B_u7ED3_u5440"><a href="#2015_u7684_u5E74_u7EC8_u603B_u7ED3_u5440" class="headerlink" title="2015的年终总结呀"></a>2015的年终总结呀</h1><hr>
-<p>  &nbsp;&nbsp;&nbsp;今年1月7号的时候去百度入职，干了大半年之后，我就差不多知道自己能够留（感觉自己是部门上海唯一的前端，目前的干的活又没有谁能替代，所以还是比较淡定的，感觉非我不留）</p>
-<p>感觉这一年基本是在路上过去的</p>
-<h3 id="2015_u5728_u8DEF_u4E0A"><a href="#2015_u5728_u8DEF_u4E0A" class="headerlink" title="2015在路上"></a>2015在路上</h3><p>–自从1月开始，就开始了上海，杭州两地没有尽头的来回；偶尔学校或者学院有个什么破事就要赶回来，有时候确实周末呆在上海确实没有什么事情可以做，枯坐一下午，或者就是对着电脑胡乱上网瞎逛一整天。</p>
-<p><strong>总之我意识到了</strong></p>
-<p>–需要找个爱好去慢慢培养（杀时间，周末真是静不下心来搞学习，还是找点其他事情，比如东亮就周末到处乱跑马拉松比赛）,可以吉他搞起来，感觉还是要找个培训班找到小群体才会练起来。路上还是看了不少书，也没有把今年在路上的时间白费，我看东亮的kindle里面也是有不少书，人家还在坚持练英语—-值得学习。</p>
-<p>我看了的书 下面几篇算是比较长篇的，短篇的不少小说记不住，还有一些法律和金融的小说，没有细看，就是大致浏览了一下。</p>
-<p>厅长小武（罗辑思维推荐的）<br>生死疲劳，41炮 （还有一些莫言短篇）<br>三体（刘慈欣的短篇也看了一点）<br>第七天（余华的）</p>
-<p>–找妹子聊起来，实际发现找妹子是很麻烦的一件事情，尤其像我这样两地跑来跑去，自己都不确定明天在哪里。然而虽然麻烦还是要找，今年下半年这个学期开始的时候学妹介绍了另外一个学妹给我，虽然一眼感觉就不喜欢那个学妹但是我还是硬着头皮上了，软磨硬泡，死乞白赖（当然也可能是我），但是后来人家居然叫你给她介绍男朋友，意思太明显了，后来我就果然删了对方的号码，留着折腾也没意思，艹 我还给那学妹发了红包，我太傻逼了，赔本买卖啊(约炮被酒托骗了是更大的赔本买卖，我就不多说了)。</p>
-<h3 id="2015_u5173_u4E8E_u6280_u672F"><a href="#2015_u5173_u4E8E_u6280_u672F" class="headerlink" title="2015关于技术"></a>2015关于技术</h3><p>–<strong>技术上，我真没有感觉提高了多少</strong>，只是感觉通过公司的这个项目组，见识到了前段项目居然可以这么复杂。<br>–12月份因为要去搞毕业论文的开题报告看了不少图加原来的不少文档，也顺便看了一下互联网广告的相关文档,互联网广告确实是一个很重要的存在。平时除了干活虽然想在技术上提高自己，但是平时干完活就懒得去干其他事情了，主要实习的工资不高，工作没动力，学习没有目标。但是还是要定期找个时间好好整理遗留的问题。</p>
-<h3 id="2015_u5173_u4E8E_u751F_u6D3B"><a href="#2015_u5173_u4E8E_u751F_u6D3B" class="headerlink" title="2015关于生活"></a>2015关于生活</h3><p><strong>是生活，生活强奸了我们。</strong><br>–在浦东张江镇孙桥这个地方住了将近一年，从申城佳苑的一栋楼搬到了另外一栋楼，然后现在搬到建中小区，然而我始终没记住住的地方的详细地址，别人问我住址总打不上具体的楼层号。</p>
-<p>–但是在这样折腾了之后，我现在是差不多稳定下来了，除非东亮结婚，估计就我一个住了😜😜，但是估计也要等我毕业入职把。</p>
-<p>–同时现在在公司，边上的黄山老婆正要生孩子；冬哥刚结婚买房，装修房子，买车；玉波正谈着女朋友，貌似也是差不多确定下来；大家各自走在人生的不同阶段。黄山还不是和我讲着职业生涯的规划，技术上的各种要点什么的，我的优势确实不少，比同龄的人接触了有了更好的条件接触更多的知识，nice。</p>
-<h3 id="u5404_u65B9_u9762_u7684_u77E5_u8BC6_u90FD_u8981_u5B66_u4E60"><a href="#u5404_u65B9_u9762_u7684_u77E5_u8BC6_u90FD_u8981_u5B66_u4E60" class="headerlink" title="各方面的知识都要学习"></a>各方面的知识都要学习</h3><p>–各个方面的知识，经济学什么的（吃完饭在公司外面闲逛时，黄山开口就能讲个不停，经济环境，公司现状，行业未来什么的）；人文类什么的，小洋洋真是能侃，什么都能插上一嘴，烧饭也牛逼，本事确实有；玉波也厉害年纪不大，对系统的理解确实比较深入；冬哥确实走的管理路线，管的事情多，各种事情的细节也确实能安排好。</p>
-<h4 id="2015_u5173_u4E8E_u9A6C_u5B50"><a href="#2015_u5173_u4E8E_u9A6C_u5B50" class="headerlink" title="2015关于马子"></a>2015关于马子</h4><p>找妹子麻烦，约炮需谨慎（酒托，仙人跳）  生命不止 折腾不息</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
         </div>
@@ -1410,7 +1411,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
