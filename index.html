@@ -197,15 +197,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -229,8 +220,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/15/chrome-extension/" itemprop="url">
-                  chrome_extension
+                <a class="post-title-link" href="/2016/07/10/linux-command/" itemprop="url">
+                  linux_command
                 </a>
               
             
@@ -240,122 +231,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-03-15T15:50:31+08:00" content="2016-03-15">
-              2016-03-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/15/chrome-extension/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/chrome-extension/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#chrome插件练手</p>
-<p>##需求<br>隔壁组在做关于广告位相关信息的统计工作，需要开发一段js，标注百度广告位的信息如广告位的宽高,坐标，以及tu(计费的id)，为了方便他们使用，我试着学着写个小chrome插件，完成他们的需求，顺便也了解了chrome插件开发的流程</p>
-<p>##具体流程<br>最简单的chrome extension 需要 icon.png,manifest.json,popup.html,popup.js这四个文件<br></p>
-<table><thead><tr><td>file</td><td>usage</td></tr></thead><tbody><tr><td>icon.png</td><td>插件的logo</td></tr><tr><td>manifest.json</td><td>插件配置文件</td></tr><tr><td>popup.html</td><td>点击chrome插件按钮,popup.html即为弹出部分内容</td></tr><tr><td>popup.js</td><td>popup.html用到的js</td></tr></tbody></table>
-
-<p><strong>manifest.json</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"百度广告位标注"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"This extension demonstrates a browser action with kittens."</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0"</span>,</span><br><span class="line">  <span class="comment">//请求权限，所有站点都允许</span></span><br><span class="line">  <span class="string">"permissions"</span>: [</span><br><span class="line">    <span class="string">"tabs"</span>,<span class="string">"http://*/*"</span>,<span class="string">"https://*/*"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"browser_action"</span>: &#123;</span><br><span class="line">    <span class="string">"default_icon"</span>: <span class="string">"icon.png"</span>,</span><br><span class="line">    <span class="string">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//在matches中指定的url后,自动执行指定的js</span></span><br><span class="line">  <span class="string">"content_scripts"</span>: [&#123;</span><br><span class="line">       <span class="string">"matches"</span>: [<span class="string">"http://*/*"</span>,<span class="string">"https://*/*"</span>], <span class="comment">//满足什么样的条件执行该插件</span></span><br><span class="line">       <span class="comment">//执行的js脚本</span></span><br><span class="line">       <span class="string">"js"</span>: [<span class="string">"test.js"</span>],</span><br><span class="line">       <span class="comment">//脚本执行合适执行,3个值: document_start | document_idel | document_end</span></span><br><span class="line">       <span class="string">"run_at"</span>: <span class="string">"document_end"</span></span><br><span class="line">      <span class="comment">// "all_frames": true</span></span><br><span class="line">  &#125;] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>test.js</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这次处理的百度广告位比较简单，都是pos.baidu.com下面的iframe，筛选起来比较方便</span></span><br><span class="line"><span class="keyword">var</span> htmlArr = [];</span><br><span class="line"><span class="keyword">var</span> htmlStr = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">var</span> maskAds = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> lst = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>)</span><br><span class="line">    <span class="keyword">var</span> ids = <span class="string">""</span></span><br><span class="line">    <span class="comment">// 给所有广告位iframe 加上遮罩层</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;lst.length;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">'src'</span> <span class="keyword">in</span> lst[i] &amp;&amp; <span class="string">'height'</span> <span class="keyword">in</span> lst[i] &amp;&amp; <span class="string">'width'</span> <span class="keyword">in</span> lst[i]) &#123;</span><br><span class="line">            <span class="keyword">var</span> src = lst[i].src</span><br><span class="line">            <span class="keyword">if</span> (src.indexOf(<span class="string">"pos.baidu.com"</span>) &gt; <span class="number">0</span> &amp;&amp; lst[i].width &gt; <span class="number">0</span> &amp;&amp; lst[i].height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                ids = ids + <span class="string">"\n"</span> + lst[i].id;</span><br><span class="line">                <span class="keyword">var</span> tmp = &#123;</span><br><span class="line">                    left: lst[i].offsetLeft,</span><br><span class="line">                    top: lst[i].offsetTop,</span><br><span class="line">                    height: lst[i].offsetHeight,</span><br><span class="line">                    width: lst[i].offsetWidth</span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="comment">// 获取tu</span></span><br><span class="line">                <span class="keyword">var</span> tmpsrc = <span class="built_in">decodeURIComponent</span>(lst[i].src);</span><br><span class="line">                <span class="keyword">if</span> (tmpsrc.indexOf(<span class="string">'&amp;di'</span>) &gt; -<span class="number">1</span> &amp;&amp; tmpsrc.indexOf(<span class="string">'&amp;dri'</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">var</span> tu = tmpsrc.split(<span class="string">'&amp;di='</span>)[<span class="number">1</span>].split(<span class="string">'&amp;dri'</span>)[<span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">var</span> prefixStyle = <span class="string">'z-index:999;text-align:center;color:#FFF;'</span></span><br><span class="line">                + <span class="string">'position:absolute;background:rgba(0,0,0,0.5);'</span></span><br><span class="line">                + <span class="string">'font-size:12px;width:100%;line-height:'</span> </span><br><span class="line">                + tmp[<span class="string">'height'</span>] + <span class="string">'px;height:'</span> </span><br><span class="line">                + tmp[<span class="string">'height'</span>] +<span class="string">'px;width:'</span> </span><br><span class="line">                + tmp[<span class="string">'width'</span>] + <span class="string">'px;'</span>;</span><br><span class="line">                <span class="keyword">var</span> style = <span class="string">'width:'</span> + tmp[<span class="string">'width'</span>] + <span class="string">'px;'</span></span><br><span class="line">                            + <span class="string">'height:'</span> + tmp[<span class="string">'height'</span>] + <span class="string">'px;'</span></span><br><span class="line">                            + <span class="string">'left:'</span> + tmp[<span class="string">'left'</span>] + <span class="string">'px;'</span></span><br><span class="line">                            + <span class="string">'top:'</span> + tmp[<span class="string">'top'</span>] + <span class="string">'px;'</span>;</span><br><span class="line">                <span class="keyword">var</span> innerText = style.replace(<span class="regexp">/px;/g</span>, <span class="string">','</span>) + <span class="string">'tu='</span> + tu;</span><br><span class="line">                <span class="keyword">var</span> adsinfoDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">                adsinfoDiv.style.cssText = prefixStyle;</span><br><span class="line">                adsinfoDiv.innerHTML = innerText;</span><br><span class="line">                <span class="keyword">var</span> parentNode = lst[i].parentElement;</span><br><span class="line">                parentNode.insertBefore(adsinfoDiv,lst[i]);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 延迟2秒，等站点的广告全部加载完全，这样获取元素的offsetLeft，offsetTop也许会准确一点（暂时没有验证）</span></span><br><span class="line">setTimeout(maskAds, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong>popup.html</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">    * <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width:200px;height:30px;font-size: 16px;font-weight: bold;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>标注iframe百度广告位的chrome插件<span class="tag">&lt;/<span class="title">h1</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>popup.js 我都暂时没有用上，目前已经完成需求</p>
-<p><strong>开发插件时 ，需要将这些文件载入到chrome中，需要在chrome://extensions/ 中操作</strong><br><img width="500" src="http://ww3.sinaimg.cn/mw690/b359f54bgw1f1xvdvdp5pj21ai0lwn1f.jpg" alt=""><br><br><br><strong>效果图片</strong><br><img width="500" src="http://ww3.sinaimg.cn/mw690/b359f54bgw1f1xuga8gehj20om0mkdj6.jpg" alt=""><br><br><br><img width="500" src="http://ww1.sinaimg.cn/mw690/b359f54bgw1f1xug9mzepj219s0l2tg0.jpg" alt=""><br><br></p>
-<p>具体源码放在git上，希望对chrome 插件刚开始学习的同学起到帮助作用 &gt;&gt; <a href="https://github.com/my19940202/chrome_extension" target="_blank" rel="external">https://github.com/my19940202/chrome_extension</a></p>
-<p><hr><br><strong>参考资料</strong> <a href="https://crxdoc-zh.appspot.com/extensions/getstarted" target="_blank" rel="external">https://crxdoc-zh.appspot.com/extensions/getstarted</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/02/iterm2-imgcat/" itemprop="url">
-                  iterm2 imgcat
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-03-02T11:17:14+08:00" content="2016-03-02">
-              2016-03-02
+            <time itemprop="dateCreated" datetime="2016-07-10T14:43:30+08:00" content="2016-07-10">
+              2016-07-10
             </time>
           </span>
 
@@ -380,432 +257,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/02/iterm2-imgcat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/iterm2-imgcat/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p><strong>最近更新的iterm2 提示可以在terminal里面显示图片</strong><br>于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情</p>
-<ol>
-<li><p>首先处理imgcat 文件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv imgcat.txt imgcat&#10;chmod 755 imgcat //&#23601;&#21487;&#20197;&#30452;&#25509;&#36890;&#36807; ./imgcat &#36816;&#34892;&#20102;&#10;mv imgcat ~/Document/mybin/imgcat</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加环境变量<br>在.bash_profile的path里面加上imgcat所在的目录<br>有两种写法<br> export PATH=/Users/pro/Document/mybin/:$PATH<br> 或者所有目录放在一起<br> export PATH=”/Users/pro/sdcfe/tools/ant/bin:/Users/pro/Documents/mybin”</p>
-</li>
-<li>最后source 一下 就好了<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/24/js-tip/" itemprop="url">
-                  js Array&Object深浅拷贝问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-02-24T17:30:19+08:00" content="2016-02-24">
-              2016-02-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/24/js-tip/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/js-tip/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p><strong>集中整理一下js 不少的注意事项 遇到比较蛋疼事情，过后就忘了，有必要及时记录整理</strong></p>
-<p>###array<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br><span class="line"><span class="comment">// ["a", 2, 3, 4] ["a", 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.slice(<span class="number">0</span>, a.length);</span><br><span class="line"><span class="comment">// 或者也可以 b = a.concat();</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br><span class="line"><span class="comment">// ["a", 2, 3, 4] [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;name:<span class="string">'yy'</span>,age:<span class="number">26</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line">b.name = a.name;</span><br><span class="line">b.age = a.age;</span><br><span class="line">a.name = <span class="string">'xx'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//Object &#123; name="yy", age=26&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//Object &#123; name="xx", age=26&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 深 遍历每个属性</span></span><br><span class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">		result[key] = <span class="keyword">typeof</span> source[key]===<span class="string">'object'</span>? deepCopy(source[key]): source[key];</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong> 参考博客:</strong>&lt;<a href="http://www.cnblogs.com/yichengbo/archive/2014/07/10/3835882.html" target="_blank" rel="external">http://www.cnblogs.com/yichengbo/archive/2014/07/10/3835882.html</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/01/回家的第一天/" itemprop="url">
-                  回家的第一天
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-02-01T09:43:50+08:00" content="2016-02-01">
-              2016-02-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/01/回家的第一天/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/回家的第一天/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>前天晚上回了家，</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/21/html-special-character/" itemprop="url">
-                  html_special_character
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-01-21T16:41:44+08:00" content="2016-01-21">
-              2016-01-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html/" itemprop="url" rel="index">
-                    <span itemprop="name">html</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/21/html-special-character/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/html-special-character/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p><strong>可能会用到html特俗字符</strong></p>
-<table><thead><tr><td>原始字符</td><td>表示<tbody><tr><td>“</td><td><span>&amp;</span>quot;</td></tr><tr><td><span>&amp;</span></td><td><span>&amp;</span>amp;</td></tr><tr><td>‘</td><td><span>&amp;</span>#039;</td></tr><tr><td>&lt;</td><td><span>&amp;</span>lt;</td></tr><tr><td>&gt;</td><td><span>&amp;</span>gt;</td></tr><tr><td> </td><td><span>&amp;</span>nbsp;</td></tr><tr><td>¡</td><td><span>&amp;</span>iexcl;</td></tr><tr><td>¢</td><td><span>&amp;</span>cent;</td></tr><tr><td>£</td><td><span>&amp;</span>pound;</td></tr><tr><td>¤</td><td><span>&amp;</span>curren;</td></tr><tr><td>¥</td><td><span>&amp;</span>yen;</td></tr><tr><td>¦</td><td><span>&amp;</span>brvbar;</td></tr><tr><td>§</td><td><span>&amp;</span>sect;</td></tr><tr><td>¨</td><td><span>&amp;</span>uml;</td></tr><tr><td>©</td><td><span>&amp;</span>copy;</td></tr><tr><td>ª</td><td><span>&amp;</span>ordf;</td></tr><tr></tr><tr><td>«</td><td><span>&amp;</span>laquo;</td></tr><tr><td>¬</td><td><span>&amp;</span>not;</td></tr><tr><td>®</td><td><span>&amp;</span>reg;</td></tr><tr><td>¯</td><td><span>&amp;</span>macr;</td></tr><tr><td>°</td><td><span>&amp;</span>deg;</td></tr><tr><td>±</td><td><span>&amp;</span>plusmn;</td></tr><tr><td>²</td><td><span>&amp;</span>sup2;</td></tr><tr><td>³</td><td><span>&amp;</span>sup3;</td></tr><tr><td>´</td><td><span>&amp;</span>acute;</td></tr><tr><td>µ</td><td><span>&amp;</span>micro;</td></tr><tr><td>¶</td><td><span>&amp;</span>para;</td></tr><tr><td>·</td><td><span>&amp;</span>middot;</td></tr><tr><td>¸</td><td><span>&amp;</span>cedil;</td></tr><tr><td>¹</td><td><span>&amp;</span>sup1;</td></tr><tr><td>º</td><td><span>&amp;</span>ordm;</td></tr><tr><td>»</td><td><span>&amp;</span>raquo;</td></tr><tr><td>¼</td><td><span>&amp;</span>frac14;</td></tr><tr><td>½</td><td><span>&amp;</span>frac12;</td></tr><tr><td>¾</td><td><span>&amp;</span>frac34;</td></tr><tr><td>¿</td><td><span>&amp;</span>iquest;</td></tr><tr><td>À</td><td><span>&amp;</span>Agrave;</td></tr><tr><td>Á</td><td><span>&amp;</span>Aacute;</td></tr><tr><td>Â</td><td><span>&amp;</span>Acirc;</td></tr><tr><td>Ã</td><td><span>&amp;</span>Atilde;</td></tr><tr><td>Ä</td><td><span>&amp;</span>Auml;</td></tr><tr><td>Å</td><td><span>&amp;</span>Aring;</td></tr><tr><td>Æ</td><td><span>&amp;</span>AElig;</td></tr><tr><td>Ç</td><td><span>&amp;</span>Ccedil;</td></tr><tr><td>È</td><td><span>&amp;</span>Egrave;</td></tr><tr><td>É</td><td><span>&amp;</span>Eacute;</td></tr><tr><td>Ê</td><td><span>&amp;</span>Ecirc;</td></tr><tr><td>Ë</td><td><span>&amp;</span>Euml;</td></tr><tr><td>Ì</td><td><span>&amp;</span>Igrave;</td></tr><tr><td>Í</td><td><span>&amp;</span>Iacute;</td></tr><tr><td>Î</td><td><span>&amp;</span>Icirc;</td></tr><tr><td>Ï</td><td><span>&amp;</span>Iuml;</td></tr><tr><td>Ð</td><td><span>&amp;</span>ETH;</td></tr><tr><td>Ñ</td><td><span>&amp;</span>Ntilde;</td></tr><tr><td>Ò</td><td><span>&amp;</span>Ograve;</td></tr><tr><td>Ó</td><td><span>&amp;</span>Oacute;</td></tr><tr><td>Ô</td><td><span>&amp;</span>Ocirc;</td></tr><tr><td>Õ</td><td><span>&amp;</span>Otilde;</td></tr><tr><td>Ö</td><td><span>&amp;</span>Ouml;</td></tr><tr><td>×</td><td><span>&amp;</span>times;</td></tr><tr><td>Ø</td><td><span>&amp;</span>Oslash;</td></tr><tr><td>Ù</td><td><span>&amp;</span>Ugrave;</td></tr><tr><td>Ú</td><td><span>&amp;</span>Uacute;</td></tr><tr><td>Û</td><td><span>&amp;</span>Ucirc;</td></tr><tr><td>Ü</td><td><span>&amp;</span>Uuml;</td></tr><tr><td>Ý</td><td><span>&amp;</span>Yacute;</td></tr><tr><td>Þ</td><td><span>&amp;</span>THORN;</td></tr><tr><td>ß</td><td><span>&amp;</span>szlig;</td></tr><tr><td>à</td><td><span>&amp;</span>agrave;</td></tr><tr><td>á</td><td><span>&amp;</span>aacute;</td></tr><tr><td>â</td><td><span>&amp;</span>acirc;</td></tr><tr><td>ã</td><td><span>&amp;</span>atilde;</td></tr><tr><td>ä</td><td><span>&amp;</span>auml;</td></tr><tr><td>å</td><td><span>&amp;</span>aring;</td></tr><tr><td>æ</td><td><span>&amp;</span>aelig;</td></tr><tr><td>ç</td><td><span>&amp;</span>ccedil;</td></tr><tr><td>è</td><td><span>&amp;</span>egrave;</td></tr><tr><td>é</td><td><span>&amp;</span>eacute;</td></tr><tr><td>ê</td><td><span>&amp;</span>ecirc;</td></tr><tr><td>ë</td><td><span>&amp;</span>euml;</td></tr><tr><td>ì</td><td><span>&amp;</span>igrave;</td></tr><tr><td>í</td><td><span>&amp;</span>iacute;</td></tr><tr><td>î</td><td><span>&amp;</span>icirc;</td></tr><tr><td>ï</td><td><span>&amp;</span>iuml;</td></tr><tr><td>ð</td><td><span>&amp;</span>eth;</td></tr><tr><td>ñ</td><td><span>&amp;</span>ntilde;</td></tr><tr><td>ò</td><td><span>&amp;</span>ograve;</td></tr><tr><td>ó</td><td><span>&amp;</span>oacute;</td></tr><tr><td>ô</td><td><span>&amp;</span>ocirc;</td></tr><tr><td>õ</td><td><span>&amp;</span>otilde;</td></tr><tr><td>ö</td><td><span>&amp;</span>ouml;</td></tr><tr><td>÷</td><td><span>&amp;</span>divide;</td></tr><tr><td>ø</td><td><span>&amp;</span>oslash;</td></tr><tr><td>ù</td><td><span>&amp;</span>ugrave;</td></tr><tr><td>ú</td><td><span>&amp;</span>uacute;</td></tr><tr><td>û</td><td><span>&amp;</span>ucirc;</td></tr><tr><td>ü</td><td><span>&amp;</span>uuml;</td></tr><tr><td>ý</td><td><span>&amp;</span>yacute;</td></tr><tr><td>þ</td><td><span>&amp;</span>thorn;</td></tr><tr><td>ÿ</td><td><span>&amp;</span>yuml;</td></tr><tr><td>Œ</td><td><span>&amp;</span>OElig;</td></tr><tr><td>œ</td><td><span>&amp;</span>oelig;</td></tr><tr><td>Š</td><td><span>&amp;</span>Scaron;</td></tr><tr><td>š</td><td><span>&amp;</span>scaron;</td></tr><tr><td>Ÿ</td><td><span>&amp;</span>Yuml;</td></tr><tr><td>ƒ</td><td><span>&amp;</span>fnof;</td></tr><tr><td>ˆ</td><td><span>&amp;</span>circ;</td></tr><tr><td>˜</td><td><span>&amp;</span>tilde;</td></tr><tr><td>Α</td><td><span>&amp;</span>Alpha;</td></tr><tr><td>Β</td><td><span>&amp;</span>Beta;</td></tr><tr><td>Γ</td><td><span>&amp;</span>Gamma;</td></tr><tr><td>Δ</td><td><span>&amp;</span>Delta;</td></tr><tr><td>Ε</td><td><span>&amp;</span>Epsilon;</td></tr><tr><td>Ζ</td><td><span>&amp;</span>Zeta;</td></tr><tr><td>Η</td><td><span>&amp;</span>Eta;</td></tr><tr><td>Θ</td><td><span>&amp;</span>Theta;</td></tr><tr><td>Ι</td><td><span>&amp;</span>Iota;</td></tr><tr><td>Κ</td><td><span>&amp;</span>Kappa;</td></tr><tr><td>Λ</td><td><span>&amp;</span>Lambda;</td></tr><tr><td>Μ</td><td><span>&amp;</span>Mu;</td></tr><tr><td>Ν</td><td><span>&amp;</span>Nu;</td></tr><tr><td>Ξ</td><td><span>&amp;</span>Xi;</td></tr><tr><td>Ο</td><td><span>&amp;</span>Omicron;</td></tr><tr><td>Π</td><td><span>&amp;</span>Pi;</td></tr><tr><td>Ρ</td><td><span>&amp;</span>Rho;</td></tr><tr><td>Σ</td><td><span>&amp;</span>Sigma;</td></tr><tr><td>Τ</td><td><span>&amp;</span>Tau;</td></tr><tr><td>Υ</td><td><span>&amp;</span>Upsilon;</td></tr><tr><td>Φ</td><td><span>&amp;</span>Phi;</td></tr><tr><td>Χ</td><td><span>&amp;</span>Chi;</td></tr><tr><td>Ψ</td><td><span>&amp;</span>Psi;</td></tr><tr><td>Ω</td><td><span>&amp;</span>Omega;</td></tr><tr><td>α</td><td><span>&amp;</span>alpha;</td></tr><tr><td>β</td><td><span>&amp;</span>beta;</td></tr><tr><td>γ</td><td><span>&amp;</span>gamma;</td></tr><tr><td>δ</td><td><span>&amp;</span>delta;</td></tr><tr><td>ε</td><td><span>&amp;</span>epsilon;</td></tr><tr><td>ζ</td><td><span>&amp;</span>zeta;</td></tr><tr><td>η</td><td><span>&amp;</span>eta;</td></tr><tr><td>θ</td><td><span>&amp;</span>theta;</td></tr><tr><td>ι</td><td><span>&amp;</span>iota;</td></tr><tr><td>κ</td><td><span>&amp;</span>kappa;</td></tr><tr><td>λ</td><td><span>&amp;</span>lambda;</td></tr><tr><td>μ</td><td><span>&amp;</span>mu;</td></tr><tr><td>ν</td><td><span>&amp;</span>nu;</td></tr><tr><td>ξ</td><td><span>&amp;</span>xi;</td></tr><tr><td>ο</td><td><span>&amp;</span>omicron;</td></tr><tr><td>π</td><td><span>&amp;</span>pi;</td></tr><tr><td>ρ</td><td><span>&amp;</span>rho;</td></tr><tr><td>ς</td><td><span>&amp;</span>sigmaf;</td></tr><tr><td>σ</td><td><span>&amp;</span>sigma;</td></tr><tr><td>τ</td><td><span>&amp;</span>tau;</td></tr><tr><td>υ</td><td><span>&amp;</span>upsilon;</td></tr><tr><td>φ</td><td><span>&amp;</span>phi;</td></tr><tr><td>χ</td><td><span>&amp;</span>chi;</td></tr><tr><td>ψ</td><td><span>&amp;</span>psi;</td></tr><tr><td>ω</td><td><span>&amp;</span>omega;</td></tr><tr><td>ϑ</td><td><span>&amp;</span>thetasym;</td></tr><tr><td>ϒ</td><td><span>&amp;</span>upsih;</td></tr><tr><td>ϖ</td><td><span>&amp;</span>piv;</td></tr><tr><td>–</td><td><span>&amp;</span>ndash;</td></tr><tr><td>—</td><td><span>&amp;</span>mdash;</td></tr><tr><td>‘</td><td><span>&amp;</span>lsquo;</td></tr><tr><td>’</td><td><span>&amp;</span>rsquo;</td></tr><tr><td>‚</td><td><span>&amp;</span>sbquo;</td></tr><tr><td>“</td><td><span>&amp;</span>ldquo;</td></tr><tr><td>”</td><td><span>&amp;</span>rdquo;</td></tr><tr><td>„</td><td><span>&amp;</span>bdquo;</td></tr><tr><td>†</td><td><span>&amp;</span>dagger;</td></tr><tr><td>‡</td><td><span>&amp;</span>Dagger;</td></tr><tr><td>•</td><td><span>&amp;</span>bull;</td></tr><tr><td>…</td><td><span>&amp;</span>hellip;</td></tr><tr><td>‰</td><td><span>&amp;</span>permil;</td></tr><tr><td>′</td><td><span>&amp;</span>prime;</td></tr><tr><td>″</td><td><span>&amp;</span>Prime;</td></tr><tr><td>‹</td><td><span>&amp;</span>lsaquo;</td></tr><tr><td>›</td><td><span>&amp;</span>rsaquo;</td></tr><tr><td>‾</td><td><span>&amp;</span>oline;</td></tr><tr><td>⁄</td><td><span>&amp;</span>frasl;</td></tr><tr><td>€</td><td><span>&amp;</span>euro;</td></tr><tr><td>ℑ</td><td><span>&amp;</span>image;</td></tr><tr><td>℘</td><td><span>&amp;</span>weierp;</td></tr><tr><td>ℜ</td><td><span>&amp;</span>real;</td></tr><tr><td>™</td><td><span>&amp;</span>trade;</td></tr><tr><td>ℵ</td><td><span>&amp;</span>alefsym;</td></tr><tr><td>←</td><td><span>&amp;</span>larr;</td></tr><tr><td>↑</td><td><span>&amp;</span>uarr;</td></tr><tr><td>→</td><td><span>&amp;</span>rarr;</td></tr><tr><td>↓</td><td><span>&amp;</span>darr;</td></tr><tr><td>↔</td><td><span>&amp;</span>harr;</td></tr><tr><td>↵</td><td><span>&amp;</span>crarr;</td></tr><tr><td>⇐</td><td><span>&amp;</span>lArr;</td></tr><tr><td>⇑</td><td><span>&amp;</span>uArr;</td></tr><tr><td>⇒</td><td><span>&amp;</span>rArr;</td></tr><tr><td>⇓</td><td><span>&amp;</span>dArr;</td></tr><tr><td>⇔</td><td><span>&amp;</span>hArr;</td></tr><tr><td>∀</td><td><span>&amp;</span>forall;</td></tr><tr><td>∂</td><td><span>&amp;</span>part;</td></tr><tr><td>∃</td><td><span>&amp;</span>exist;</td></tr><tr><td>∅</td><td><span>&amp;</span>empty;</td></tr><tr><td>∇</td><td><span>&amp;</span>nabla;</td></tr><tr><td>∈</td><td><span>&amp;</span>isin;</td></tr><tr><td>∉</td><td><span>&amp;</span>notin;</td></tr><tr><td>∋</td><td><span>&amp;</span>ni;</td></tr><tr><td>∏</td><td><span>&amp;</span>prod;</td></tr><tr><td>∑</td><td><span>&amp;</span>sum;</td></tr><tr><td>−</td><td><span>&amp;</span>minus;</td></tr><tr><td>∗</td><td><span>&amp;</span>lowast;</td></tr><tr><td>√</td><td><span>&amp;</span>radic;</td></tr><tr><td>∝</td><td><span>&amp;</span>prop;</td></tr><tr><td>∞</td><td><span>&amp;</span>infin;</td></tr><tr><td>∠</td><td><span>&amp;</span>ang;</td></tr><tr><td>∧</td><td><span>&amp;</span>and;</td></tr><tr><td>∨</td><td><span>&amp;</span>or;</td></tr><tr><td>∩</td><td><span>&amp;</span>cap;</td></tr><tr><td>∪</td><td><span>&amp;</span>cup;</td></tr><tr><td>∫</td><td><span>&amp;</span>int;</td></tr><tr><td>∴</td><td><span>&amp;</span>there4;</td></tr><tr><td>∼</td><td><span>&amp;</span>sim;</td></tr><tr><td>≅</td><td><span>&amp;</span>cong;</td></tr><tr><td>≈</td><td><span>&amp;</span>asymp;</td></tr><tr><td>≠</td><td><span>&amp;</span>ne;</td></tr><tr><td>≡</td><td><span>&amp;</span>equiv;</td></tr><tr><td>≤</td><td><span>&amp;</span>le;</td></tr><tr><td>≥</td><td><span>&amp;</span>ge;</td></tr><tr><td>⊂</td><td><span>&amp;</span>sub;</td></tr><tr><td>⊃</td><td><span>&amp;</span>sup;</td></tr><tr><td>⊄</td><td><span>&amp;</span>nsub;</td></tr><tr><td>⊆</td><td><span>&amp;</span>sube;</td></tr><tr><td>⊇</td><td><span>&amp;</span>supe;</td></tr><tr><td>⊕</td><td><span>&amp;</span>oplus;</td></tr><tr><td>⊗</td><td><span>&amp;</span>otimes;</td></tr><tr><td>⊥</td><td><span>&amp;</span>perp;</td></tr><tr><td>⋅</td><td><span>&amp;</span>sdot;</td></tr><tr><td>⌈</td><td><span>&amp;</span>lceil;</td></tr><tr><td>⌉</td><td><span>&amp;</span>rceil;</td></tr><tr><td>⌊</td><td><span>&amp;</span>lfloor;</td></tr><tr><td>⌋</td><td><span>&amp;</span>rfloor;</td></tr><tr><td>⟨</td><td><span>&amp;</span>lang;</td></tr><tr><td>⟩</td><td><span>&amp;</span>rang;</td></tr><tr><td>◊</td><td><span>&amp;</span>loz;</td></tr><tr><td>♠</td><td><span>&amp;</span>spades;</td></tr><tr><td>♣</td><td><span>&amp;</span>clubs;</td></tr><tr><td>♥</td><td><span>&amp;</span>hearts;</td></tr><tr><td>♦</td><td><span>&amp;</span>diams;</td></tr></tbody></td></tr></thead></table>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/21/Linux-常用命令整理/" itemprop="url">
-                  Linux 常用命令整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2016-01-21T14:13:31+08:00" content="2016-01-21">
-              2016-01-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/21/Linux-常用命令整理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/Linux-常用命令整理/" itemprop="commentsCount"></span>
+                <a href="/2016/07/10/linux-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/10/linux-command/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -828,7 +281,7 @@
           <span itemprop="articleBody">
             
               <p><strong>整理了自己常用到一些Linux命令，自己使用的较多</strong></p>
-<table border="1"><thead><tr><td>类型</td><td>命令</td><td>作用<tbody><tr><td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩</td></tr><tr><td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩</td></tr><tr><td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）</td></tr><tr><td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）</td></tr><tr><td>文件操作</td><td>wget <a href="http://a.com/b.jpg" target="_blank" rel="external">http://a.com/b.jpg</a> -P pic/</td><td>wget 指定文件存放的目录</td></tr><tr><td>文件操作</td><td>chmod 755 imgcat</td><td>imgcat是imgcat.sh 去掉了后缀名,可以直接 ./imgcat (sh imgcat.sh)</td></tr><tr><td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)</td></tr><tr><td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’</td></tr><tr><td>字符处理</td><td>grep -o ‘xxx’ data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td></tr><tr><td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk</td></tr><tr><td>字符处理</td><td>sed -n ‘5,10p’ data.txt <br>sed -n ‘10p’ data.txt<br>cat nohup.out| head -n 100<br>cat nohup.out| tail -n 100 </td><td>看5-10行，看第10行,头100，尾100</td></tr><tr><td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中</td></tr><tr><td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作</td></tr><tr><td>其他</td><td>ps -ax</td><td>查看所有进程</td></tr><tr><td>其他</td><td>crontab -e</td><td>定时任务配置</td></tr><tr><td>其他</td><td>date +%Y-%m-%d <br>date -d yesterday +%Y%m%d <br>date -d tomorrow +%Y%m%d <br>date -d ‘30 days ago’ +%Y%m%d</td><td>时间获取</td></tr></tbody></td></tr></thead></table>
+<table border="1"> <thead> <tr> <td>类型</td><td>命令</td><td>作用   <tbody> <tr> <td>文件操作</td><td>tar -zcvf target.tar.gz sourcefile</td><td>压缩  </td></tr><tr> <td>文件操作</td><td>tar -zxvf target.tar.gz</td><td>解压缩  </td></tr><tr> <td>文件操作</td><td>du -hs path</td><td>查看文件大小（Mb单位）  </td></tr><tr> <td>文件操作</td><td>cp -r xx yy</td><td>递归方式拷贝（拷贝所有文件和文件夹）  </td></tr><tr> <td>文件操作</td><td>wget <a href="http://a.com/b.jpg" target="_blank" rel="external">http://a.com/b.jpg</a> -P pic/</td><td>wget 指定文件存放的目录  </td></tr><tr> <td>文件操作</td><td>chmod 755 imgcat</td><td>imgcat是imgcat.sh 去掉了后缀名,可以直接 ./imgcat (sh imgcat.sh)  </td></tr><tr> <td>文件操作</td><td>scp -r username@servername:/path/filename /target/path</td><td>拷贝别人开发机的文件(-r 拷贝所有文件和文件夹)  </td></tr><tr> <td>字符处理</td><td>sed ‘s/\t/,/g’ data.txt</td><td>data.txt中的tab=&gt;’,’  </td></tr><tr> <td>字符处理 </td><td> grep -o ‘xxx’ data.txt | wc -l<br> grep -r ‘name’ ./<br>  </td><td>data.txt中的xxx的出现次数<br>查看当前目录下面的所有含有name字符串的文件  </td></tr><tr> <td>字符处理</td><td>iconv -f ‘utf-8’ -t ‘gbk’ a.txt &gt; b.txt</td><td>utf8=&gt;gbk  </td></tr><tr> <td>字符处理 </td><td> sed -n ‘5,10p’ data.txt <br> sed -n ‘10p’ data.txt<br> cat nohup.out| head -n 100<br> cat nohup.out| tail -n 100  </td><td>看5-10行，看第10行,头100，尾100  </td></tr><tr> <td>hadoop</td><td>hadoop fs -getmerge /app/2016 data.txt</td><td>2016目录下的所有文件merge到data.txt中  </td></tr><tr> <td>hadoop</td><td>hadoop fs -cat,-ls</td><td>fs类型的多种操作  </td></tr><tr> <td>其他</td><td>ps -ax</td><td>查看所有进程  </td></tr><tr> <td>其他</td><td>crontab -e</td><td>定时任务配置  </td></tr><tr> <td>其他 </td><td> date +%Y-%m-%d <br> date -d yesterday +%Y%m%d <br> date -d tomorrow +%Y%m%d <br> date -d ‘30 days ago’ +%Y%m%d  </td><td>时间获取  </td></tr></tbody></td></tr></thead></table>
 
 
 <!-- 
@@ -865,7 +318,15 @@
             <td>字符处理</td><td>sed 's/\t/,/g’ data.txt</td><td>data.txt中的tab=>','</td>
         </tr>
         <tr>
-            <td>字符处理</td><td>grep -o 'xxx' data.txt | wc -l</td><td>data.txt中的xxx的出现次数</td>
+            <td>字符处理</td>
+            <td>
+                grep -o 'xxx' data.txt | wc -l<br/>
+                grep -r 'name' ./<br/>
+            </td>
+            <td>
+                data.txt中的xxx的出现次数<br/>
+                查看当前目录下面的所有含有name字符串的文件
+            </td>
         </tr>
         <tr>
             <td>字符处理</td><td>iconv -f 'utf-8' -t 'gbk' a.txt > b.txt</td><td>utf8=>gbk</td>
@@ -949,8 +410,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/02/大四了/" itemprop="url">
-                  大四了
+                <a class="post-title-link" href="/2016/04/10/js-Array-Oject-deep-copy/" itemprop="url">
+                  js_Array&Oject_deep_copy
                 </a>
               
             
@@ -960,8 +421,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-02T20:53:28+08:00" content="2016-01-02">
-              2016-01-02
+            <time itemprop="dateCreated" datetime="2016-04-10T12:45:41+08:00" content="2016-04-10">
+              2016-04-10
             </time>
           </span>
 
@@ -970,8 +431,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -986,8 +447,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/02/大四了/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/大四了/" itemprop="commentsCount"></span>
+                <a href="/2016/04/10/js-Array-Oject-deep-copy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/js-Array-Oject-deep-copy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1009,20 +470,10 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="u5367_u69FD__u5927_u56DB_u4E86_23_23__u6807_u9898"><a href="#u5367_u69FD__u5927_u56DB_u4E86_23_23__u6807_u9898" class="headerlink" title="卧槽 大四了## 标题"></a>卧槽 大四了## 标题</h1><h2 id="u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0"><a href="#u6807_u7B7E_uFF08_u7A7A_u683C_u5206_u9694_uFF09_uFF1A__u6742_u8BB0" class="headerlink" title="标签（空格分隔）： 杂记"></a>标签（空格分隔）： 杂记</h2><hr>
-<p>记得几个星期之前，经理找我谈了一下，我们部门好像就留我一个实习生，想想还是挺高兴的。但是现在部门就我一个实习生了，我还是相当蛋疼的。后来我才知道，我这个位置也是因为另外某个正式工提出了离职的申请，感觉自己的offer确实来的侥幸（一方面是前者，另外一面是组里没有其他的正规FE对于我前端的工作给出专业的评价）</p>
-<blockquote>
-<ul>
-<li><p>关于生活<br> 平时也就上上班，周末的时候确实闲着也是闲着，这个周末准备吉拿到上海去，周末可以装个逼，陶冶情操什么的，别老是玩电脑。</p>
-<blockquote>
-<p>关于找妹子<br> <strong>妹子还是要找的，现在妹子着了反正毕业能养活她，我是无所谓的,如果找到妹子就好好发展把</strong><br>关于学车<br> <strong>学车这个事情相当重要的，大四这一年如果不去学车的话，上班后学车麻烦 在上海学车价格也贵</strong></p>
-</blockquote>
-</li>
-<li><p>关于技术<br> <strong><strong>技术上，我觉得确实组里也没有大神带我在。估计学习主要还是要靠自己，至于学习的办法就得自己解决了，关于相学习nodejs和实际工作中nodejs使用不多的矛盾，自己看着办吧。
- </strong></strong>感觉是平时工作没有大神在身边指出我的相关问题，所以很多问题到了无法避免的时候才会被指出（比如之前的代码版本管理问题），很多老的render拉出来进行修改的时候就会破头烂额地加上之前没有merge的代码。<br> <em>**</em>昨天晚上问了问林神，关于我现在的懒散的工作环境，他是感觉很好，活少钱多最好，但是对于自己的后续的学习这样是没有什么帮助的。</p>
-</li>
-</ul>
-</blockquote>
+              <p>js传值使用了引用，在一些场景下会遇到一些奇怪的问题，如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">a[<span class="number">1</span>] = <span class="string">'2nd'</span>;</span><br><span class="line"><span class="comment">// 实际输出a,b,c发现 都是 [1, "2nd", 3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;a:<span class="number">1231</span>,b:<span class="number">312</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line"><span class="keyword">var</span> c =a</span><br><span class="line">a.a = <span class="string">'this is a in a'</span></span><br><span class="line"><span class="comment">// 实际输出a,b,c 发现都是 &#123;a: "this is a in a", b: 312&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">// var b = a;</span></span><br><span class="line"><span class="comment">// var c = a;</span></span><br><span class="line"><span class="keyword">var</span> b = a.slice(<span class="number">0</span>, a.length);</span><br><span class="line"><span class="keyword">var</span> c = a.concat();</span><br><span class="line">a[<span class="number">0</span>] = <span class="string">'aaaa'</span>;</span><br><span class="line"><span class="comment">// b,c 没有变化</span></span><br></pre></td></tr></table></figure>
+<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历每个属性，这个办法还是有问题的(一旦这个obj比较复杂,含有数组，这个function就不能用了)</span></span><br><span class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">        result[key] = <span class="keyword">typeof</span> source[key]===<span class="string">'object'</span>? deepCopy(source[key]): source[key];</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             
           </span>
@@ -1065,8 +516,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/02/room-renting/" itemprop="url">
-                  room renting
+                <a class="post-title-link" href="/2016/03/02/iterm2-imgcat-show-images-in-iterm2/" itemprop="url">
+                  iterm2_imgcat:show_images_in_iterm2
                 </a>
               
             
@@ -1076,8 +527,121 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-02T20:39:19+08:00" content="2016-01-02">
-              2016-01-02
+            <time itemprop="dateCreated" datetime="2016-03-02T10:36:20+08:00" content="2016-03-02">
+              2016-03-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/02/iterm2-imgcat-show-images-in-iterm2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/iterm2-imgcat-show-images-in-iterm2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="iterm2__u914D_u7F6Eimgcat_u663E_u793A_u56FE_u7247"><a href="#iterm2__u914D_u7F6Eimgcat_u663E_u793A_u56FE_u7247" class="headerlink" title="iterm2 配置imgcat显示图片"></a>iterm2 配置imgcat显示图片</h1><hr>
+<p>最近更新的iterm2 提示可以在terminal里面显示图片<br>于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情</p>
+<ul>
+<li><p>首先处理imgcat 文件<br>imgcat这个文件可以随便防止，只要添加到path里面即可</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv imgcat.txt imgcat&#10;chmod 755 imgcat //&#36171;&#26435;&#38480; &#20351;./imgcat&#30452;&#25509;&#36816;&#34892;&#10;mv imgcat ~/Document/mybin/imgcat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加环境变量<br>在.bash_profile的path里面加上imgcat所在的目录<br>有两种写法</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/Users/pro/Document/mybin/:$PATH&#10;export PATH=&#8221;/Users/pro/sdcfe/tools/ant/bin:/Users/pro/Documents/mybin&#8221;</span><br></pre></td></tr></table></figure>
+<p>最后source 一下 就好了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/10/roomrenting/" itemprop="url">
+                  roomrenting
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-02-10T15:27:16+08:00" content="2016-02-10">
+              2016-02-10
             </time>
           </span>
 
@@ -1102,8 +666,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/02/room-renting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/room-renting/" itemprop="commentsCount"></span>
+                <a href="/2016/02/10/roomrenting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/10/roomrenting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1181,8 +745,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/02/px-em-rem-dpi-ppi-dppx/" itemprop="url">
-                  px_em_rem_dpi_ppi_dppx
+                <a class="post-title-link" href="/2016/01/10/pxemremppidppx/" itemprop="url">
+                  pxemremppidppx
                 </a>
               
             
@@ -1192,8 +756,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-02T20:29:26+08:00" content="2016-01-02">
-              2016-01-02
+            <time itemprop="dateCreated" datetime="2016-01-10T15:26:08+08:00" content="2016-01-10">
+              2016-01-10
             </time>
           </span>
 
@@ -1218,8 +782,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/02/px-em-rem-dpi-ppi-dppx/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/px-em-rem-dpi-ppi-dppx/" itemprop="commentsCount"></span>
+                <a href="/2016/01/10/pxemremppidppx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/10/pxemremppidppx/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1249,12 +813,12 @@
 <li><p>px 像素点 显示屏(不考虑os对高分辨率屏幕的优化，如 Retina屏的显示处理)</p>
 </li>
 <li><p>em 基于父元素的尺寸，em继承父元素的大小</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    font－size:62.5%;</span><br><span class="line">    /*font－size:10px;上下两句的效果是一样*/</span><br><span class="line">    /*body里面的元素 原来是 12px 写成1.2em即可*/</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">* rem css3属性（IE8 IE8- 不支持） 基于根元素（html元素）</span><br><span class="line">```css </span><br><span class="line">    html &#123;</span><br><span class="line">    		font-size: 20px;/*调节根元素大小可以达到放大缩小的效果*/</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    font－size:62.5%;</span><br><span class="line">    /*font－size:10px;上下两句的效果是一样*/</span><br><span class="line">    /*body里面的元素 原来是 12px 写成1.2em即可*/</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">* rem css3属性（IE8 IE8- 不支持） 基于根元素（html元素）</span><br><span class="line">```css </span><br><span class="line">    html &#123;</span><br><span class="line">            font-size: 20px;/*调节根元素大小可以达到放大缩小的效果*/</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>dpi Dots Per Inch（每英寸所打印的点数）<br><img src="http://cdn.infoqstatic.com/statics_s2_20150707-0138u2/resource/articles/development-of-the-mobile-web-deep-concept/zh/resources/zoom_pic.gif" alt="4"></p>
 </li>
 <li>ppi 显示屏的像素密度<br>计算公式<br><img src="http://cdn.infoqstatic.com/statics_s2_20150707-0138u2/resource/articles/development-of-the-mobile-web-deep-concept/zh/resources/original.png" alt="1"><br><img src="http://hiphotos.baidu.com/exp/pic/item/cbc17b380cd79123de98a335ac345982b2b78033.jpg" alt="2"><br><img src="http://hiphotos.baidu.com/exp/pic/item/c28fddfdfc0392457af8d64e8694a4c27c1e25e6.jpg" alt="3"></li>
-<li>dppx 貌似是css3 用来判断Retina屏的<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"zh-cmn-Hans"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-resolution: <span class="number">2dppx</span>) </span>&#123;</span><br><span class="line">	<span class="class">.normal</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-resolution: <span class="number">1dppx</span>) and (max-resolution: <span class="number">1.9dppx</span>) </span>&#123;</span><br><span class="line">	<span class="class">.retina</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"retina"</span>&gt;</span>视网膜屏<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"normal"</span>&gt;</span>普通屏<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>dppx 貌似是css3 用来判断Retina屏的<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"zh-cmn-Hans"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-resolution: <span class="number">2dppx</span>) </span>&#123;</span><br><span class="line">    <span class="class">.normal</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-resolution: <span class="number">1dppx</span>) and (max-resolution: <span class="number">1.9dppx</span>) </span>&#123;</span><br><span class="line">    <span class="class">.retina</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"retina"</span>&gt;</span>视网膜屏<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"normal"</span>&gt;</span>普通屏<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -1384,14 +948,125 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/02/test-post/" itemprop="url">
+                  2015的年终总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-12-02T13:46:00+08:00" content="2015-12-02">
+              2015-12-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/总结/" itemprop="url" rel="index">
+                    <span itemprop="name">总结</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/02/test-post/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/02/test-post/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="2015_u7684_u5E74_u7EC8_u603B_u7ED3_u5440"><a href="#2015_u7684_u5E74_u7EC8_u603B_u7ED3_u5440" class="headerlink" title="2015的年终总结呀"></a>2015的年终总结呀</h1><hr>
+<p>  &nbsp;&nbsp;&nbsp;今年1月7号的时候去百度入职，干了大半年之后，我就差不多知道自己能够留（感觉自己是部门上海唯一的前端，目前的干的活又没有谁能替代，所以还是比较淡定的，感觉非我不留）</p>
+<p>感觉这一年基本是在路上过去的</p>
+<h3 id="2015_u5728_u8DEF_u4E0A"><a href="#2015_u5728_u8DEF_u4E0A" class="headerlink" title="2015在路上"></a>2015在路上</h3><p>–自从1月开始，就开始了上海，杭州两地没有尽头的来回；偶尔学校或者学院有个什么破事就要赶回来，有时候确实周末呆在上海确实没有什么事情可以做，枯坐一下午，或者就是对着电脑胡乱上网瞎逛一整天。</p>
+<p><strong>总之我意识到了</strong></p>
+<p>–需要找个爱好去慢慢培养（杀时间，周末真是静不下心来搞学习，还是找点其他事情，比如东亮就周末到处乱跑马拉松比赛）,可以吉他搞起来，感觉还是要找个培训班找到小群体才会练起来。路上还是看了不少书，也没有把今年在路上的时间白费，我看东亮的kindle里面也是有不少书，人家还在坚持练英语—-值得学习。</p>
+<p>–找妹子聊起来，实际发现找妹子是很麻烦的一件事情，尤其像我这样两地跑来跑去，自己都不确定明天在哪里。然而虽然麻烦还是要找，今年下半年这个学期开始的时候学妹介绍了另外一个学妹给我，虽然一眼感觉就不喜欢那个学妹但是我还是硬着头皮上了，软磨硬泡，死乞白赖（当然也可能是我），但是后来人家居然叫你给她介绍男朋友，意思太明显了，后来我就果然删了对方的号码，留着折腾也没意思，艹 我还给那学妹发了红包，我太傻逼了，赔本买卖啊(约炮被酒托骗了是更大的赔本买卖，我就不多说了)。</p>
+<h3 id="2015_u5173_u4E8E_u6280_u672F"><a href="#2015_u5173_u4E8E_u6280_u672F" class="headerlink" title="2015关于技术"></a>2015关于技术</h3><p>–<strong>技术上，我真没有感觉提高了多少</strong>，只是感觉通过公司的这个项目组，见识到了前段项目居然可以这么复杂。<br>–12月份因为要去搞毕业论文的开题报告看了不少图加原来的不少文档，也顺便看了一下互联网广告的相关文档,互联网广告确实是一个很重要的存在。平时除了干活虽然想在技术上提高自己，但是平时干完活就懒得去干其他事情了，主要实习的工资不高，工作没动力，学习没有目标。但是还是要定期找个时间好好整理遗留的问题。</p>
+<h3 id="2015_u5173_u4E8E_u751F_u6D3B"><a href="#2015_u5173_u4E8E_u751F_u6D3B" class="headerlink" title="2015关于生活"></a>2015关于生活</h3><p><strong>是生活，生活强奸了我们。</strong><br>–在浦东张江镇孙桥这个地方住了将近一年，从申城佳苑的一栋楼搬到了另外一栋楼，然后现在搬到建中小区，然而我始终没记住住的地方的详细地址，别人问我住址总打不上具体的楼层号。</p>
+<p>–但是在这样折腾了之后，我现在是差不多稳定下来了，除非东亮结婚，估计就我一个住了😜😜，但是估计也要等我毕业入职把。</p>
+<p>–同时现在在公司，边上的黄山老婆正要生孩子；冬哥刚结婚买房，装修房子，买车；玉波正谈着女朋友，貌似也是差不多确定下来；大家各自走在人生的不同阶段。黄山还不是和我讲着职业生涯的规划，技术上的各种要点什么的，我的优势确实不少，比同龄的人接触了有了更好的条件接触更多的知识，nice。</p>
+<h3 id="u5404_u65B9_u9762_u7684_u77E5_u8BC6_u90FD_u8981_u5B66_u4E60"><a href="#u5404_u65B9_u9762_u7684_u77E5_u8BC6_u90FD_u8981_u5B66_u4E60" class="headerlink" title="各方面的知识都要学习"></a>各方面的知识都要学习</h3><p>–各个方面的知识，经济学什么的（吃完饭在公司外面闲逛时，黄山开口就能讲个不停，经济环境，公司现状，行业未来什么的）；人文类什么的，小洋洋真是能侃，什么都能插上一嘴，烧饭也牛逼，本事确实有；玉波也厉害年纪不大，对系统的理解确实比较深入；冬哥确实走的管理路线，管的事情多，各种事情的细节也确实能安排好。</p>
+<h4 id="2015_u5173_u4E8E_u9A6C_u5B50"><a href="#2015_u5173_u4E8E_u9A6C_u5B50" class="headerlink" title="2015关于马子"></a>2015关于马子</h4><p>找妹子麻烦，约炮需谨慎（酒托，仙人跳）  生命不止 折腾不息</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
         </div>
@@ -1430,14 +1105,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>

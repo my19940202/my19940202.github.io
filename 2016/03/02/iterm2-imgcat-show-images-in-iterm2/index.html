@@ -51,16 +51,28 @@
 
 
 
-<meta name="description" content="没有找到页面">
+<meta name="description" content="iterm2 配置imgcat显示图片
+最近更新的iterm2 提示可以在terminal里面显示图片于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情
+
+首先处理imgcat 文件imgcat这个文件可以随便防止，只要添加到path里面即可
+1mv imgcat.txt imgcat&amp;#10;chmod 755 imgcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="404">
-<meta property="og:url" content="http://my19940202.github.io/2016/01/02/404/index.html">
+<meta property="og:title" content="iterm2_imgcat:show_images_in_iterm2">
+<meta property="og:url" content="http://my19940202.github.io/2016/03/02/iterm2-imgcat-show-images-in-iterm2/index.html">
 <meta property="og:site_name" content="波波的github page">
-<meta property="og:description" content="没有找到页面">
-<meta property="og:updated_time" content="2016-01-02T07:41:23.000Z">
+<meta property="og:description" content="iterm2 配置imgcat显示图片
+最近更新的iterm2 提示可以在terminal里面显示图片于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情
+
+首先处理imgcat 文件imgcat这个文件可以随便防止，只要添加到path里面即可
+1mv imgcat.txt imgcat&amp;#10;chmod 755 imgcat">
+<meta property="og:updated_time" content="2016-07-10T07:47:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404">
-<meta name="twitter:description" content="没有找到页面">
+<meta name="twitter:title" content="iterm2_imgcat:show_images_in_iterm2">
+<meta name="twitter:description" content="iterm2 配置imgcat显示图片
+最近更新的iterm2 提示可以在terminal里面显示图片于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情
+
+首先处理imgcat 文件imgcat这个文件可以随便防止，只要添加到path里面即可
+1mv imgcat.txt imgcat&amp;#10;chmod 755 imgcat">
 
 
 
@@ -72,7 +84,7 @@
   };
 </script>
 
-  <title> 404 | 波波的github page </title>
+  <title> iterm2_imgcat:show_images_in_iterm2 | 波波的github page </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hk">
@@ -212,7 +224,7 @@
             
             
               
-                404
+                iterm2_imgcat:show_images_in_iterm2
               
             
           </h1>
@@ -221,8 +233,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-02T15:02:38+08:00" content="2016-01-02">
-              2016-01-02
+            <time itemprop="dateCreated" datetime="2016-03-02T10:36:20+08:00" content="2016-03-02">
+              2016-03-02
             </time>
           </span>
 
@@ -231,8 +243,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/404/" itemprop="url" rel="index">
-                    <span itemprop="name">404</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -247,8 +259,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/02/404/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/404/" itemprop="commentsCount"></span>
+                <a href="/2016/03/02/iterm2-imgcat-show-images-in-iterm2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/iterm2-imgcat-show-images-in-iterm2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,7 +279,17 @@
       
 
       
-        <span itemprop="articleBody"><p>没有找到页面</p>
+        <span itemprop="articleBody"><h1 id="iterm2__u914D_u7F6Eimgcat_u663E_u793A_u56FE_u7247"><a href="#iterm2__u914D_u7F6Eimgcat_u663E_u793A_u56FE_u7247" class="headerlink" title="iterm2 配置imgcat显示图片"></a>iterm2 配置imgcat显示图片</h1><hr>
+<p>最近更新的iterm2 提示可以在terminal里面显示图片<br>于是我就试了一下，官网上只是提供了imgcat.txt 这个文件，具体步骤没有具体说，我想了一下才记起配置环境变量这个事情</p>
+<ul>
+<li><p>首先处理imgcat 文件<br>imgcat这个文件可以随便防止，只要添加到path里面即可</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv imgcat.txt imgcat&#10;chmod 755 imgcat //&#36171;&#26435;&#38480; &#20351;./imgcat&#30452;&#25509;&#36816;&#34892;&#10;mv imgcat ~/Document/mybin/imgcat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加环境变量<br>在.bash_profile的path里面加上imgcat所在的目录<br>有两种写法</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/Users/pro/Document/mybin/:$PATH&#10;export PATH=&#8221;/Users/pro/sdcfe/tools/ant/bin:/Users/pro/Documents/mybin&#8221;</span><br></pre></td></tr></table></figure>
+<p>最后source 一下 就好了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -279,16 +301,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/02/test-post/" rel="next" title="2015的年终总结">
-                <i class="fa fa-chevron-left"></i> 2015的年终总结
+              <a href="/2016/02/10/roomrenting/" rel="next" title="roomrenting">
+                <i class="fa fa-chevron-left"></i> roomrenting
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/10/pxemremppidppx/" rel="prev" title="pxemremppidppx">
-                pxemremppidppx <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/10/js-Array-Oject-deep-copy/" rel="prev" title="js_Array&Oject_deep_copy">
+                js_Array&Oject_deep_copy <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -316,8 +338,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/02/404/"
-           data-title="404" data-url="http://my19940202.github.io/2016/01/02/404/">
+      <div class="ds-thread" data-thread-key="2016/03/02/iterm2-imgcat-show-images-in-iterm2/"
+           data-title="iterm2_imgcat:show_images_in_iterm2" data-url="http://my19940202.github.io/2016/03/02/iterm2-imgcat-show-images-in-iterm2/">
       </div>
     
   </div>
@@ -407,7 +429,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iterm2__u914D_u7F6Eimgcat_u663E_u793A_u56FE_u7247"><span class="nav-number">1.</span> <span class="nav-text">iterm2 配置imgcat显示图片</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
