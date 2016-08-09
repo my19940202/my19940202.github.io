@@ -51,25 +51,25 @@
 
 
 
-<meta name="description" content="租房
-房东随便找了个理由不给续租(最初的租房合同上也就写着3个月，口头续租好几个月)，说是卫生间打扫的不干净（害她不好把其他房间租出去），叫我们自己出去找房子。然后我和舍友在已经被二房东占领的张江蛋疼地找房子。
-
-#####看房过程具体也没有什么过程，首先就是要了一个二房东的号码，打过去问问房子的情况，过去看看，也就看看房子的装修以及房子的价格，看完之后我和室友答应几天之后给回复（然而并不一定给回">
+<meta name="description" content="这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。问题具体场景
+cookie设置:前端种(document.cookie = ‘xx=123’)，也可以后端种(http response header 返回里面的set-cookie字段就可以设置cookie)
+baiduid是baidu域名下cookie中的baiduid
+页面向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="roomrenting">
-<meta property="og:url" content="http://my19940202.github.io/2016/02/10/roomrenting/index.html">
+<meta property="og:title" content="cookie">
+<meta property="og:url" content="http://my19940202.github.io/2016/08/07/cookie/index.html">
 <meta property="og:site_name" content="波波的github page">
-<meta property="og:description" content="租房
-房东随便找了个理由不给续租(最初的租房合同上也就写着3个月，口头续租好几个月)，说是卫生间打扫的不干净（害她不好把其他房间租出去），叫我们自己出去找房子。然后我和舍友在已经被二房东占领的张江蛋疼地找房子。
-
-#####看房过程具体也没有什么过程，首先就是要了一个二房东的号码，打过去问问房子的情况，过去看看，也就看看房子的装修以及房子的价格，看完之后我和室友答应几天之后给回复（然而并不一定给回">
-<meta property="og:updated_time" content="2016-07-10T07:47:20.000Z">
+<meta property="og:description" content="这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。问题具体场景
+cookie设置:前端种(document.cookie = ‘xx=123’)，也可以后端种(http response header 返回里面的set-cookie字段就可以设置cookie)
+baiduid是baidu域名下cookie中的baiduid
+页面向">
+<meta property="og:updated_time" content="2016-08-09T14:08:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="roomrenting">
-<meta name="twitter:description" content="租房
-房东随便找了个理由不给续租(最初的租房合同上也就写着3个月，口头续租好几个月)，说是卫生间打扫的不干净（害她不好把其他房间租出去），叫我们自己出去找房子。然后我和舍友在已经被二房东占领的张江蛋疼地找房子。
-
-#####看房过程具体也没有什么过程，首先就是要了一个二房东的号码，打过去问问房子的情况，过去看看，也就看看房子的装修以及房子的价格，看完之后我和室友答应几天之后给回复（然而并不一定给回">
+<meta name="twitter:title" content="cookie">
+<meta name="twitter:description" content="这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。问题具体场景
+cookie设置:前端种(document.cookie = ‘xx=123’)，也可以后端种(http response header 返回里面的set-cookie字段就可以设置cookie)
+baiduid是baidu域名下cookie中的baiduid
+页面向">
 
 
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title> roomrenting | 波波的github page </title>
+  <title> cookie | 波波的github page </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hk">
@@ -221,7 +221,7 @@
             
             
               
-                roomrenting
+                cookie
               
             
           </h1>
@@ -230,8 +230,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-02-10T15:27:16+08:00" content="2016-02-10">
-              2016-02-10
+            <time itemprop="dateCreated" datetime="2016-08-07T12:52:56+08:00" content="2016-08-07">
+              2016-08-07
             </time>
           </span>
 
@@ -240,8 +240,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/backend/" itemprop="url" rel="index">
+                    <span itemprop="name">backend</span>
                   </a>
                 </span>
 
@@ -256,8 +256,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/10/roomrenting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/10/roomrenting/" itemprop="commentsCount"></span>
+                <a href="/2016/08/07/cookie/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/07/cookie/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -276,20 +276,22 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="u79DF_u623F"><a href="#u79DF_u623F" class="headerlink" title="租房"></a>租房</h2><hr>
-<p>房东随便找了个理由不给续租(最初的租房合同上也就写着3个月，口头续租好几个月)，说是卫生间打扫的不干净（害她不好把其他房间租出去），叫我们自己出去找房子。然后我和舍友在已经被二房东占领的张江蛋疼地找房子。</p>
-<hr>
-<p>#####看房过程<br>具体也没有什么过程，首先就是要了一个二房东的号码，打过去问问房子的情况，过去看看，也就看看房子的装修以及房子的价格，看完之后我和室友答应几天之后给回复（然而并不一定给回复，我内心其实感觉还是得来发电话告知一下二房东）；就这么如此重复了好几次。</p>
-<hr>
-<h5 id="u6700_u540E_u603B_u7ED3_u51E0_u70B9_u5173_u4E8E_u79DF_u623F_u9700_u8981_u6CE8_u610F_u5730_u4E8B_u60C5"><a href="#u6700_u540E_u603B_u7ED3_u51E0_u70B9_u5173_u4E8E_u79DF_u623F_u9700_u8981_u6CE8_u610F_u5730_u4E8B_u60C5" class="headerlink" title="最后总结几点关于租房需要注意地事情"></a>最后总结几点关于租房需要注意地事情</h5><blockquote>
-<ul>
-<li>赶集或者爱屋及乌什么网站的信息室可以起到参考作用（租房飞高峰期），目前6，7月份，大学生毕业期间，价格波动较大，实际价格还是要和房东或者二房东协商。</li>
-<li>正式的租房合同<br>（我第一次签的得那个租房合同相当得不正式，只有一张A4纸就一个房东签名，其他没有了；第二次的租房合同信息比较详细,有公司的印章）</li>
-<li>水电煤气费抄表<br>（入住时的初始数字），可以拍照记录(商业住房的水电费贵了好几倍),还有钥匙，门禁卡等等（钥匙和门禁要钱，最好也记在租房协议上）</li>
-<li>租房的时间<br>（尽量确定自己会租房的时间，到期续租最好写在协议上，否则房东想赶走你相当容易）</li>
-<li>房间打扫干净不干净，可能到最后房东还是会向你收清洁费。</li>
+        <span itemprop="articleBody"><h2 id="u8FD9_u5468_u5E72_u6D3B_u7684_u65F6_u5019_u9047_u5230_u4E00_u4E2A_u95EE_u9898_uFF0C_u5BFC_u81F4_u540E_u7AEF_u57FA_u4E8Ecookie_u7B49_u7279_u5F81_u8FDB_u884C_u5185_u5BB9_u63A8_u8350_u7684_u670D_u52A1_u6302_u6389_u3002_u7136_u540E_u4E3A_u4E86_u5904_u7406_u8FD9_u4E2A_u95EE_u9898_uFF0C_u82B1_u4E86_u4E0D_u5C11_u529F_u592B_u3002"><a href="#u8FD9_u5468_u5E72_u6D3B_u7684_u65F6_u5019_u9047_u5230_u4E00_u4E2A_u95EE_u9898_uFF0C_u5BFC_u81F4_u540E_u7AEF_u57FA_u4E8Ecookie_u7B49_u7279_u5F81_u8FDB_u884C_u5185_u5BB9_u63A8_u8350_u7684_u670D_u52A1_u6302_u6389_u3002_u7136_u540E_u4E3A_u4E86_u5904_u7406_u8FD9_u4E2A_u95EE_u9898_uFF0C_u82B1_u4E86_u4E0D_u5C11_u529F_u592B_u3002" class="headerlink" title="这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。"></a>这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。</h2><h5 id="u95EE_u9898_u5177_u4F53_u573A_u666F"><a href="#u95EE_u9898_u5177_u4F53_u573A_u666F" class="headerlink" title="问题具体场景"></a>问题具体场景</h5><ul>
+<li>cookie设置:前端种(document.cookie = ‘xx=123’)，也可以后端种(http response header 返回里面的set-cookie字段就可以设置cookie)</li>
+<li>baiduid是baidu域名下cookie中的baiduid</li>
+<li>页面向一个xxx.baidu.com请求内容，然后进行渲染。</li>
+<li>后端的服务根据请求内容时传递的baiduid推送相关的内容,baiduid塞在URL里面，类似 xxx.baidu.com?baidu=12631782&amp;flag=1</li>
+<li>在非baidu域名的站点下，请求内容时没有办法直接获取baiduid(cookie不能跨域)，前端在这样的情况下就返回了random的32位baiduid</li>
+<li>无效baiduid超出一定范围后，就把后端搞挂了。</li>
 </ul>
-</blockquote>
+<h5 id="u521A_u5F00_u59CB_u7684_u89E3_u51B3_u65B9_u6848"><a href="#u521A_u5F00_u59CB_u7684_u89E3_u51B3_u65B9_u6848" class="headerlink" title="刚开始的解决方案"></a>刚开始的解决方案</h5><p>没有获取有效的baidu，那就先办法获取有效的baiduid。</p>
+<ul>
+<li>那就在baidu域下面搞个空页面，这个空页面将baiduid以某种形式输出(直接在body里面打印、或者在URL里面加上#baiduid)</li>
+</ul>
+<p>刚开始只是想当然做了一个空页面，能在body里面和URL里面把URL输出了一下，没有具体在页面中尝试，后来发现这样的情况<br>也属于跨域，我用iframe调用这个页面的时候，也是无法获取iframe相关的资源的。</p>
+<h5 id="u5176_u4ED6FE_u5EFA_u8BAE_u7684_u89E3_u51B3_u65B9_u6848"><a href="#u5176_u4ED6FE_u5EFA_u8BAE_u7684_u89E3_u51B3_u65B9_u6848" class="headerlink" title="其他FE建议的解决方案"></a>其他FE建议的解决方案</h5><p>后来在FE大群里面向其他大牛请教方案，大牛提示可以使用window.name(<a href="http://blog.csdn.net/bao19901210/article/details/21458001" target="_blank" rel="external">http://blog.csdn.net/bao19901210/article/details/21458001</a>)<br>和 postmessge(没有仔细查过资料)</p>
+<p>但是FE的大牛以提议不要随便动baiduid涉及到了公司的安全，可能会被公司安全组发现。</p>
+<h5 id="u6700_u540E_u7684_u89E3_u51B3_u65B9_u6848"><a href="#u6700_u540E_u7684_u89E3_u51B3_u65B9_u6848" class="headerlink" title="最后的解决方案"></a>最后的解决方案</h5><p>后来意识到http请求是向 xxx.baidu.com发出的，request header里面是会自动带上baidu.com下面的所有cookie,可以在 xxx.baidu.com的后端代码做一些处理。<br>获取http request header cookie里面的baiduid,替换参数里面的baiduid.<br>xxx.baidu.com其实也是只是个转发的服务器<br>具体代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getBAIDUIdFromCookie = <span class="function"><span class="keyword">function</span> (<span class="params">req</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// get cookie in http request</span></span><br><span class="line">    <span class="keyword">var</span> Cookies = &#123;&#125;;</span><br><span class="line">    req.headers.cookie &amp;&amp; req.headers.cookie.split(<span class="string">';'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params"> Cookie </span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> parts = Cookie.split(<span class="string">'='</span>);</span><br><span class="line">        Cookies[parts[<span class="number">0</span>].trim()] = (parts[ <span class="number">1</span> ] || <span class="string">''</span> ).trim().split(<span class="string">':'</span>)[<span class="number">0</span>];</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> Cookies[<span class="string">'BAIDUID'</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ral_option = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> params = urllib.parse(req.url, <span class="literal">true</span>);</span><br><span class="line">ral_option.data = <span class="built_in">decodeURIComponent</span>(params.query.q);</span><br><span class="line"><span class="comment">// set baiduid</span></span><br><span class="line"><span class="keyword">var</span> BAIDUID = getBAIDUIdFromCookie(req);</span><br><span class="line"><span class="keyword">if</span> (BAIDUID) &#123;</span><br><span class="line">    <span class="keyword">var</span> tmpData = <span class="built_in">JSON</span>.parse(ral_option.data);</span><br><span class="line">    tmpData[<span class="string">'baiduid'</span>] = BAIDUID;</span><br><span class="line">    ral_option.data = <span class="built_in">JSON</span>.stringify(tmpData);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    log.debug(<span class="string">'have no BAIDU'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -301,17 +303,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/pxemremppidppx/" rel="next" title="pxemremppidppx">
-                <i class="fa fa-chevron-left"></i> pxemremppidppx
+              <a href="/2016/07/24/graduation-trip/" rel="next" title="graduation trip">
+                <i class="fa fa-chevron-left"></i> graduation trip
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/02/iterm2-imgcat-show-images-in-iterm2/" rel="prev" title="iterm2_imgcat:show_images_in_iterm2">
-                iterm2_imgcat:show_images_in_iterm2 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -338,8 +336,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/10/roomrenting/"
-           data-title="roomrenting" data-url="http://my19940202.github.io/2016/02/10/roomrenting/">
+      <div class="ds-thread" data-thread-key="2016/08/07/cookie/"
+           data-title="cookie" data-url="http://my19940202.github.io/2016/08/07/cookie/">
       </div>
     
   </div>
@@ -429,7 +427,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u79DF_u623F"><span class="nav-number">1.</span> <span class="nav-text">租房</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u540E_u603B_u7ED3_u51E0_u70B9_u5173_u4E8E_u79DF_u623F_u9700_u8981_u6CE8_u610F_u5730_u4E8B_u60C5"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">最后总结几点关于租房需要注意地事情</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FD9_u5468_u5E72_u6D3B_u7684_u65F6_u5019_u9047_u5230_u4E00_u4E2A_u95EE_u9898_uFF0C_u5BFC_u81F4_u540E_u7AEF_u57FA_u4E8Ecookie_u7B49_u7279_u5F81_u8FDB_u884C_u5185_u5BB9_u63A8_u8350_u7684_u670D_u52A1_u6302_u6389_u3002_u7136_u540E_u4E3A_u4E86_u5904_u7406_u8FD9_u4E2A_u95EE_u9898_uFF0C_u82B1_u4E86_u4E0D_u5C11_u529F_u592B_u3002"><span class="nav-number">1.</span> <span class="nav-text">这周干活的时候遇到一个问题，导致后端基于cookie等特征进行内容推荐的服务挂掉。然后为了处理这个问题，花了不少功夫。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u95EE_u9898_u5177_u4F53_u573A_u666F"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">问题具体场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u521A_u5F00_u59CB_u7684_u89E3_u51B3_u65B9_u6848"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">刚开始的解决方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5176_u4ED6FE_u5EFA_u8BAE_u7684_u89E3_u51B3_u65B9_u6848"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">其他FE建议的解决方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u540E_u7684_u89E3_u51B3_u65B9_u6848"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">最后的解决方案</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
