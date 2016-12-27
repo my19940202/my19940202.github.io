@@ -150,7 +150,7 @@ tar -zxvf target.tar.gz
 文件操作
 du -hs path
 查看文件大小（Mb单位）">
-<meta property="og:updated_time" content="2016-10-22T10:19:41.000Z">
+<meta property="og:updated_time" content="2016-12-27T05:31:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux_command">
 <meta name="twitter:description" content="整理了自己常用到一些Linux命令，自己使用的较多
@@ -511,8 +511,8 @@ du -hs path
 </tr>
 <tr>
 <td>字符处理</td>
-<td>grep -o ‘xxx’ data.txt &#166; wc -l<br> grep -r ‘name’ ./<br></td>
-<td>data.txt中的xxx的出现次数<br>查看当前目录下面的所有含有name字符串的文件</td>
+<td>grep -o ‘xxx’ data.txt &#166; wc -l<br> grep -r ‘name’ ./<br>grep -a1 ‘name’ ./<br></td>
+<td>data.txt中的xxx的出现次数<br>查看当前目录下面的所有含有name字符串的文件 <br>输出上下一行(a1), 下一行(A1)</td>
 </tr>
 <tr>
 <td>字符处理</td>
@@ -523,6 +523,11 @@ du -hs path
 <td>字符处理</td>
 <td>sed -n ‘5,10p’ data.txt <br> sed -n ‘10p’ data.txt<br> cat nohup.out&#166; head -n 100<br> cat nohup.out&#166; tail -n 100</td>
 <td>看5-10行，看第10行,头100，尾100</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort -n -r -k 2 -t ‘:’ result &gt; result_sorted</td>
+<td>key:value形式的文件按照value进行排序</td>
 </tr>
 <tr>
 <td>其他</td>
