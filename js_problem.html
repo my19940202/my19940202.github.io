@@ -628,7 +628,27 @@
 <li>&#x9875;&#x9762;&#x4E0D;&#x662F;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;</li>
 </ul>
 <h3 id="js&#x4E8B;&#x4EF6;">js&#x4E8B;&#x4EF6;</h3>
-<p>addEventListener(&apos;click&apos;, function(){}); //&#x9ED8;&#x8BA4;&#x5192;&#x6CE1;</p>
+<p>&#x4E8B;&#x4EF6;&#x59D4;&#x6258;: &#x7528;&#x4E8E;&#x5904;&#x7406;&#x5B50;&#x5143;&#x7D20;&#x5F88;&#x591A;||&#x4F1A;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;</p>
+<pre><code>&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;
+    var oUl = document.getElementById(&quot;ul1&quot;);
+    var aLi = oUl.getElementsByTagName(&apos;li&apos;);
+    for(var i=0;i&lt;aLi.length;i++){
+        aLi[i].onclick = function(){
+            alert(123);
+        }
+    }
+
+&#x975E;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#x65B9;&#x5F0F;
+    var oUl = document.getElementById(&quot;ul1&quot;);
+&#x3000;&#x3000;oUl.onclick = function(ev){
+&#x3000;&#x3000;&#x3000;&#x3000;var ev = ev || window.event;
+&#x3000;&#x3000;&#x3000;&#x3000;var target = ev.target || ev.srcElement;
+&#x3000;&#x3000;&#x3000;&#x3000;if(target.nodeName.toLowerCase() == &apos;li&apos;){
+&#x3000; &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;    alert(123);
+&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;  alert(target.innerHTML);
+&#x3000;&#x3000;&#x3000;&#x3000;}
+&#x3000;&#x3000;}
+</code></pre><p>addEventListener(&apos;click&apos;, function(){}); //&#x9ED8;&#x8BA4;&#x5192;&#x6CE1;</p>
 <p>event.stopPropagation() //&#x963B;&#x6B62;&#x5192;&#x6CE1;</p>
 <p>addEventListener(&apos;click&apos;, function(){},true); // &#x8BBE;&#x7F6E;&#x6355;&#x83B7;&#x7C7B;&#x578B;</p>
 <p>event.preventDefault() //&#x963B;&#x6B62;&#x6355;&#x83B7;</p>
@@ -716,7 +736,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常见js问题","level":"1.5","depth":1,"next":{"title":"常见css问题","level":"1.6","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"previous":{"title":"常用python代码段","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2017-12-05T01:58:13.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-05T03:49:36.791Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常见js问题","level":"1.5","depth":1,"next":{"title":"常见css问题","level":"1.6","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"previous":{"title":"常用python代码段","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2018-05-21T05:50:49.845Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T08:30:48.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
