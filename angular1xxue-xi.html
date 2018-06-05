@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>常见js问题 · GitBook</title>
+        <title>angular1x学习 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="css_problem.html" />
     
-    
-    <link rel="prev" href="python.html" />
+    <link rel="prev" href="ji-jiu-xue-xi-zheng-li.html" />
     
 
     </head>
@@ -141,7 +139,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="js_problem.html">
+        <li class="chapter " data-level="1.5" data-path="js_problem.html">
             
                 <a href="js_problem.html">
             
@@ -570,7 +568,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.38" data-path="angular1xxue-xi.html">
+        <li class="chapter active" data-level="1.38" data-path="angular1xxue-xi.html">
             
                 <a href="angular1xxue-xi.html">
             
@@ -613,7 +611,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >常见js问题</a>
+        <a href="." >angular1x学习</a>
     </h1>
 </div>
 
@@ -628,97 +626,80 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x65E5;&#x5E38;js&#x95EE;&#x9898;">&#x65E5;&#x5E38;js&#x95EE;&#x9898;</h2>
-<h3 id="&#x95ED;&#x5305;&#x95EE;&#x9898;">&#x95ED;&#x5305;&#x95EE;&#x9898;</h3>
-<p>&#x63D0;&#x4F9B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;</p>
-<p>&#x53EF;&#x4EE5;&#x4ECE;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4F20;&#x503C;&#x548C;&#x4F20;&#x5740;&#x89D2;&#x5EA6;&#x601D;&#x8003;</p>
-<p>&#x57FA;&#x7840;&#x53D8;&#x91CF;&#xFF08;number String Boolean&#xFF09;&#x90FD;&#x662F;&#x4F20;&#x503C;&#x7684;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x4FEE;&#x6539;&#x540E;&#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x59CB;&#x503C;</p>
-<p>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF08;obj,array&#xFF0C;func&#xFF09;&#x90FD;&#x662F;&#x4F20;&#x5740;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x4FEE;&#x6539;&#x4F1A;&#x5F71;&#x54CD;&#x539F;&#x59CB;&#x503C;</p>
-<h3 id="&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3>
-<blockquote>
-<p>null undefined number string array object Boolean</p>
-</blockquote>
-<h3 id="&#x4F4E;&#x901F;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x4E0B;&#x7684;js&#x8F7D;&#x5165;&#x5F02;&#x5E38;&#x95EE;&#x9898;">&#x4F4E;&#x901F;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x4E0B;&#x7684;js&#x8F7D;&#x5165;&#x5F02;&#x5E38;&#x95EE;&#x9898;</h3>
-<blockquote>
-<p>A Parser-blocking, cross-origin script is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity</p>
-<p>&#x7FFB;&#x8BD1;&#xFF1A;&#x5728;&#x5F31;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x4F7F;&#x7528;document.write()&#x6765;&#x52A8;&#x6001;&#x63D2;&#x5165;&#x5916;&#x90E8;&#x7684;&#x811A;&#x672C;&#x4F1A;&#x963B;&#x585E;&#x9875;&#x9762;&#x7684;&#x89E3;&#x6790;</p>
-<p>&#x7ED3;&#x679C;&#xFF1A;&#x5EF6;&#x8FDF;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#xFF0C;&#x751A;&#x81F3;&#x52A0;&#x8F7D;&#x811A;&#x672C;&#x5931;&#x8D25;&#xFF0C;&#x6700;&#x7EC8;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x663E;&#x793A;</p>
-</blockquote>
-<p>Chrome&#x5BF9;&#x4E8E;&#x7531;document.write()&#x52A8;&#x6001;&#x63D2;&#x5165;&#x7684;&lt;script&gt;&#x4F1A;&#x505A;&#x68C0;&#x67E5;&#xFF0C;&#x5F53;&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;Chrome&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x52A0;&#x8F7D;&lt;script&gt;&#x91CC;&#x7684;&#x811A;&#x672C;&#x3002;</p>
-<ul>
-<li>&#x7528;&#x6237;&#x5904;&#x5728;&#x5F31;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7684;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x662F;234G</li>
-<li>document.write()&#x5728;&#x4E3B;&#x9875;&#x9762;&#x91CC;&#xFF0C;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x5D4C;&#x5165;&#x5728;iframe&#x91CC;&#x7684;&#x9875;&#x9762;&#x6CA1;&#x6709;&#x5F71;&#x54CD;</li>
-<li>&#x5728;document.write()&#x63D2;&#x5165;&#x7684;&#x811A;&#x672C;&#x662F;&#x963B;&#x788D;&#x89E3;&#x6790;&#x7684;&#xFF08;parser-blocking&#xFF09;&#x3002;&#x5982;&#x679C;&#x63D2;&#x5165;&#x7684;&lt;script&gt;&#x6807;&#x7B7E;&#x52A0;&#x4E86; &apos;async&apos; &#x6216;&apos;defer&apos;&#x5C5E;&#x6027;&#xFF0C;&#x811A;&#x672C;&#x4F1A;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x89E3;&#x6790; &#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x662F;&#x80FD;&#x88AB;&#x6267;&#x884C;&#x7684;&#x3002;</li>
-<li>&#x52A0;&#x8F7D;&#x7684;&#x811A;&#x672C;&#x548C;&#x4E0D;&#x662F;&#x5176;&#x4ED6;&#x57DF;&#x540D;&#x3002;</li>
-<li>&#x811A;&#x672C;&#x6CA1;&#x6709;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x91CC;</li>
-<li>&#x9875;&#x9762;&#x4E0D;&#x662F;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;</li>
+                                <ul>
+<li>ng-app &#x5B9A;&#x4E49; root dom&#xFF0C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x53EA;&#x5141;&#x8BB8;&#x4E00;&#x4E2A; app</li>
+<li>ng-controller</li>
+<li>ng-repeat</li>
+<li>ngView <code>ngView</code>&#x6307;&#x4EE4;&#x7684;&#x89D2;&#x8272;&#x662F;&#x4E3A;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x628A;&#x5BF9;&#x5E94;&#x7684;&#x89C6;&#x56FE;&#x6A21;&#x677F;&#x8F7D;&#x5165;&#x5230;&#x5E03;&#x5C40;&#x6A21;&#x677F;&#x4E2D;</li>
+<li>angular.module &#x521B;&#x5EFA;&#xFF0C;&#x6CE8;&#x518C;&#x6216;&#x68C0;&#x7D22; AngularJS &#x6A21;&#x5757;</li>
 </ul>
-<h3 id="js&#x4E8B;&#x4EF6;">js&#x4E8B;&#x4EF6;</h3>
-<p>&#x4E8B;&#x4EF6;&#x59D4;&#x6258;: &#x7528;&#x4E8E;&#x5904;&#x7406;&#x5B50;&#x5143;&#x7D20;&#x5F88;&#x591A;||&#x4F1A;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;</p>
-<pre><code>&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;
-    var oUl = document.getElementById(&quot;ul1&quot;);
-    var aLi = oUl.getElementsByTagName(&apos;li&apos;);
-    for(var i=0;i&lt;aLi.length;i++){
-        aLi[i].onclick = function(){
-            alert(123);
-        }
+<pre><code>angular.module(&apos;phoneDetail&apos;, [
+  &apos;ngRoute&apos; // &#x6B64;&#x5904;&#x662F;&#x4F9D;&#x8D56;
+]);
+</code></pre><h4 id="&#x4EE5;&#x4E0B;&#x4FE9;&#x5199;&#x6CD5;&#x6548;&#x679C;&#x4E00;&#x6837;">&#x4EE5;&#x4E0B;&#x4FE9;&#x5199;&#x6CD5;&#x6548;&#x679C;&#x4E00;&#x6837;</h4>
+<pre><code>angular.
+  module(&apos;phonecatApp&apos;).
+  component(&apos;testList&apos;, {
+    template:
+        `&lt;article&gt;
+          &lt;h1&gt;{{name}}&lt;/h1&gt;
+          &lt;p&gt;{{code}}&lt;/p&gt;
+        &lt;/article&gt;`,
+    controller: function PhoneListController($scope) {
+      $scope.name = &apos;Motorola XOOM&#x2122; with Wi-Fi&apos;;
+      $scope.code = &apos;The Next, Next Generation tablet.&apos;;
     }
+  });
 
-&#x975E;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#x65B9;&#x5F0F;
-    var oUl = document.getElementById(&quot;ul1&quot;);
-&#x3000;&#x3000;oUl.onclick = function(ev){
-&#x3000;&#x3000;&#x3000;&#x3000;var ev = ev || window.event;
-&#x3000;&#x3000;&#x3000;&#x3000;var target = ev.target || ev.srcElement;
-&#x3000;&#x3000;&#x3000;&#x3000;if(target.nodeName.toLowerCase() == &apos;li&apos;){
-&#x3000; &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;    alert(123);
-&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;  alert(target.innerHTML);
-&#x3000;&#x3000;&#x3000;&#x3000;}
-&#x3000;&#x3000;}
-</code></pre><p>addEventListener(&apos;click&apos;, function(){}); //&#x9ED8;&#x8BA4;&#x5192;&#x6CE1;</p>
-<p>event.stopPropagation() //&#x963B;&#x6B62;&#x5192;&#x6CE1;</p>
-<p>addEventListener(&apos;click&apos;, function(){},true); // &#x8BBE;&#x7F6E;&#x6355;&#x83B7;&#x7C7B;&#x578B;</p>
-<p>event.preventDefault() //&#x963B;&#x6B62;&#x6355;&#x83B7;</p>
-<p><img src="assets/import.png" alt=""></p>
-<hr>
-<h2 id="es6&#x76F8;&#x5173;&#x95EE;&#x9898;-">es6&#x76F8;&#x5173;&#x95EE;&#x9898; &gt;_&lt;</h2>
-<h3 id="promise&#x5565;&#x73A9;&#x610F;">promise&#x5565;&#x73A9;&#x610F;</h3>
-<h3 id="generater&#x5565;&#x73A9;&#x610F;">generater&#x5565;&#x73A9;&#x610F;</h3>
-<h3 id="yield&#x5565;&#x73A9;&#x610F;">yield&#x5565;&#x73A9;&#x610F;</h3>
-<h3 id="export-default">export default</h3>
-<blockquote>
-<h5 id="&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;export-default&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x6A21;&#x677F;&#x4E2D;-import&#x7684;&#x65F6;&#x5019;-&#x4E0D;&#x9700;&#x8981;&#x5E26;">&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;export default&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x6A21;&#x677F;&#x4E2D; import&#x7684;&#x65F6;&#x5019; &#x4E0D;&#x9700;&#x8981;&#x5E26;{}</h5>
+angular.
+  module(&apos;phonecatApp&apos;).
+  component(&apos;test&apos;, {
+    template:
+        `&lt;article&gt;
+          &lt;h1&gt;{{$ctrl.name}}&lt;/h1&gt;
+          &lt;p&gt;{{$ctrl.code}}&lt;/p&gt;
+        &lt;/article&gt;`,
+    controller: function PhoneListController() {
+      this.name = &apos;Test components name&apos;;
+      this.code = &apos;Test components code&apos;;
+    }
+  });
+</code></pre><p>&#x5199;&#x6CD5;&#x4E00;&#x6837;2</p>
+<pre><code>angular.
+  module(&apos;phoneList&apos;).
+  component(&apos;phoneList&apos;, {
+    templateUrl: &apos;phone-list/phone-list.template.html&apos;,
+    controller: function PhoneListController($http) {
+      var self = this;
+      self.orderProp = &apos;age&apos;;
+
+      $http.get(&apos;phones/phones.json&apos;).then(function(response) {
+        self.phones = response.data;
+      });
+    }
+  });
+
+angular.
+  module(&apos;phoneList&apos;).
+  component(&apos;phoneList&apos;, {
+    templateUrl: &apos;phone-list/phone-list.template.html&apos;,
+    controller: [&apos;$http&apos;, function PhoneListController($http) {
+      var self = this;
+      self.orderProp = &apos;age&apos;;
+
+      $http.get(&apos;phones/phones.json&apos;).then(function(response) {
+        self.phones = response.data;
+      });
+    }]
+  });
+</code></pre><p>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</p>
+<pre><code>PhoneListCtrl.$inject = [&apos;$scope&apos;, &apos;$http&apos;];
+</code></pre><h4 id="filter--orderby&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">filter &amp;&amp; orderBy&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h4>
+<pre><code>&lt;li ng-repeat=&quot;phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp&quot;&gt;
+&lt;/li&gt;
+</code></pre><blockquote>
+<p><a href="https://www.runoob.com/angularjs/angularjs-reference.html" target="_blank">https://www.runoob.com/angularjs/angularjs-reference.html</a></p>
 </blockquote>
-<hr>
-<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x5C42;&#x9762;">&#x6D4F;&#x89C8;&#x5668;&#x5C42;&#x9762;</h2>
-<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x57FA;&#x672C;&#x6D41;&#x7A0B;">&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x57FA;&#x672C;&#x6D41;&#x7A0B;</h3>
-<p><img src="assets/3055132361-55169ffa877a0_articlex.png" alt=""></p>
-<h3 id="repaint">repaint</h3>
-<p>&#x5143;&#x7D20;&#x6837;&#x5F0F;&#x53D8;&#x5316;&#xFF0C;&#x4F46;&#x6CA1;&#x5F15;&#x8D77;&#x5E03;&#x5C40;&#x53D8;&#x5316;&#xFF08;color opacity&#x5565;&#x7684;&#xFF09;</p>
-<h3 id="reflow&#x53D8;&#x5316;&#x5927;&#xFF0C;&#x6210;&#x672C;&#x66F4;&#x9AD8;">reflow&#x53D8;&#x5316;&#x5927;&#xFF0C;&#x6210;&#x672C;&#x66F4;&#x9AD8;</h3>
-<p>&#x6539;&#x53D8;&#x7A97;&#x53E3;&#x5927;&#x5C0F;</p>
-<ol>
-<li><p>&#x6539;&#x53D8;&#x5B57;&#x4F53;</p>
-</li>
-<li><p>&#x589E;&#x52A0;&#x548C;&#x5220;&#x9664;&#x6837;&#x5F0F;&#x8868;</p>
-</li>
-<li><p>&#x5185;&#x5BB9;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x5728;&#x8F93;&#x5165;&#x6846;&#x8F93;&#x5165;&#x6587;&#x5B57;</p>
-</li>
-<li><p>&#x6FC0;&#x6D3B;&#x4F2A;&#x7C7B;</p>
-</li>
-<li><p>&#x64CD;&#x4F5C;class&#x5C5E;&#x6027;</p>
-</li>
-<li><p>&#x811A;&#x672C;&#x64CD;&#x4F5C;DOM</p>
-</li>
-<li><p>&#x8BA1;&#x7B97;offsetWidth&#x548C;offsetHeight</p>
-</li>
-<li><p>&#x8BBE;&#x7F6E;style&#x5C5E;&#x6027;</p>
-</li>
-</ol>
-<blockquote>
-<p><a href="https://segmentfault.com/a/1190000006104095" target="_blank">https://segmentfault.com/a/1190000006104095</a></p>
-<p><a href="https://segmentfault.com/a/1190000002629708" target="_blank">https://segmentfault.com/a/1190000002629708</a></p>
-</blockquote>
-<p><img src="assets/v2-b82f2d58aa3356b8b58c69067b828855_b.png" alt=""></p>
 
                                 
                                 </section>
@@ -746,14 +727,10 @@
 
             
                 
-                <a href="python.html" class="navigation navigation-prev " aria-label="Previous page: 常用python代码段">
+                <a href="ji-jiu-xue-xi-zheng-li.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 急救学习整理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="css_problem.html" class="navigation navigation-next " aria-label="Next page: 常见css问题">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -762,7 +739,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常见js问题","level":"1.5","depth":1,"next":{"title":"常见css问题","level":"1.6","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"previous":{"title":"常用python代码段","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2018-05-21T05:50:49.845Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-05T11:13:43.872Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"angular1x学习","level":"1.38","depth":1,"previous":{"title":"急救学习整理","level":"1.37","depth":1,"path":"ji-jiu-xue-xi-zheng-li.md","ref":"ji-jiu-xue-xi-zheng-li.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"angular1xxue-xi.md","mtime":"2018-06-05T10:01:06.959Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-05T11:13:43.872Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
