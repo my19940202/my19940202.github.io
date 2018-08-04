@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>文章-尺寸单位 · GitBook</title>
+        <title>vue相关学习 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="wen-7ae0-2015-zong-jie.html" />
     
-    
-    <link rel="prev" href="wen-7ae0-nginx.html" />
+    <link rel="prev" href="ri-chang-qi-ta.html" />
     
 
     </head>
@@ -466,7 +464,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.30" data-path="wen-7ae0-chi-cun-dan-wei.html">
+        <li class="chapter " data-level="1.30" data-path="wen-7ae0-chi-cun-dan-wei.html">
             
                 <a href="wen-7ae0-chi-cun-dan-wei.html">
             
@@ -596,7 +594,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.40" data-path="vuexiang-guan-xue-xi.html">
+        <li class="chapter active" data-level="1.40" data-path="vuexiang-guan-xue-xi.html">
             
                 <a href="vuexiang-guan-xue-xi.html">
             
@@ -639,7 +637,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >文章-尺寸单位</a>
+        <a href="." >vue相关学习</a>
     </h1>
 </div>
 
@@ -654,54 +652,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="px-em-rem-dpi-ppi-dppx">px em rem dpi ppi dppx</h1>
-<h4 id="&#x68B3;&#x7406;&#x5C3A;&#x5BF8;&#x5355;&#x4F4D;&#x7684;&#x7406;&#x89E3;">&#x68B3;&#x7406;&#x5C3A;&#x5BF8;&#x5355;&#x4F4D;&#x7684;&#x7406;&#x89E3;</h4>
-<hr>
-<ul>
-<li><p>px &#x50CF;&#x7D20;&#x70B9; &#x663E;&#x793A;&#x5C4F;(&#x4E0D;&#x8003;&#x8651;os&#x5BF9;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x5C4F;&#x5E55;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x5982; Retina&#x5C4F;&#x7684;&#x663E;&#x793A;&#x5904;&#x7406;)</p>
-</li>
-<li><p>em &#x57FA;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x7684;&#x5C3A;&#x5BF8;&#xFF0C;em&#x7EE7;&#x627F;&#x7236;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;</p>
-<pre><code>body {
-    font&#xFF0D;size:62.5%;
-    /*font&#xFF0D;size:10px;&#x4E0A;&#x4E0B;&#x4E24;&#x53E5;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;*/
-    /*body&#x91CC;&#x9762;&#x7684;&#x5143;&#x7D20; &#x539F;&#x6765;&#x662F; 12px &#x5199;&#x6210;1.2em&#x5373;&#x53EF;*/
-}
-</code></pre></li>
-<li><p>rem css3&#x5C5E;&#x6027;&#xFF08;IE8 IE8- &#x4E0D;&#x652F;&#x6301;&#xFF09; &#x57FA;&#x4E8E;&#x6839;&#x5143;&#x7D20;&#xFF08;html&#x5143;&#x7D20;&#xFF09;</p>
-<pre><code>html {
-            font-size: 20px;/*&#x8C03;&#x8282;&#x6839;&#x5143;&#x7D20;&#x5927;&#x5C0F;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x653E;&#x5927;&#x7F29;&#x5C0F;&#x7684;&#x6548;&#x679C;*/
-        }
-</code></pre></li>
-<li><p>dpi Dots Per Inch&#xFF08;&#x6BCF;&#x82F1;&#x5BF8;&#x6240;&#x6253;&#x5370;&#x7684;&#x70B9;&#x6570;&#xFF09;
-<img src="http://cdn.infoqstatic.com/statics_s2_20150707-0138u2/resource/articles/development-of-the-mobile-web-deep-concept/zh/resources/zoom_pic.gif" alt="" title="4"></p>
-</li>
-<li>ppi &#x663E;&#x793A;&#x5C4F;&#x7684;&#x50CF;&#x7D20;&#x5BC6;&#x5EA6; &#x8BA1;&#x7B97;&#x516C;&#x5F0F;
-<img src="http://cdn.infoqstatic.com/statics_s2_20150707-0138u2/resource/articles/development-of-the-mobile-web-deep-concept/zh/resources/original.png" alt="" title="1">
-<img src="http://hiphotos.baidu.com/exp/pic/item/cbc17b380cd79123de98a335ac345982b2b78033.jpg" alt="" title="2">
-<img src="http://hiphotos.baidu.com/exp/pic/item/c28fddfdfc0392457af8d64e8694a4c27c1e25e6.jpg" alt="" title="3"></li>
-<li>dppx &#x8C8C;&#x4F3C;&#x662F;css3 &#x7528;&#x6765;&#x5224;&#x65AD;Retina&#x5C4F;&#x7684; ```html </li>
-</ul>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh-cmn-Hans&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot; /&gt;
-&lt;style&gt;
-@media screen and (min-resolution: 2dppx) {
-    .normal{display:none;}
-}
-@media screen and (min-resolution: 1dppx) and (max-resolution: 1.9dppx) {
-    .retina{display:none;}
-}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p class=&quot;retina&quot;&gt;&#x89C6;&#x7F51;&#x819C;&#x5C4F;&lt;/p&gt;
-&lt;p class=&quot;normal&quot;&gt;&#x666E;&#x901A;&#x5C4F;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><blockquote>
-<p>&#x53C2;&#x8003;&#x6587;&#x7AE0;<a href="http://www.infoq.com/cn/articles/development-of-the-mobile-web-deep-concept/" target="_blank">http://www.infoq.com/cn/articles/development-of-the-mobile-web-deep-concept/</a></p>
+                                <h1 id="&#x4E00;&#x6B21;&#x7684;&#x5916;&#x5305;&#x7684;&#x603B;&#x7ED3;&#x548C;&#x5B66;&#x4E60;">&#x4E00;&#x6B21;&#x7684;&#x5916;&#x5305;&#x7684;&#x603B;&#x7ED3;&#x548C;&#x5B66;&#x4E60;</h1>
+<h6 id="2018-07-112018-08-03">(2018-07-11~2018-08-03)</h6>
+<h3 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h3>
+<p>&#x8FD9;&#x662F;&#x6709;&#x53F2;&#x4EE5;&#x6765;&#x9879;&#x76EE;&#x5468;&#x671F;&#x6700;&#x8D76;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x8EAB;&#x5FC3;&#x75B2;&#x60EB;&#xFF0C;&#x611F;&#x89C9;&#x540E;&#x9762;&#x8981;&#x597D;&#x597D;&#x8003;&#x8651;&#x662F;&#x4E0D;&#x662F;&#x8981;&#x63A5;&#x79C1;&#x6D3B;</p>
+<h3 id="&#x9700;&#x6C42;&#x5206;&#x6790;&#xFF1A;">&#x9700;&#x6C42;&#x5206;&#x6790;&#xFF1A;</h3>
+<p>&#x8FD9;&#x4E00;&#x6B21;&#x63A5;&#x7684;&#x9879;&#x76EE;&#x662F;&#x5E73;&#x5B89;&#x4E0B;&#x9762;&#x6C49;&#x65B9;&#x533B;&#x836F;&#x516C;&#x53F8;, &#x6709;&#x4E24;&#x4E2A;&#x7AEF;h5&#x5151;&#x6362;&#x9875;&#x9762;&#x4EE5;&#x53CA;&#x540E;&#x53F0;&#x5151;&#x6362;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;</p>
+<p>h5&#x9875;&#x9762;&#x63D0;&#x4F9B;&#x4E86;&#x8BBE;&#x8BA1;&#x56FE;</p>
+<p>&#x540E;&#x7AEF;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x53EA;&#x7ED9;&#x4E86;&#x8BBE;&#x8BA1;&#x8349;&#x56FE;</p>
+<p>&#x4E3B;&#x8981;&#x662F;&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;&#xFF0C;&#x652F;&#x6301;&#x6574;&#x4E2A;&#x5151;&#x6362;&#x5546;&#x54C1;&#x7684;&#x6D41;&#x7A0B;</p>
+<h3 id="&#x6280;&#x672F;&#x65B9;&#x6848;&#xFF1A;">&#x6280;&#x672F;&#x65B9;&#x6848;&#xFF1A;</h3>
+<p>&#x521A;&#x5F00;&#x59CB;&#x6211;&#x662F;&#x60F3;&#x7528; react antdesign &#x90A3;&#x4E00;&#x5957;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x6700;&#x540E;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E0D;&#x662F;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x7684;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x539F;&#x6765;&#x9879;&#x76EE;&#x6846;&#x67B6;&#x4E0A;&#x5F00;&#x53D1;&#xFF1B;</p>
+<p>&#x540E;&#x9762;&#x91C7;&#x7528;&#x4E86; vue&#xFF0C;element-ui &#x8FD9;&#x5957;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</p>
+<blockquote>
+<p>&#x5F53;&#x7136;&#x5176;&#x4E2D; &#x5C31;&#x9047;&#x5230;&#x4E86; vue &#x4EE5;&#x53CA; element-ui&#x7684;&#x4E00;&#x4E9B;&#x5217;&#x5751;</p>
+<ol>
+<li>vue &#x5728; table &#x60C5;&#x51B5;&#x4E0B;&#xFF0C;json &#x6DF1;&#x5EA6;&#x592A;&#x5927;&#xFF0C;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x68C0;&#x6D4B;&#x5230; json &#x7684;&#x53D8;&#x5316;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x91C7;&#x53D6;&#x6DF1;&#x62F7;&#x8D1D;</li>
+<li>vue &#x7EC4;&#x4EF6;&#x521D;&#x59CB;&#x5316;&#x95EE;&#x9898;&#xFF0C;&#x7701;&#x5E02;&#x533A;&#x7684;&#x8868;&#x5355;&#x8054;&#x52A8;&#x60C5;&#x51B5;&#xFF0C;&#x591A;&#x6B21;&#x6D89;&#x53CA;&#x5230;&#x521D;&#x59CB;&#x5316;&#x95EE;&#x9898;&#xFF0C;&#x663E;&#x793A;&#x5F02;&#x5E38;</li>
+<li>&#x56FE;&#x7247;&#x4E0A;&#x4F20; formData &#x56FE;&#x7247; FileReader &#x5BF9;&#x8C61; &#xFF08;&#x56E0;&#x4E3A;&#x4F7F;&#x7528;&#x4E86; element-ui&#x7684;upload &#x7EC4;&#x4EF6;&#xFF0C;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#x95EE;&#x9898;&#x4E00;&#x5EA6;&#x5F88;&#x6DF7;&#x4E71;&#xFF09;</li>
+</ol>
 </blockquote>
+<p><a href="https://code.aliyun.com/pajc-members/nurun-projects-pajc-website?spm=a2111a.8458726.0.0.6c6c7a7f5TDBK0" target="_blank">&#x963F;&#x91CC;&#x4E91;&#x7684;&#x4EE3;&#x7801;&#x5E93;&#x5730;&#x5740;</a></p>
+<h3 id=""> </h3>
+<h3 id="&#x6392;&#x671F;&#xFF1A;">&#x6392;&#x671F;&#xFF1A;</h3>
+<p>&#x539F;&#x8BA1;&#x5212;&#x662F;&#x4E24;&#x5468;&#x534A;&#x65F6;&#x95F4;&#x5B8C;&#x6210;h5&#x9875;&#x9762;&#x4EE5;&#x53CA;&#x540E;&#x7AEF;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x53D1;</p>
+<p>2018-07-11~2018-08-03 &#x5C06;&#x8FD1;&#x4E09;&#x5468;&#x65F6;&#x95F4; &#x5176;&#x4E2D;&#x5C06;&#x8FD1;&#x4E09;&#x5929;&#x52A0;&#x73ED;&#x5230; &#x51CC;&#x6668;3 4&#x70B9;&#xFF08;&#x767D;&#x5929;&#x5E72;&#x4E0D;&#x4E86;&#x79C1;&#x6D3B; &#x53EA;&#x80FD;&#x665A;&#x4E0A;&#x5077;&#x5077;&#x5E72;&#x5E72;&#xFF09;</p>
+<p>&#x7136;&#x540E;&#x90A3;&#x6BB5;&#x65F6;&#x95F4;&#x516C;&#x53F8;&#x7684;&#x9879;&#x76EE;&#x4E5F;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x8F7B;&#x677E;</p>
+<p>2018-08-04</p>
+<p>&#x76F8;&#x5173;&#x56FE;&#x7247;&#x7D20;&#x6750;</p>
+<p><a href="http://pajc.nurunci.com/ba/dashboard#/" target="_blank">http://pajc.nurunci.com/ba/dashboard#/<img src="assets/ba.png" alt=""></a></p>
+<p><a href="https://pajc.nurunci.com/campaign/card/index.html" target="_blank">https://pajc.nurunci.com/campaign/card/index.html</a></p>
+<p><a href="https://pajc.nurunci.com/campaign/card/code.html" target="_blank">https://pajc.nurunci.com/campaign/card/code.html</a></p>
+<p><img src="assets/h5_code.png" alt=""></p>
+<p><img src="assets/lis.png" alt=""></p>
 
                                 
                                 </section>
@@ -729,14 +712,10 @@
 
             
                 
-                <a href="wen-7ae0-nginx.html" class="navigation navigation-prev " aria-label="Previous page: 文章-nginx">
+                <a href="ri-chang-qi-ta.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 日常其他">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="wen-7ae0-2015-zong-jie.html" class="navigation navigation-next " aria-label="Next page: 文章-2015总结">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -745,7 +724,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文章-尺寸单位","level":"1.30","depth":1,"next":{"title":"文章-2015总结","level":"1.31","depth":1,"path":"wen-7ae0-2015-zong-jie.md","ref":"wen-7ae0-2015-zong-jie.md","articles":[]},"previous":{"title":"文章-nginx","level":"1.29","depth":1,"path":"wen-7ae0-nginx.md","ref":"wen-7ae0-nginx.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"wen-7ae0-chi-cun-dan-wei.md","mtime":"2017-12-17T08:09:15.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-04T03:23:17.832Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue相关学习","level":"1.40","depth":1,"previous":{"title":"日常其他","level":"1.39","depth":1,"path":"ri-chang-qi-ta.md","ref":"ri-chang-qi-ta.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vuexiang-guan-xue-xi.md","mtime":"2018-08-04T03:22:52.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-04T03:23:17.832Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
