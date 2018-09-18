@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>常用linux命令 · GitBook</title>
+        <title>linux cmd · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="python.html" />
+    <link rel="next" href="js.html" />
     
     
-    <link rel="prev" href="js.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,12 +102,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="js.html">
+        <li class="chapter active" data-level="1.2" data-path="常用linux命令.html">
             
-                <a href="js.html">
+                <a href="常用linux命令.html">
             
                     
-                    常用js代码段
+                    linux cmd
             
                 </a>
             
@@ -115,12 +115,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="常用linux命令.html">
+        <li class="chapter " data-level="1.3" data-path="js.html">
             
-                <a href="常用linux命令.html">
+                <a href="js.html">
             
                     
-                    常用linux命令
+                    snippet-js
             
                 </a>
             
@@ -133,7 +133,7 @@
                 <a href="python.html">
             
                     
-                    常用python代码段
+                    snippet-python
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="js_problem.html">
             
                     
-                    常见js问题
+                    知识点-js
             
                 </a>
             
@@ -159,7 +159,7 @@
                 <a href="css_problem.html">
             
                     
-                    常见css问题
+                    知识点-css
             
                 </a>
             
@@ -172,7 +172,7 @@
                 <a href="chang-jian-nodejs-wen-ti.html">
             
                     
-                    常见nodejs问题
+                    知识点-nodejs
             
                 </a>
             
@@ -185,7 +185,7 @@
                 <a href="phpxiang-guan-de-zhi-shi-dian.html">
             
                     
-                    常见php问题
+                    知识点-php
             
                 </a>
             
@@ -198,7 +198,7 @@
                 <a href="htmlwen-ti.html">
             
                     
-                    HTML问题
+                    知识点-html
             
                 </a>
             
@@ -211,7 +211,7 @@
                 <a href="reactjssi-lu-zheng-li.html">
             
                     
-                    react相关
+                    知识点-react
             
                 </a>
             
@@ -224,7 +224,7 @@
                 <a href="hadoop.html">
             
                     
-                    hadoop
+                    知识点-hadoop
             
                 </a>
             
@@ -237,7 +237,7 @@
                 <a href="angular1xxue-xi.html">
             
                     
-                    angular1x学习
+                    知识点-angular1x
             
                 </a>
             
@@ -250,7 +250,7 @@
                 <a href="reduxxue-xi-ji-lu.html">
             
                     
-                    redux学习记录
+                    知识点-redux
             
                 </a>
             
@@ -665,7 +665,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >常用linux命令</a>
+        <a href="." >linux cmd</a>
     </h1>
 </div>
 
@@ -1002,7 +1002,9 @@ netstat &#x67E5;&#x770B;&#x672C;&#x673A;&#x7AEF;&#x53E3;&#x7684;&#x72B6;&#x6001;
 <li>tailf &#x89C2;&#x5BDF;log&#x76EE;&#x5F55;log&#xFF0C;&#x4E00;&#x822C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E; &#x65E5;&#x5FD7;&#x91CF;&#x5F00;&#x59CB;&#x8BB2;&#x51CF;&#x6162;</li>
 </ul>
 <h1 id="git&#x76F8;&#x5173;">git&#x76F8;&#x5173;</h1>
-<pre><code>git commit --amend // update commit msg
+<pre><code>&#x201C;&#x5728;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x63D0;&#x4EA4;&#x4E86;&#x597D;&#x591A;&#x6B21;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x6B21;merge master&#x51B2;&#x7A81;&#xFF0C;&#x6700;&#x540E;&#x5408;&#x5165;&#x5931;&#x8D25;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#x5904;&#x7406;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x56DE;&#x6EDA;&#x4E4B;&#x524D;&#x7684;&#x591A;&#x6B21; commit,&#x9002;&#x7528;&#x4E8E;&#x5206;&#x652F;&#x6CA1;&#x6709;push&#x7684;&#x573A;&#x666F;&#xFF09;&#x201D;
+git reset --soft origin/master
+git commit --amend // update commit msg
 git reset --hard origin/master # &#x5F3A;&#x5236;&#x7528; remote &#x8986;&#x76D6;&#x672C;&#x5730;
 git diff commitid1 commitid2 &#x67E5;&#x770B;&#x67D0;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;
 git diff commitid1:xx.txt commitid2:xx.txt &#x67E5;&#x770B;&#x67D0;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;
@@ -1091,12 +1093,12 @@ done
 
             
                 
-                <a href="js.html" class="navigation navigation-prev " aria-label="Previous page: 常用js代码段">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="python.html" class="navigation navigation-next " aria-label="Next page: 常用python代码段">
+                <a href="js.html" class="navigation navigation-next " aria-label="Next page: snippet-js">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1107,7 +1109,7 @@ done
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常用linux命令","level":"1.3","depth":1,"next":{"title":"常用python代码段","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"previous":{"title":"常用js代码段","level":"1.2","depth":1,"path":"js.md","ref":"js.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"常用linux命令.md","mtime":"2018-07-24T09:14:25.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-17T06:37:59.255Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"linux cmd","level":"1.2","depth":1,"next":{"title":"snippet-js","level":"1.3","depth":1,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"常用linux命令.md","mtime":"2018-09-18T06:53:25.081Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-18T07:27:37.649Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
