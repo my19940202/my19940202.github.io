@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="css_problem.html" />
+    <link rel="next" href="chang-jian-nodejs-wen-ti.html" />
     
     
-    <link rel="prev" href="python.html" />
+    <link rel="prev" href="css_problem.html" />
     
 
     </head>
@@ -141,12 +141,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="js_problem.html">
+        <li class="chapter " data-level="1.5" data-path="css_problem.html">
             
-                <a href="js_problem.html">
+                <a href="css_problem.html">
             
                     
-                    知识点-js
+                    知识点-css
             
                 </a>
             
@@ -154,12 +154,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="css_problem.html">
+        <li class="chapter active" data-level="1.6" data-path="js_problem.html">
             
-                <a href="css_problem.html">
+                <a href="js_problem.html">
             
                     
-                    知识点-css
+                    知识点-js
             
                 </a>
             
@@ -276,7 +276,7 @@
                 <a href="si-kao-fang-shi.html">
             
                     
-                    处事方式
+                    思考方式
             
                 </a>
             
@@ -393,7 +393,7 @@
                 <a href="mian-shi-xiang-guan.html">
             
                     
-                    面试
+                    面试官培训
             
                 </a>
             
@@ -427,7 +427,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.27" data-path="wen-7ae0-cookie.html">
+        <li class="chapter " data-level="1.27" data-path="wen-7ae0-2015-zong-jie.html">
+            
+                <a href="wen-7ae0-2015-zong-jie.html">
+            
+                    
+                    文章-2015总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="wen-7ae0-cookie.html">
             
                 <a href="wen-7ae0-cookie.html">
             
@@ -440,7 +453,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.28" data-path="wen-7ae0-bi-ye-lv-xing.html">
+        <li class="chapter " data-level="1.29" data-path="wen-7ae0-bi-ye-lv-xing.html">
             
                 <a href="wen-7ae0-bi-ye-lv-xing.html">
             
@@ -453,7 +466,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.29" data-path="wen-7ae0-nginx.html">
+        <li class="chapter " data-level="1.30" data-path="wen-7ae0-nginx.html">
             
                 <a href="wen-7ae0-nginx.html">
             
@@ -466,25 +479,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.30" data-path="wen-7ae0-chi-cun-dan-wei.html">
+        <li class="chapter " data-level="1.31" data-path="wen-7ae0-chi-cun-dan-wei.html">
             
                 <a href="wen-7ae0-chi-cun-dan-wei.html">
             
                     
                     文章-尺寸单位
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.31" data-path="wen-7ae0-2015-zong-jie.html">
-            
-                <a href="wen-7ae0-2015-zong-jie.html">
-            
-                    
-                    文章-2015总结
             
                 </a>
             
@@ -778,6 +778,21 @@
 <blockquote>
 <p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000" target="_blank">https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000</a></p>
 </blockquote>
+<h2 id="csrf&#x95EE;&#x9898;&#x5904;&#x7406;&#xFF08;&#x4F2A;&#x9020;&#x8BF7;&#x6C42;-&#x76F4;&#x63A5;&#x5F80;&#x63A5;&#x53E3;&#x53D1;&#x9001;&#xFF09;">CSRF&#x95EE;&#x9898;&#x5904;&#x7406;&#xFF08;&#x4F2A;&#x9020;&#x8BF7;&#x6C42; &#x76F4;&#x63A5;&#x5F80;&#x63A5;&#x53E3;&#x53D1;&#x9001;&#xFF09;</h2>
+<ol>
+<li><strong>CSRF&#x662F;&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#xFF08;Cross-site request forgery&#xFF09;&#x7684;&#x82F1;&#x6587;&#x7F29;&#x5199;&#x3002;</strong></li>
+<li><strong>&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x4F2A;&#x88C5;&#x6388;&#x6743;&#x7528;&#x6237;&#x7684;&#x8BF7;&#x6C42;&#x6765;&#x5229;&#x7528;&#x6388;&#x4FE1;&#x7F51;&#x7AD9;&#x7684;&#x6076;&#x610F;&#x6F0F;&#x6D1E;</strong></li>
+</ol>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;</strong></p>
+<ol>
+<li><p>&#x540E;&#x7AEF;&#x9650;&#x5236;&#x53EA;&#x63A5;&#x53D7;&#x5BF9;&#x5E94;refer&#x7684;request</p>
+</li>
+<li><p>&#x8BF7;&#x6C42;&#x4E2D;&#x8981;&#x5305;&#x542B;&#x7528;&#x6237;&#x8EAB;&#x4EFD;token</p>
+</li>
+<li><p>&#x524D;&#x7AEF;&#x53D1;&#x8BF7;&#x6C42;&#x65F6; &#x5E26;&#x4E0A;&#x540E;&#x7AEF;&#x7B2C;&#x4E00;&#x6B21;&#x9875;&#x9762;&#x8F7D;&#x5165;&#x5E26;&#x6765;&#x7684;token</p>
+</li>
+</ol>
+<p><a href="https://laravel-china.org/articles/6735/laravel-csrf-attack-and-defense" target="_blank">https://laravel-china.org/articles/6735/laravel-csrf-attack-and-defense</a></p>
 
                                 
                                 </section>
@@ -805,12 +820,12 @@
 
             
                 
-                <a href="python.html" class="navigation navigation-prev " aria-label="Previous page: snippet-python">
+                <a href="css_problem.html" class="navigation navigation-prev " aria-label="Previous page: 知识点-css">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="css_problem.html" class="navigation navigation-next " aria-label="Next page: 知识点-css">
+                <a href="chang-jian-nodejs-wen-ti.html" class="navigation navigation-next " aria-label="Next page: 知识点-nodejs">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -821,7 +836,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.5","depth":1,"next":{"title":"知识点-css","level":"1.6","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"previous":{"title":"snippet-python","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2018-09-17T03:05:08.609Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-18T07:27:37.649Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.6","depth":1,"next":{"title":"知识点-nodejs","level":"1.7","depth":1,"path":"chang-jian-nodejs-wen-ti.md","ref":"chang-jian-nodejs-wen-ti.md","articles":[]},"previous":{"title":"知识点-css","level":"1.5","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2018-09-18T08:17:11.308Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-20T02:25:57.060Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
