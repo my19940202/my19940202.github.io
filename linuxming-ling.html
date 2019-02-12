@@ -609,19 +609,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="常用linux命令.html">
-            
-                <a href="常用linux命令.html">
-            
-                    
-                    linux cmd
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
 
@@ -1007,7 +994,8 @@ b=1
 <h1 id="git&#x76F8;&#x5173;">git&#x76F8;&#x5173;</h1>
 <pre><code>&#x201C;&#x5728;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x63D0;&#x4EA4;&#x4E86;&#x597D;&#x591A;&#x6B21;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x6B21;merge master&#x51B2;&#x7A81;&#xFF0C;&#x6700;&#x540E;&#x5408;&#x5165;&#x5931;&#x8D25;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#x5904;&#x7406;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x56DE;&#x6EDA;&#x4E4B;&#x524D;&#x7684;&#x591A;&#x6B21; commit,&#x9002;&#x7528;&#x4E8E;&#x5206;&#x652F;&#x6CA1;&#x6709;push&#x7684;&#x573A;&#x666F;&#xFF09;&#x201D;
 git reset --soft origin/master
-git commit --amend // update commit msg
+git commit --amend // &#x63D0;&#x4EA4;&#x540E;&#x8FD8;&#x6CA1;push&#x7684;&#x60C5;&#x51B5;&#x4E0B;update commit msg
+
 git reset --hard origin/master # &#x5F3A;&#x5236;&#x7528; remote &#x8986;&#x76D6;&#x672C;&#x5730;
 git diff commitid1 commitid2 &#x67E5;&#x770B;&#x67D0;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;
 git diff commitid1:xx.txt commitid2:xx.txt &#x67E5;&#x770B;&#x67D0;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;
@@ -1016,7 +1004,14 @@ git stash list &#x770B;&#x770B;&#x6709;&#x54EA;&#x4E9B;&#x5806;&#x6808;
 git stash drop stash@{2} &#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x4FEE;&#x6539;
 git stash apply stash@{2} &#x6062;&#x590D;&#x5230; stash@{2} &#x8FD9;&#x4E2A;&#x53D8;&#x5316;
 https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89
-</code></pre><h1 id="vim">vim</h1>
+</code></pre><blockquote>
+<p>git commit --amend &#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A; &#x6709;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x90E8;&#x5C0F;&#x5FC3;&#x628A; change id &#x6539;&#x6CA1;&#x4E86;&#xFF0C;&#x518D;&#x53BB;&#x63D0;&#x4EA4;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x63D0;&#x793A;&#xFF08;&#x6240;&#x4EE5;amend&#x64CD;&#x4F5C;&#x4E5F;&#x6709;&#x5206;&#x9669;&#xFF0C;&#x516C;&#x53F8;&#x5185;&#x7F51;&#x7684;git&#x6709;&#x8FC7;&#x5B9A;&#x5236;&#x5316;&#x914D;&#x7F6E;&#x4F1A;&#x6709;changeid&#x8F93;&#x51FA;&#xFF0C;&#x5916;&#x7F51;&#x7684;github&#x68C0;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#x6CA1;&#x6709;changeid&#xFF09;</p>
+</blockquote>
+<p><img src="assets/git_missing_changeid.png" alt=""><img src="assets/git_amend.png" alt=""><img src="assets/git_missing_changeid.png" alt=""></p>
+<p><img src="assets/git_missing_changeid.png" alt=""></p>
+<p><img src="assets/git_missing_changeid.png" alt=""></p>
+<p><img src="assets/git_missing_changeid.png" alt=""></p>
+<h1 id="vim">vim</h1>
 <pre><code>set list &#x6765;&#x663E;&#x793A;&#x975E;&#x53EF;&#x89C1;&#x5B57;&#x7B26;
 set nolist &#x9690;&#x85CF;
 &#x5236;&#x8868;&#x7B26;&#x88AB;&#x663E;&#x793A;&#x4E3A;&#x201C;^I&#x201D;&#xFF0C;&#x800C;&#x884C;&#x5C3E;&#x5219;&#x6807;&#x8BC6;&#x4E3A;&#x201C;$&#x201C;
@@ -1140,7 +1135,7 @@ curl \
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"linux命令","level":"1.2","depth":1,"next":{"title":"snippet-js","level":"1.3","depth":1,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linuxming-ling.md","mtime":"2019-02-10T13:19:53.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-10T13:20:45.072Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"linux命令","level":"1.2","depth":1,"next":{"title":"snippet-js","level":"1.3","depth":1,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linuxming-ling.md","mtime":"2019-02-12T09:47:02.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-12T09:48:53.374Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
