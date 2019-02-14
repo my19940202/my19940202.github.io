@@ -656,7 +656,17 @@
                                 
                                 <h1 id="&#x5E38;&#x7528;js-&#x63D0;&#x5347;&#x6548;&#x7387;&#x4F18;&#x96C5;&#x7684;&#x4EE3;&#x7801;&#x6280;&#x5DE7;">&#x5E38;&#x7528;js &#x63D0;&#x5347;&#x6548;&#x7387;&#x4F18;&#x96C5;&#x7684;&#x4EE3;&#x7801;&#x6280;&#x5DE7;</h1>
 <p>&#x7EBF;&#x4E0A;sandbox&#x5730;&#x5740;&#xFF08;&#x8FD9;&#x73A9;&#x610F;&#x505A;demo&#x9884;&#x89C8;&#xFF0C;&#x5F88;&#x597D;&#x7528;&#xFF09;&#xFF1A;<a href="https://codesandbox.io/u/my19940202/sandboxes" target="_blank">https://codesandbox.io/u/my19940202/sandboxes</a></p>
-<p>Obj&#x4E2D;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x6DFB;&#x52A0;&#x5B57;&#x6BB5; &#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF08;&#x4E0D;&#x7528;&#x5728;&#x5199;if &#x4E86;&#xFF09;</p>
+<p>typescript &#x53C2;&#x6570;&#x662F;&#x51FD;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x600E;&#x4E48;&#x5199;</p>
+<pre><code>// filter&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x5B9A;, &#x6240;&#x4EE5;&#x5199;&#x6210;...args: any[]
+// &#x51FD;&#x6570; ...args: any[]) =&gt; any
+export function setFilter(filterName: string,
+    filterFunc: (...args: any[]) =&gt; any) {
+    if (filter.hasFilter(filterName)) {
+        filter.delFilter(filterName);
+    }
+    filter.setFilter(filterName, filterFunc);
+}
+</code></pre><p>Obj&#x4E2D;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x6DFB;&#x52A0;&#x5B57;&#x6BB5; &#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF08;&#x4E0D;&#x7528;&#x5728;&#x5199;if &#x4E86;&#xFF09;</p>
 <pre><code>var rich = true; 
 var man = {
     name:  &apos;hello world&apos;,
@@ -845,7 +855,7 @@ setTimeout(a, 1000, 2, 3)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"snippet-js","level":"1.3","depth":1,"next":{"title":"snippet-python","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"previous":{"title":"linux命令","level":"1.2","depth":1,"path":"linuxming-ling.md","ref":"linuxming-ling.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js.md","mtime":"2019-02-12T09:32:52.884Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-12T09:52:04.560Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"snippet-js","level":"1.3","depth":1,"next":{"title":"snippet-python","level":"1.4","depth":1,"path":"python.md","ref":"python.md","articles":[]},"previous":{"title":"linux命令","level":"1.2","depth":1,"path":"linuxming-ling.md","ref":"linuxming-ling.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js.md","mtime":"2019-02-14T06:58:06.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T07:01:45.544Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
