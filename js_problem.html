@@ -654,7 +654,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x65E5;&#x5E38;js&#x95EE;&#x9898;">&#x65E5;&#x5E38;js&#x95EE;&#x9898;</h2>
+                                <h1 id="&#x65E5;&#x5E38;js&#x95EE;&#x9898;">&#x65E5;&#x5E38;js&#x95EE;&#x9898;</h1>
+<h3 id="js&#x5FAE;&#x4EFB;&#x52A1;microtasks--&#x5B8F;&#x4EFB;&#x52A1;task">JS&#x5FAE;&#x4EFB;&#x52A1;(Microtasks) &amp; &#x5B8F;&#x4EFB;&#x52A1;(task)</h3>
+<ul>
+<li>&#x5B8F;&#x4EFB;&#x52A1;&#xFF1A;&#x5305;&#x62EC;&#x6574;&#x4F53;&#x4EE3;&#x7801;script&#xFF0C;setTimeout&#xFF0C;setInterval&#x3001;setImmediate&#x3002;</li>
+<li>&#x5FAE;&#x4EFB;&#x52A1;&#xFF1A;&#x539F;&#x751F;Promise(&#x6709;&#x4E9B;&#x5B9E;&#x73B0;&#x7684;promise&#x5C06;then&#x65B9;&#x6CD5;&#x653E;&#x5230;&#x4E86;&#x5B8F;&#x4EFB;&#x52A1;&#x4E2D;)&#x3001;process.nextTick&#x3001;Object.observe(&#x5DF2;&#x5E9F;&#x5F03;)&#x3001; MutationObserver &#x8BB0;&#x4F4F;&#x5C31;&#x884C;&#x4E86;&#x3002;</li>
+</ul>
+<h3 id="event-loop&#xFF08;&#x8FD9;&#x662F;-js&#x6267;&#x884C;&#x673A;&#x5236;&#xFF09;---call-back&#xFF08;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#xFF09;">event loop&#xFF08;&#x8FD9;&#x662F; JS&#x6267;&#x884C;&#x673A;&#x5236;&#xFF09; &amp;  call back&#xFF08;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#xFF09;</h3>
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=6MXRNXXgP_0" target="_blank">https://www.youtube.com/watch?v=6MXRNXXgP_0</a></p>
+<p><a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" target="_blank">https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4</a></p>
+</blockquote>
+<p>&#x6D4F;&#x89C8;&#x5668; basic architecture</p>
+<ul>
+<li>heap: &#x7406;&#x89E3;&#x6210;&#x6D4F;&#x89C8;&#x5668;&#x4E13;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</li>
+<li>stack: &#x4E3A; js &#x51C6;&#x5907;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;</li>
+</ul>
+<p><img src="assets/11.png" alt=""></p>
+<p>&#x6CA1;&#x6709;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x60C5;&#x51B5;&#x4E0B; &#x6808;&#x7ED3;&#x6784; &#x5148;&#x8FDB;&#x540E;&#x51FA;</p>
+<p><img src="assets/js-stack.gif" alt=""></p>
+<p>&#x5B58;&#x5728;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x60C5;&#x51B5;&#xFF08;setTimeout &#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x60C5;&#x51B5;&#xFF09;</p>
+<p><img src="assets/callback.gif" alt=""></p>
+<h3 id="&#x51FD;&#x6570;&#x8C03;&#x7528;&#x60C5;&#x51B5;">&#x51FD;&#x6570;&#x8C03;&#x7528;&#x60C5;&#x51B5;</h3>
+<p>&#x719F;&#x6089;chrome&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;call stack&#xFF0C;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801; <a href="https://codesandbox.io/s/o5y4ql07zy" target="_blank">https://codesandbox.io/s/o5y4ql07zy</a></p>
+<p>&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528; console.trace &#x624B;&#x52A8;&#x8F93;&#x51FA; <a href="https://codesandbox.io/s/8k13wpk2qj" target="_blank">https://codesandbox.io/s/8k13wpk2qj</a></p>
+<p>&#x603B;&#x7ED3;&#xFF1A; &#x80FD;&#x591F;&#x663E;&#x793A;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x6D41;&#x7A0B;</p>
+<p><img src="assets/chrome_call_stack.png" alt=""></p>
 <h3 id="&#x95ED;&#x5305;&#x95EE;&#x9898;">&#x95ED;&#x5305;&#x95EE;&#x9898;</h3>
 <p>&#x63D0;&#x4F9B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;</p>
 <p>&#x53EF;&#x4EE5;&#x4ECE;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4F20;&#x503C;&#x548C;&#x4F20;&#x5740;&#x89D2;&#x5EA6;&#x601D;&#x8003;</p>
@@ -811,7 +836,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.6","depth":1,"next":{"title":"知识点-nodejs","level":"1.7","depth":1,"path":"chang-jian-nodejs-wen-ti.md","ref":"chang-jian-nodejs-wen-ti.md","articles":[]},"previous":{"title":"知识点-css","level":"1.5","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2018-11-20T02:25:36.463Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-15T08:30:23.456Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.6","depth":1,"next":{"title":"知识点-nodejs","level":"1.7","depth":1,"path":"chang-jian-nodejs-wen-ti.md","ref":"chang-jian-nodejs-wen-ti.md","articles":[]},"previous":{"title":"知识点-css","level":"1.5","depth":1,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2019-03-09T09:35:14.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T09:41:16.992Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
