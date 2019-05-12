@@ -1,4 +1,6 @@
-![](/assets/money.png)**等额本息和等额本金 \(大部分情况下利息是差不多的  \)**
+# dai-kuan-zhi-shi
+
+![](.gitbook/assets/money.png)**等额本息和等额本金 \(大部分情况下利息是差不多的 \)**
 
 **等额本金**
 
