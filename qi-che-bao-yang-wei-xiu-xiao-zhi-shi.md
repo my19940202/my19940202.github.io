@@ -1,5 +1,3 @@
-# qi-che-bao-yang-wei-xiu-xiao-zhi-shi
-
 5000km左右换换机油
 
 去4s 店保养的时候 直接去车间看，哪个坏了哪个拍照
