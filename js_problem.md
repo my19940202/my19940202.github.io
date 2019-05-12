@@ -1,4 +1,4 @@
-# 日常js问题
+# 知识点-js
 
 ## npm install流程
 
@@ -24,7 +24,7 @@ install、postinstall、prepublish、prepare
 
 ## LRU cache
 
-下面这种场景比较适合的解决办法就是lru cache![](/assets/memory.png)
+下面这种场景比较适合的解决办法就是lru cache![](.gitbook/assets/memory.png)
 
 ## requestIdleCallback
 
@@ -54,15 +54,15 @@ how: **由系统来决定回调函数的执行时机 \(如果屏幕刷新60hz，
 * heap: 理解成浏览器专用的内存空间
 * stack: 为 js 准备的一个单线程的执行环境
 
-![](/assets/11.png)
+![](.gitbook/assets/11.png)
 
 没有异步操作的情况下 栈结构 先进后出
 
-![](/assets/js-stack.gif)
+![](.gitbook/assets/js-stack%20%281%29.gif)
 
 存在异步操作的情况（setTimeout 也是一样的情况）
 
-![](/assets/callback.gif)
+![](.gitbook/assets/callback%20%281%29.gif)
 
 ### 函数调用情况
 
@@ -72,7 +72,7 @@ how: **由系统来决定回调函数的执行时机 \(如果屏幕刷新60hz，
 
 总结： 能够显示函数的调用流程
 
-![](/assets/chrome_call_stack.png)
+![](.gitbook/assets/chrome_call_stack%20%281%29.png)
 
 ### 闭包问题
 
@@ -109,7 +109,7 @@ Chrome对于由document.write\(\)动态插入的&lt;script&gt;会做检查，当
 
 事件委托: 用于处理子元素很多\|\|会更新的场景
 
-```
+```text
 传统方式
     var oUl = document.getElementById("ul1");
     var aLi = oUl.getElementsByTagName('li');
@@ -139,9 +139,7 @@ addEventListener\('click', function\(\){},true\); // 设置捕获类型
 
 event.preventDefault\(\) //阻止捕获
 
-![](/assets/import.png)
-
----
+![](.gitbook/assets/import.png)
 
 ## es6相关问题 &gt;\_&lt;
 
@@ -151,15 +149,13 @@ event.preventDefault\(\) //阻止捕获
 
 ### export default
 
-> ##### 一个文件中export default只有一个，在其他模板中 import的时候 不需要带{}
-
----
+> #### 一个文件中export default只有一个，在其他模板中 import的时候 不需要带{}
 
 ## 浏览器层面
 
 ### 浏览器解析基本流程
 
-![](/assets/3055132361-55169ffa877a0_articlex.png)
+![](.gitbook/assets/3055132361-55169ffa877a0_articlex%20%281%29.png)
 
 ### repaint
 
@@ -170,26 +166,19 @@ event.preventDefault\(\) //阻止捕获
 改变窗口大小
 
 1. 改变字体
-
 2. 增加和删除样式表
-
 3. 内容的改变，比如用户在输入框输入文字
-
 4. 激活伪类
-
 5. 操作class属性
-
 6. 脚本操作DOM
-
 7. 计算offsetWidth和offsetHeight
-
 8. 设置style属性
 
 > [https://segmentfault.com/a/1190000006104095](https://segmentfault.com/a/1190000006104095)
 >
 > [https://segmentfault.com/a/1190000002629708](https://segmentfault.com/a/1190000002629708)
 
-![](/assets/v2-b82f2d58aa3356b8b58c69067b828855_b.png)
+![](.gitbook/assets/v2-b82f2d58aa3356b8b58c69067b828855_b%20%281%29.png)
 
 ## await async的理解
 
@@ -201,7 +190,7 @@ event.preventDefault\(\) //阻止捕获
 
 **Promise最大的好处是在异步执行的流程中，把执行代码和处理结果的代码清晰地分离了**
 
-参考示例   [http://jsrun.net/EggKp/edit](http://jsrun.net/EggKp/edit)
+参考示例 [http://jsrun.net/EggKp/edit](http://jsrun.net/EggKp/edit)
 
 > [https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000)
 
@@ -213,9 +202,7 @@ event.preventDefault\(\) //阻止捕获
 **解决方案**
 
 1. 后端限制只接受对应refer的request
-
 2. 请求中要包含用户身份token
-
 3. 前端发请求时 带上后端第一次页面载入带来的token
 
 [https://laravel-china.org/articles/6735/laravel-csrf-attack-and-defense](https://laravel-china.org/articles/6735/laravel-csrf-attack-and-defense)

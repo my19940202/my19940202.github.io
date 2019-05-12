@@ -1,4 +1,6 @@
-# 常用命令
+# linux命令
+
+## 常用命令
 
 | 类型 | 命令 | 作用 |
 | :--- | :--- | :--- |
@@ -29,7 +31,7 @@
 
 ### sort专题
 
-```
+```text
 $ cat test.data
 a 1
 b 2
@@ -61,11 +63,11 @@ $ sort -n test.data | uniq
 $ cat A.txt B.txt B.txt | sort | uniq -u > ret.txt
 ```
 
-> [https://blog.csdn.net/stpeace/article/details/50407106](#httpsblogcsdnnetstpeacearticledetails50407106)
+> [https://blog.csdn.net/stpeace/article/details/50407106](linuxming-ling.md#httpsblogcsdnnetstpeacearticledetails50407106)
 
 ### grep专题
 
-```
+```text
 高亮处理 --color=auto
 # match 多个关键字
 grep -E 'xxx|yyy|zzz' data
@@ -108,7 +110,7 @@ grep -oE "tu=u[0-9]{6,7}" --color=auto
 
 ### awk专题
 
-```
+```text
 #!/bin/awk -f
 # FS指定列分割符 OFS列输出分隔符
 BEGIN{
@@ -141,7 +143,7 @@ NR 行号 NF 字段数量
 awk -F "," '{printf("Line:%s,Col:%s\n", NR,NF)}' new_data
 ```
 
-```
+```text
 # for 输出没有按照下标来的
 $ awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA){print k,tA[k];}}'
 4
@@ -162,9 +164,9 @@ awk -F ',' 'BEGIN{cout=0} {if (NR
  cout;i++) print i,name[i] }' list_data
 ```
 
-# curl进行请求
+## curl进行请求
 
-```
+```text
 # 其他细节可以  curl -h 自己查看
 
 curl -i -X POST \
@@ -181,22 +183,24 @@ curl --cookie "name=fuckyou" http://xx.com/api
 
 > for循环发送请求
 
-    query_arr=("滤芯" "净水器滤芯" "鲜花" "美国移民");
-    for((i=1;i
-    <
-    =50;i++));
-    do
-    query_idx=`expr $i % 4`;
-    curl -i -X POST \
-    -H "application/x-www-form-urlencoded; charset=UTF-8" \
-    -d \
-    '{"magic_num":778,"channel_page":"pc_ns_wenku_yuedu_tab","query":"'${query_arr[$query_idx]}'","pre_query":"'${query_arr[$query_idx]}'","search_id":2292132705,"charge_name":"ksws3","encode_type":0,"experiment_id_list":[2018011603],"user_ip":2319884839,"baidu_id":"A46A9B49722108FC124D78FF6C451418","passport_user_id":0,"url":"https://p.baidu.com/question/7b4f6162633531346463360200/398307","refer":"http://p.baidu.com","device_info":{"user_agent":"Mozilla/5.0"},"service_control":{"union_title":"十二生肖之六合","union_charge_tag":"tag1##tag2"},"cookie_info":[],"http_headers":"","wise_req_info":{"wise_adapter":"","wpt": 2}}' \
-    'http://10.150.93.38:8101/asp'
-    done
+```text
+query_arr=("滤芯" "净水器滤芯" "鲜花" "美国移民");
+for((i=1;i
+<
+=50;i++));
+do
+query_idx=`expr $i % 4`;
+curl -i -X POST \
+-H "application/x-www-form-urlencoded; charset=UTF-8" \
+-d \
+'{"magic_num":778,"channel_page":"pc_ns_wenku_yuedu_tab","query":"'${query_arr[$query_idx]}'","pre_query":"'${query_arr[$query_idx]}'","search_id":2292132705,"charge_name":"ksws3","encode_type":0,"experiment_id_list":[2018011603],"user_ip":2319884839,"baidu_id":"A46A9B49722108FC124D78FF6C451418","passport_user_id":0,"url":"https://p.baidu.com/question/7b4f6162633531346463360200/398307","refer":"http://p.baidu.com","device_info":{"user_agent":"Mozilla/5.0"},"service_control":{"union_title":"十二生肖之六合","union_charge_tag":"tag1##tag2"},"cookie_info":[],"http_headers":"","wise_req_info":{"wise_adapter":"","wpt": 2}}' \
+'http://10.150.93.38:8101/asp'
+done
+```
 
 > post发送formdata形式的请求
 
-```
+```text
 #!/bin/bash
 curl \
   -F "code=GBK" \
@@ -205,22 +209,22 @@ curl \
   xxyyzzaabbcc.baidu.com:8089/amis/download/word-table/upload?AMIS_USER=xishengbo
 ```
 
-# 环境变量添加
+## 环境变量添加
 
-```
+```text
 # 新增了一个hadoop client
 export PATH=$PATH:/home/xishengbo/hadoop_client_yq/hadoop/bin
 ```
 
-# svn
+## svn
 
-```
+```text
 svn commit -m “恢复到某修订版（某修订版作废）”
 ```
 
-# 权限赋予
+## 权限赋予
 
-```
+```text
 理解 文件、目录的权限的不同 r w x
 
 让 xxx.sh 可执行即为 ./xxx.sh 运行
@@ -230,9 +234,9 @@ chmod 777 xxx.sh
 chmod -x xxx.cpp
 ```
 
-# 模板测试服务的快速重启
+## 模板测试服务的快速重启
 
-```
+```text
 rm lu-ui
 rm ../log/*log*
 wget http://10.145.78.238:8114/output/bin/lu-ui
@@ -240,24 +244,24 @@ chmod 777 lu-ui
 kill $(ps aux | grep 'bin/lu-ui' | awk '{print $2}')
 ```
 
-# 进程放入后台以及切换到前台
+## 进程放入后台以及切换到前台
 
-```
+```text
 vim界面下 ctrl + z (其他占用终端的进程也是一样)
 要回到前台   
 jobs 查看当前后台任务
 通过 fg 1 切换回来
 ```
 
-# 文件大小排序
+## 文件大小排序
 
-```
+```text
 ls -Slgrepr
 ```
 
-# tmux的使用
+## tmux的使用
 
-```
+```text
 用于缓存自己的开发环境 不用每次开发的时候都重新打开环境
 tmux
 tmux ls
@@ -287,9 +291,9 @@ tmux使用了主题  感觉样式可以
  https://segmentfault.com/a/1190000003001555
 ```
 
-# mysql操作
+## mysql操作
 
-```
+```text
 mysql -uUSERNAME -pPASSWORK -P4100 -hHOST test_db
 mysql -uxishengbo -pWNXhRY4L9Q -P4100 -hst01-dba-sdc-bak03.st01 cb_webdb
 
@@ -302,31 +306,31 @@ DATE_FORMAT(st_date, "%Y-%m-%d")
 like "%xsb%"  // like的用法
 ```
 
-# 网络相关
+## 网络相关
 
-```
+```text
 ## 查看请求baidu.com 数据包所经过的IP节点 一般用于问题排查
 traceroute baidu.com
 netstat 查看本机端口的状态
 ```
 
-# 发压力测试
+## 发压力测试
 
-```
+```text
 ab -c 2 -n 10 http://127.0.0.1:8800?c=1
 &
 b=1
 各类限制条件自己看参数吧 get post都能发的
 ```
 
-# 观察/bin有没有完全启动起来的方法
+## 观察/bin有没有完全启动起来的方法
 
 * 通过top命令 看改程序的 cpu占用情况，一般刚开始启动 占用很高（做各种初始化工作，载入配置等等）
 * tailf 观察log目录log，一般启动完成后 日志量开始讲减慢
 
-# git相关
+## git相关
 
-```
+```text
 “在分支开发提交了好多次，其中一次merge master冲突，最后合入失败可以用这个办法处理（相当于回滚之前的多次 commit,适用于分支没有push的场景）”
 git reset --soft origin/master
 git commit --amend // 提交后还没push的情况下update commit msg
@@ -343,11 +347,11 @@ https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%8
 
 > git commit --amend 注意事项： 有的时候一部小心把 change id 改没了，再去提交就会出现下面的提示（所以amend操作也有分险，公司内网的git有过定制化配置会有changeid输出，外网的github检查了一下没有changeid）
 
-![](/assets/git_amend.png)![](/assets/git_missing_changeid.png)
+![](.gitbook/assets/git_amend.png)![](.gitbook/assets/git_missing_changeid.png)
 
-# vim
+## vim
 
-```
+```text
 set list 来显示非可见字符
 set nolist 隐藏
 制表符被显示为“^I”，而行尾则标识为“$“
@@ -388,7 +392,7 @@ sa
 -sd$
 ```
 
-# linux环境变量相关使用方法
+## linux环境变量相关使用方法
 
 echo 显示某个环境变量值 echo $PATH  
 export 设置一个新的环境变量 export HELLO="hello" \(可以无引号\)  
@@ -396,7 +400,7 @@ env 显示所有环境变量
 set 显示本地定义的shell变量  
 unset 清除环境变量 unset HELLO
 
-```
+```text
 /*test.js*/
 console.log(process.env.PORT, "this is port");
 
@@ -410,13 +414,11 @@ result: 8093 this is port
 */
 ```
 
-# fis使用
+## fis使用
 
-```
+```text
 fis3 release -wL (watch模式动态 release）
 fis3 release -d ./output (打包文件到某个目录)
 fis server start stop restart
 ```
-
-
 

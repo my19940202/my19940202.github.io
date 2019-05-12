@@ -1,3 +1,5 @@
+# 知识点-redux
+
 * **compose 作用**
 
 compose\(funcA, funcB, funcC\) 形象为 compose\(funcA\(funcB\(funcC\(\)\)\)\)）

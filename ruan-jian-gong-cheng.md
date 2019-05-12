@@ -1,6 +1,6 @@
+# 软件工程
+
 大公司产品开发流程
 
-
-
-![](/assets/屏幕快照 2018-05-30 上午9.47.37.png)
+![](.gitbook/assets/ping-mu-kuai-zhao-20180530-shang-wu-9.47.37.png)
 

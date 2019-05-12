@@ -1,10 +1,12 @@
+# 面试官培训
+
 ## 一个面试官需要注意的点
 
 下次再刷一遍内网视频，列出一下要点
 
-![](/assets/屏幕快照 2018-02-27 下午6.51.29.png)![](/assets/屏幕快照 2018-02-27 下午7.00.53.png)
+![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-6.51.29%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-7.00.53%20%281%29.png)
 
-![](/assets/屏幕快照 2018-02-27 下午6.53.12.png)
+![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-6.53.12%20%281%29.png)
 
 ## 准备面试\(一次简单的前端面试准备\)
 
@@ -17,11 +19,8 @@
 \#\#\# 计算机网络相关
 
 * http状态 1XX 2XX 3XX 4XX 5XX 含义 常见的有哪些（200 404 500 含义啥）
-
 * http标准动作GET POST UPDATE DELETE TRACE PUT\(GET POST区别h\)
-
 * https和http的区别多了哪些，为什么会有https
-
 * cookie,session
 
   cookie，session区别作用，差别
@@ -36,13 +35,12 @@
 
   跨域的解决办法\(allow-origin:\*,自己配置本域名的转发,jsonp\)
 
-— 困难题：一次页面访问到页面最终渲染经历了哪些（浏览器渲染原理 http协议  TCP，IP网络模型）
+— 困难题：一次页面访问到页面最终渲染经历了哪些（浏览器渲染原理 http协议 TCP，IP网络模型）
 
 \#\#\# js相关的
 
 * 主要的数据类型（基础 undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object））
-
-* 事件两种处理方法  冒泡和捕获 处理方式上区别
+* 事件两种处理方法 冒泡和捕获 处理方式上区别
 
 — js在for循环中绑定事件，出现的问题（考察闭包，处理办法）
 
@@ -55,17 +53,13 @@
 — HTML语义化的理解（长啥样，意义：spider，浏览器解析，开发维护）
 
 * 内联样式 class id样式优先级
-
 * 元素定位
 
 — 盒子模型\(padding margin boder算不算再盒子的宽高内\)
 
 * 手机端如实现自适应的解决办法（rem em % view-port） bootstrap的自适应是怎么实现的
-
 * inline,block,inline-block 区别哪些标签是,哪些不是
-
 * 浏览器reflow repaint 区别
-
 * 优化网站页面性能哪些办法
 
   （网络性能：静态资源变小，CDN，首屏server渲染，服务器性能优化,合理利用本地缓存。。。）
@@ -80,16 +74,13 @@
 
 — 网络操作 （ping netstat）
 
-* 系统级 ps top  curl
-
+* 系统级 ps top curl
 * 字符处理 grep sed
-
 * Linux上面起任务的方式,ssh连接断掉了 任务会怎么样
 
-\#\#\#  稍长哪些后端语言
+\#\#\# 稍长哪些后端语言
 
 * web后端服务做了哪些（路由对应模板，数据库查数据，渲染页面）
-
 * 前后端开发如何协作
 
 问问面试者对岗位、公司和业务有啥问题

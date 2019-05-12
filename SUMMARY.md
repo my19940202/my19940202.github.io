@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [linux命令](linuxming-ling.md)
@@ -22,7 +22,7 @@
 * [SVG熟悉](svgshu-xi.md)
 * [乐理知识学习汇总](le-li-zhi-shi-xue-xi-hui-zong.md)
 * [机器学习相关的整理](ji-qi-xue-xi-xiang-guan-de-zheng-li.md)
-* [linux命令](linuxming-ling.md)
+* [linux命令](linuxming-ling-1.md)
 * [面试官培训](mian-shi-xiang-guan.md)
 * [今生今世的证据](jin-sheng-jin-shi-de-zheng-ju.md)
 * [文章-2017总结](wen-7ae0-2017-zong-jie.md)

@@ -1,3 +1,5 @@
+# 名言警句
+
 ## 可以阻止你成功，但是不能阻止你的成长
 
 ## 你的样子 是你走过的路 看过的书 见过的人 经历过的事
@@ -18,13 +20,9 @@
 
 ## If you wish to persuade me, you must think my thoughts, feel my feelings, and speak my words.
 
-## ![](/assets/monday_quote.jpg)
+## ![](.gitbook/assets/monday_quote.jpg)
 
 ## If you want to go fast, go alone. If you want to go far, go together.
 
 ## Try new thins and take risk that's how you grow your configdence
-
-## 
-
-
 

@@ -1,12 +1,10 @@
-做好 PPT 的方法![](/assets/屏幕快照 2018-02-07 下午7.43.58.png)
+# 做好ppt的方法
 
-![](/assets/ppt2.png)
+做好 PPT 的方法![](.gitbook/assets/ping-mu-kuai-zhao-20180207-xia-wu-7.43.58%20%281%29.png)
 
+![](.gitbook/assets/ppt2%20%281%29.png)
 
+![](.gitbook/assets/ppt3.png)
 
-![](/assets/ppt3.png)
-
-
-
-![](/assets/ppt4.png)
+![](.gitbook/assets/ppt4%20%281%29.png)
 

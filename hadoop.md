@@ -1,6 +1,6 @@
-## hadoop基础知识
+# 知识点-hadoop
 
-![](/assets/屏幕快照 2017-10-07 下午5.05.04.png)![](/assets/屏幕快照 2018-09-17 下午2.27.22.png)![](/assets/屏幕快照 2018-09-17 下午2.27.47.png)![](/assets/屏幕快照 2018-09-17 下午2.28.00.png)
+![](.gitbook/assets/ping-mu-kuai-zhao-20171007-xia-wu-5.05.04%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.22%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.47%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.28.00.png)
 
 nameNode\(存放文件的真实地址映射\)
 
