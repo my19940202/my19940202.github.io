@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [XXXXXX](README.md)
 * [日常的活动计划安排](todolist.md)
 * [常见CSS代码段](css.md)
 * [互联网广告系统 相关概念记录](ad.md)
