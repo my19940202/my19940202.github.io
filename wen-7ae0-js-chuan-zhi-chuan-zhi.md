@@ -1,6 +1,8 @@
+# 文章-js传值传址
+
 js传值使用了引用，在一些场景下会遇到一些奇怪的问题，如
 
-```
+```text
 // 浅拷贝
 var a = [1,2,3]
 var b = a;
@@ -16,9 +18,9 @@ a.a = 'this is a in a'
 // 实际输出a,b,c 发现都是 {a: "this is a in a", b: 312}
 ```
 
-### array
+## array
 
-```
+```text
 var a = [1,2,3]
 // var b = a;
 // var c = a;
@@ -28,9 +30,9 @@ a[0] = 'aaaa';
 // b,c 没有变化
 ```
 
-### object
+## object
 
-```
+```text
 // 遍历每个属性，这个办法还是有问题的(一旦这个obj比较复杂,含有数组，这个function就不能用了)
 var deepCopy = function(source) {
     var result = {};
@@ -42,8 +44,5 @@ var deepCopy = function(source) {
 
 // 推荐这个万金油
 JSON.parse(JSON.stringify({a:123}))
-
 ```
-
-
 

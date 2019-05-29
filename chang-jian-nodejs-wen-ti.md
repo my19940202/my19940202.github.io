@@ -1,4 +1,4 @@
-# nodejs知识点
+# 知识点-nodejs
 
 ## express https server
 
@@ -6,15 +6,13 @@
 >
 > [https://github.com/my19940202/https\_server](https://github.com/my19940202/https_server)
 
-### 
-
 ### express next 中间件相关，通过middle ware响应请求流程
 
 [http://www.expressjs.com.cn/guide/using-middleware.html](http://www.expressjs.com.cn/guide/using-middleware.html)
 
 1.错误处理
 
-```
+```text
 var express = require('express');
 var app = express();
 
@@ -68,7 +66,7 @@ app.get('/xsb',
 
 ### yog使用
 
-```
+```text
 # 基于express的一套mvc框架
 home 目录下运行 watch文件变化
 yog2 release --dest debug --watch
@@ -76,6 +74,4 @@ yog2 release --dest debug --watch
 yog目录下 开启server
 yog2 run
 ```
-
-
 

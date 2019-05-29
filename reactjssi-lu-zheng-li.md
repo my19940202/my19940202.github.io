@@ -1,3 +1,5 @@
+# 知识点-react
+
 ## react fiber 文档阅读
 
 > [https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
@@ -12,7 +14,7 @@
 
 ## casting in typescript  \(角色分配\)
 
-```
+```text
 // 常见的Element type
 HTMLDivElement
 HTMLInputElement
@@ -49,7 +51,7 @@ class Wrapper extends React.Component<PropsInterface, StateInterface> {
 
 super\(\) 的作用 [https://codesandbox.io/s/q98rlj068q](https://codesandbox.io/s/q98rlj068q)
 
-```
+```text
 改变上下文的指向
 用法1：super作为函数调用时，代表父类的构造函数。ES6 要求，子类的构造函数必须执行一次super函数。
 
@@ -58,7 +60,7 @@ super\(\) 的作用 [https://codesandbox.io/s/q98rlj068q](https://codesandbox.io
 
 propTypes : {
 
-```
+```text
 //数据不允许为空
 
 name: PropTypes.string.isRequired
@@ -66,9 +68,9 @@ name: PropTypes.string.isRequired
 
 }
 
-## reactjs life cycle![](/assets/download.png)
+## reactjs life cycle![](.gitbook/assets/download%20%281%29.png)
 
-```
+```text
 // 父组件更新子组件的时候 该函数被触发
 componentWillReceiveProps(nextProps) {
     if (nextProps.idx !== this.props.idx) {
@@ -99,6 +101,4 @@ ReactDOM.render(<InfoWindowComp info={info}/>, tempDiv, function() {
 **reactNode 的创建和使用的 demo**
 
 > [https://codesandbox.io/u/my19940202](https://codesandbox.io/u/my19940202)
-
-
 

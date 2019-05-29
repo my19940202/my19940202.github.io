@@ -1,12 +1,12 @@
-# 平安津村兑换码管理系统-总结和学习
+# vue相关学习
 
-###### \(2018-07-11~2018-08-03\)
+### \(2018-07-11~2018-08-03\)
 
-### 总结：
+## 总结：
 
 这是有史以来项目周期最赶的项目，身心疲惫，感觉后面要好好考虑是不是要接私活
 
-### 需求分析：
+## 需求分析：
 
 这一次接的项目是平安下面汉方医药公司, 有两个端h5兑换页面以及后台兑换管理系统
 
@@ -16,7 +16,7 @@ h5页面提供了设计图
 
 主要是增删改查操作，支持整个兑换商品的流程
 
-### 技术方案：
+## 技术方案：
 
 刚开始我是想用 react antdesign 那一套解决方法，不过最后因为这个项目不是前后端分离的，只能在原来项目框架上开发；
 
@@ -32,9 +32,7 @@ h5页面提供了设计图
 
 [https://github.com/my19940202/simple\_vue\_crm](https://github.com/my19940202/simple_vue_crm)
 
-### 
-
-### 排期：
+## 排期：
 
 原计划是两周半时间完成h5页面以及后端管理系统的开发
 
@@ -46,13 +44,13 @@ h5页面提供了设计图
 
 相关图片素材
 
-[http://pajc.nurunci.com/ba/dashboard\#/![](/assets/ba.png)](http://pajc.nurunci.com/ba/dashboard#/)
+[http://pajc.nurunci.com/ba/dashboard\#/![](.gitbook/assets/ba.png)](http://pajc.nurunci.com/ba/dashboard#/)
 
 [https://pajc.nurunci.com/campaign/card/index.html](https://pajc.nurunci.com/campaign/card/index.html)
 
 [https://pajc.nurunci.com/campaign/card/code.html](https://pajc.nurunci.com/campaign/card/code.html)
 
-![](/assets/h5_code.png)
+![](.gitbook/assets/h5_code.png)
 
-![](/assets/lis.png)
+![](.gitbook/assets/lis.png)
 

@@ -1,22 +1,22 @@
-## 收集日常CSS问题
+# 知识点-css
 
 **PPI：单位英寸像素数（Pixel Per Inch）：现实世界的一英寸内像素数，决定了屏幕的显示质量**
 
 **DPR: 设备像素比率（Device Pixel Ratio）：物理像素与逻辑像素（px）的对应关系**
 
-#### rem em的定义
+### rem em的定义
 
 em 以父元素 上面的font-size 为基准
 
 rem 以 HTML 上面的font-size 为基准
 
-```
+```text
 rem <html lang="en" style="font-size: 20px;">
 ```
 
-#### input type=text 问题
+### input type=text 问题
 
-```
+```text
 <!--自动focus-->
 <input autofocus="autofocus" tye="text" />
 <!--取消 focus时的border-->
@@ -25,26 +25,24 @@ input:focus {
 }
 ```
 
-#### 
-
-#### Formatting context
+### Formatting context
 
 > Formatting context 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最常见的 Formatting context 有 Block fomatting context \(简称BFC\)和 Inline formatting context \(简称IFC\)。
 
-#### 文档流相关知识 FLOW
+### 文档流相关知识 FLOW
 
 > 文档流是文档中可显示对象在排列时所占用的位置，定位和浮动会脱离文档流
 
-#### a:link visited  active hover
+### a:link visited  active hover
 
 | a{} | for a have no href |
 | :--- | :--- |
 | a:link | have href |
 | a:active | when click |
 
-#### 选中区域
+### 选中区域
 
-```
+```text
 /*选中区域颜色*/
 ::selection {
     background-color: #fea;
@@ -59,11 +57,11 @@ input:focus {
 user-select:none;
 ```
 
-#### border:solid 默认是3px\(等价于 border:3px solid \#000;\)
+### border:solid 默认是3px\(等价于 border:3px solid \#000;\)
 
-#### inline-block 空格造成的2px间隙
+### inline-block 空格造成的2px间隙
 
-```
+```text
 <!doctype html>
 <html>
 <head>
@@ -145,9 +143,9 @@ user-select:none;
 
 示例 [http://ecma.bdimg.com/public03/imageplus/test/xishengbo/inline-block-test.html](http://ecma.bdimg.com/public03/imageplus/test/xishengbo/inline-block-test.html)
 
-### 手机端的自适应布局处理方法
+## 手机端的自适应布局处理方法
 
-```
+```text
 1. 适用view-port scale (只需要按照一个尺寸的设计图进行开发，在不同分辨率下做缩放，可能会因为缩放导致模糊问题)
 设计图是基础尺寸是375 根据不同屏幕分辨率进行缩放
 var baseWidth = 375;
@@ -161,11 +159,11 @@ document.write(viewport);
 3. css3 media 不同分辨率 用不同布局方案
 ```
 
-### 运用flex进行上下左右居中处理
+## 运用flex进行上下左右居中处理
 
 [http://bj.bcebos.com/cae-pub-read/public03/imageplus/test/css/flex\_middle.html](http://bj.bcebos.com/cae-pub-read/public03/imageplus/test/css/flex_middle.html)
 
-```
+```text
 <!DOCTYPE html>
 <html>
 <head>
@@ -216,11 +214,11 @@ document.write(viewport);
 </html>
 ```
 
-### 文字截断问题处理
+## 文字截断问题处理
 
-[http://bj.bcebos.com/cae-pub-read/public03/imageplus/test/css/flex\_middle.html](#)
+[http://bj.bcebos.com/cae-pub-read/public03/imageplus/test/css/flex\_middle.html](css_problem.md)
 
-```
+```text
 .one_line {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -238,7 +236,7 @@ document.write(viewport);
 }
 ```
 
-### flex基础入门
+## flex基础入门
 
-https://jsfiddle.net/xishengbo/rxfuuhar/
+[https://jsfiddle.net/xishengbo/rxfuuhar/](https://jsfiddle.net/xishengbo/rxfuuhar/)
 

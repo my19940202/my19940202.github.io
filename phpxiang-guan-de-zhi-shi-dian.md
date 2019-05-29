@@ -1,6 +1,8 @@
+# 知识点-php
+
 ## php代码
 
-```
+```text
 // 打印log常用
 var_dump($name);
 echo "fuck you";
@@ -18,7 +20,7 @@ view
 
 ## Smarty模板上的简单操作
 
-```
+```text
 // 字符串连接
 {%$desc = $ad->desc|cat:$ad->descSec%}
 {%$style_785_class = $style_785_class|cat:"ec-785-idea2062 "%}
@@ -36,6 +38,4 @@ view
 // %.1f 一位小数  %d 整数
  {%$stars = (5-$sublink->content|string_format:"%.1f")*24%}
 ```
-
-
 

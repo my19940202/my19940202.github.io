@@ -1,23 +1,21 @@
-# 常用js 提升效率优雅的代码技巧
+# snippet-js
 
 线上sandbox地址（这玩意做demo预览，很好用）：[https://codesandbox.io/u/my19940202/sandboxes](https://codesandbox.io/u/my19940202/sandboxes)
 
-### separate operator ...操作符日常用法
+## separate operator ...操作符日常用法
 
 从一个有大量key的obj中获取部分key，相对快捷\(浅拷贝，js 原生操作基本都是浅拷贝）
 
-```
+```text
 let a = {a:123, b:123, c:1, d:90, e: 123, x: 123, y: 90}
 let {x, y, ...info} = a
 console.log(info)
 // {a:123, b:123, c: 1, d:90, e: 123}
 ```
 
+## typescript 参数是函数的情况下类型定义怎么写
 
-
-### typescript 参数是函数的情况下类型定义怎么写
-
-```
+```text
 // filter函数的参数不定, 所以写成...args: any[]
 // 函数 ...args: any[]) => any
 export function setFilter(filterName: string,
@@ -29,9 +27,9 @@ export function setFilter(filterName: string,
 }
 ```
 
-### Obj中根据情况添加字段 快捷方式（不用在写if 了）
+## Obj中根据情况添加字段 快捷方式（不用在写if 了）
 
-```
+```text
 var rich = true; 
 var man = {
     name:  'hello world',
@@ -42,9 +40,9 @@ var man = {
 };
 ```
 
-### 动态插入js
+## 动态插入js
 
-```
+```text
 var hm = document.createElement('script');
 var time_stamp = (new Date()).getTime();
 hm.src = '//hm.baidu.com/hm.js?' + time_stamp;
@@ -52,9 +50,9 @@ var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(hm, s);
 ```
 
-### 生成随机字符串\(长度自定义\)
+## 生成随机字符串\(长度自定义\)
 
-```
+```text
 var randomWord = function (randomFlag, min, max){
     var str = "",
     range = min,
@@ -76,9 +74,9 @@ uid = randomWord(false, 32);
 uid = randomWord(true, 1, 10);
 ```
 
-### cookie获取
+## cookie获取
 
-```
+```text
 function getCookie(name) {
     var arr, reg = new RegExp("(^| )"+name+"=([^;]*)(;|$)");
     if (arr = document.cookie.match(reg)) {
@@ -91,24 +89,24 @@ function getCookie(name) {
 }
 ```
 
-### 生成1-n的数组
+## 生成1-n的数组
 
-```
+```text
 var numbersArray = [] , max = 100;
 for( var i=1; numbersArray.push(i++) < max;);
 ```
 
-### 返回数组指定范围的随机一个
+## 返回数组指定范围的随机一个
 
-```
+```text
 var arr = [1,2,3,4,5,6,7,8];
 var min = 0;var max = arr.length;
 var index = Math.floor(Math.random() * (max - min + 1)) + min;
 ```
 
-### 数组 unique去除多余元素
+## 数组 unique去除多余元素
 
-```
+```text
 Array.prototype.unique = function () {
     var uniqueObj = {};
     var newArr = [];
@@ -123,9 +121,9 @@ Array.prototype.unique = function () {
 }
 ```
 
-### 数组reverse
+## 数组reverse
 
-```
+```text
 var arr = [1,2,4,5,6,7,8];
 var arr_reverse = [];
 while (arr.length) {
@@ -134,9 +132,9 @@ while (arr.length) {
 console.log(arr_reverse)
 ```
 
-### js quick sort
+## js quick sort
 
-```
+```text
 function quicksort(a, left, right){
     var i, j, temp;
     i = left;
@@ -155,27 +153,27 @@ function quicksort(a, left, right){
 }
 ```
 
-### 原生手写ajax jsonp等
+## 原生手写ajax jsonp等
 
-```
+```text
 // 有空去补充
 ```
 
-### js前端实验框架
+## js前端实验框架
 
-```
+```text
 正在开发中 还待完成
 ```
 
-### js前端日志框架
+## js前端日志框架
 
-```
+```text
 // 有空去补充
 ```
 
-### gulp 压缩图片的简单配置
+## gulp 压缩图片的简单配置
 
-```
+```text
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
@@ -203,9 +201,9 @@ gulp.task('default', function() {
 });
 ```
 
-### 原生js 实现复制功能 [http://jsrun.net/JYhKp](http://jsrun.net/JYhKp)
+## 原生js 实现复制功能 [http://jsrun.net/JYhKp](http://jsrun.net/JYhKp)
 
-```
+```text
 // 对应的输入框 主要通过execCommand实现功能
 let inputText = document.getElementById('shareInput');
 let currentFocus = document.activeElement;
@@ -215,9 +213,9 @@ document.execCommand('copy', true);
 currentFocus.focus();
 ```
 
-### setTimeout传参方式
+## setTimeout传参方式
 
-```
+```text
 // 传统的方式
 setTimeout(function (x, y) {
     console.log(x, y);
@@ -231,11 +229,11 @@ function a(x, y) {
 setTimeout(a, 1000, 2, 3)
 ```
 
-### es6数组的各种迭代操作异同点
+## es6数组的各种迭代操作异同点
 
 [http://jsrun.net/f6hKp/edit](http://jsrun.net/f6hKp/edit)
 
-### caller 和 callee的区别
+## caller 和 callee的区别
 
 [http://jsrun.net/yLhKp/edit](http://jsrun.net/yLhKp/edit)
 

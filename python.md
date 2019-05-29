@@ -1,8 +1,8 @@
-## 常用py代码段
+# snippet-python
 
-### 正则match domain
+## 正则match domain
 
-```
+```text
 import re
 from urlparse import urlparse
 topHostPostfix = (
@@ -35,11 +35,9 @@ if __name__ == '__main__':
     getDomain('http://fasdf.com/asdfasd?asdf/!#ahsdjhfk&afjsdhfka')
 ```
 
+## 简单邮件发送
 
-
-### 简单邮件发送
-
-```
+```text
 # -*- coding: utf-8 -*-
 # python 发邮件简单demo, 只有安装了sendmail才能work
 from os import path
@@ -76,9 +74,9 @@ if __name__ == '__main__':
     main()
 ```
 
-### 字符串trim 操作
+## 字符串trim 操作
 
-```
+```text
 >>> str = ' fuck___you '
 >>> str.strip()
 'fuck___you'
@@ -89,9 +87,9 @@ if __name__ == '__main__':
 >>>
 ```
 
-### 简单的 server 回应 GET 和 POST
+## 简单的 server 回应 GET 和 POST
 
-```
+```text
 import SimpleHTTPServer  
 import SocketServer  
 import re  
@@ -130,6 +128,4 @@ httpd = SocketServer.TCPServer(("", PORT), Handler)
 print "serving at port", PORT  
 httpd.serve_forever()
 ```
-
-
 

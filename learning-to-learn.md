@@ -1,6 +1,6 @@
-# learning how to learn
+# learning about learning
 
-### **week 5**
+## **week 5**
 
 左右脑的作用角色
 
@@ -17,11 +17,9 @@
 1. 不至于在难题面前卡壳，解决难题的时候 处于专注模式，很难分散思维想到其他解决方法，这样处理起来，保证了思维的发散，避开思维定势
 2. 这样的操作，能解决足够多的题目，不至于卡到一个题目卡死。
 
-
-
 对工作的过度自信，将会导致工作上思维方式的单一化，可能确认创新能力
 
-### **week 4**
+## **week 4**
 
 视觉记忆的特殊性
 
@@ -51,7 +49,7 @@ working memory
 
 随着自己的深入理解，这些小例子会转化成的真正理解的内容
 
-### **week 3**
+## **week 3**
 
 zoombie mode 比如开车的时候用到的那种毫无意识的手脚动作控制，整个大脑只有一个开车的 key pointer
 
@@ -71,9 +69,9 @@ zoombie mode 比如开车的时候用到的那种毫无意识的手脚动作控�
 
 1. 写下睡觉前写下明天的todoList
 
-![](/assets/屏幕快照 2018-12-09 下午5.53.57.png)
+![](.gitbook/assets/ping-mu-kuai-zhao-20181209-xia-wu-5.53.57.png)
 
-1. ### **week 1**
+1. **week 1**
 
 thinking mode 分为：focuse mode & diffuse mode
 
@@ -89,7 +87,7 @@ when you look at something that you really rather not do ,actually you acvative 
 
 long term memory 像电脑的硬盘 长效
 
-working  memory 像电脑的内存 经常进进出出
+working memory 像电脑的内存 经常进进出出
 
 当一段记忆需要进入 long term memory 需要大量的回顾，间隔性的锻炼有利于加强神经突触稳固链路
 
@@ -97,7 +95,7 @@ working  memory 像电脑的内存 经常进进出出
 
 睡眠帮助大脑加深白天学习的内容（睡眠，大脑进入 diffuse mode 会删掉一些无用记忆，加深你要学习的内容，如果睡前自我暗示，效果会更好）
 
-### **week 2**
+## **week 2**
 
 chunk
 
@@ -121,8 +119,6 @@ essential steps of make chunks
 2. understanding && make sense what u learn 
 3. practice and repeat
 
----
-
 **illusion of learning**
 
 recall is a good to solid chunk
@@ -132,19 +128,15 @@ common illusion of learning： 扫了一眼答案 就觉得自己知道怎么解
 1. 总结归纳是个好东西
 2. 自测是个好方法检测是自己是否掌握知识（另外一种形式上的 recall）
 
----
-
 **多巴胺、乙酰胆碱、血清素**
 
-多巴胺** **released when  get unexpected reward
+多巴胺 ****released when get unexpected reward
 
 毒品就是促进多巴胺分泌的
 
 血清素 影响社交生活
 
 交际花 血清素高，血清素低可能冒险行为更多
-
----
 
 building chunk library
 
