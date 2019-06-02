@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>文章-js传值传址 · GitBook</title>
+        <title>哲学相关的课程 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="wen-7ae0-zu-fang.html" />
     
-    
-    <link rel="prev" href="wen-7ae0-chi-cun-dan-wei.html" />
+    <link rel="prev" href="learning-to-learn.html" />
     
 
     </head>
@@ -492,7 +490,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.32" data-path="wen-7ae0-js-chuan-zhi-chuan-zhi.html">
+        <li class="chapter " data-level="1.32" data-path="wen-7ae0-js-chuan-zhi-chuan-zhi.html">
             
                 <a href="wen-7ae0-js-chuan-zhi-chuan-zhi.html">
             
@@ -609,7 +607,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="zhe-xue-xiang-guan-de-ke-cheng.html">
+        <li class="chapter active" data-level="1.41" data-path="zhe-xue-xiang-guan-de-ke-cheng.html">
             
                 <a href="zhe-xue-xiang-guan-de-ke-cheng.html">
             
@@ -652,7 +650,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >文章-js传值传址</a>
+        <a href="." >哲学相关的课程</a>
     </h1>
 </div>
 
@@ -667,41 +665,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>js&#x4F20;&#x503C;&#x4F7F;&#x7528;&#x4E86;&#x5F15;&#x7528;&#xFF0C;&#x5728;&#x4E00;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x5947;&#x602A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5982;</p>
-<pre><code>// &#x6D45;&#x62F7;&#x8D1D;
-var a = [1,2,3]
-var b = a;
-var c = a;
-a[1] = &apos;2nd&apos;;
-// &#x5B9E;&#x9645;&#x8F93;&#x51FA;a,b,c&#x53D1;&#x73B0; &#x90FD;&#x662F; [1, &quot;2nd&quot;, 3]
+                                <h1 id="&#x8BB0;&#x5F55;&#x5B64;&#x72EC;&#x7684;&#x9605;&#x8BFB;&#x8005;&#x91CC;&#x9762;&#x7684;&#x54F2;&#x5B66;&#x8BFE;">&#x8BB0;&#x5F55;&#x5B64;&#x72EC;&#x7684;&#x9605;&#x8BFB;&#x8005;&#x91CC;&#x9762;&#x7684;&#x54F2;&#x5B66;&#x8BFE;</h1>
 
-
-var a = {a:1231,b:312}
-var b = a
-var c =a
-a.a = &apos;this is a in a&apos;
-// &#x5B9E;&#x9645;&#x8F93;&#x51FA;a,b,c &#x53D1;&#x73B0;&#x90FD;&#x662F; {a: &quot;this is a in a&quot;, b: 312}
-</code></pre><h3 id="array">array</h3>
-<pre><code>var a = [1,2,3]
-// var b = a;
-// var c = a;
-var b = a.slice(0, a.length);
-var c = a.concat();
-a[0] = &apos;aaaa&apos;;
-// b,c &#x6CA1;&#x6709;&#x53D8;&#x5316;
-</code></pre><h3 id="object">object</h3>
-<pre><code>// &#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#x8FD8;&#x662F;&#x6709;&#x95EE;&#x9898;&#x7684;(&#x4E00;&#x65E6;&#x8FD9;&#x4E2A;obj&#x6BD4;&#x8F83;&#x590D;&#x6742;,&#x542B;&#x6709;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;function&#x5C31;&#x4E0D;&#x80FD;&#x7528;&#x4E86;)
-var deepCopy = function(source) {
-    var result = {};
-    for (var key in source) {
-        result[key] = typeof source[key]===&apos;object&apos;? deepCopy(source[key]): source[key];
-    } 
-    return result;
-}
-
-// &#x63A8;&#x8350;&#x8FD9;&#x4E2A;&#x4E07;&#x91D1;&#x6CB9;
-JSON.parse(JSON.stringify({a:123}))
-</code></pre>
                                 
                                 </section>
                             
@@ -728,14 +693,10 @@ JSON.parse(JSON.stringify({a:123}))
 
             
                 
-                <a href="wen-7ae0-chi-cun-dan-wei.html" class="navigation navigation-prev " aria-label="Previous page: 文章-尺寸单位">
+                <a href="learning-to-learn.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: learning about learning">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="wen-7ae0-zu-fang.html" class="navigation navigation-next " aria-label="Next page: 文章-租房">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -744,7 +705,7 @@ JSON.parse(JSON.stringify({a:123}))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文章-js传值传址","level":"1.32","depth":1,"next":{"title":"文章-租房","level":"1.33","depth":1,"path":"wen-7ae0-zu-fang.md","ref":"wen-7ae0-zu-fang.md","articles":[]},"previous":{"title":"文章-尺寸单位","level":"1.31","depth":1,"path":"wen-7ae0-chi-cun-dan-wei.md","ref":"wen-7ae0-chi-cun-dan-wei.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"wen-7ae0-js-chuan-zhi-chuan-zhi.md","mtime":"2018-09-18T08:50:44.955Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-02T11:11:45.847Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"哲学相关的课程","level":"1.41","depth":1,"previous":{"title":"learning about learning","level":"1.40","depth":1,"path":"learning-to-learn.md","ref":"learning-to-learn.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zhe-xue-xiang-guan-de-ke-cheng.md","mtime":"2019-06-02T11:11:12.416Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-02T11:11:45.847Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
