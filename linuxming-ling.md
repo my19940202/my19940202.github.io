@@ -2,7 +2,7 @@
 description: 整理常用的命令
 ---
 
-# linux命令
+# linux命令(test)
 
 ## 常用命令
 
@@ -425,4 +425,3 @@ fis3 release -wL (watch模式动态 release）
 fis3 release -d ./output (打包文件到某个目录)
 fis server start stop restart
 ```
-
