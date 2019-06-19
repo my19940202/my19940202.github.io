@@ -4,7 +4,7 @@
 
 全音半音
 
-C调的1234567 基本音![](.gitbook/assets/123456.png)![](.gitbook/assets/gao-zhong-di-123456.jpg)
+C调的1234567 基本音![](assets/123456.png)![](assets/gao-zhong-di-123456.jpg)
 
 倍低音 低音 高音 倍高音（点在上下 进行区分）
 
@@ -18,17 +18,17 @@ C调的1234567 基本音![](.gitbook/assets/123456.png)![](.gitbook/assets/gao-z
 
 ## 打拍子\(需要结合节拍器将自己的节奏感先练好\)
 
-![](.gitbook/assets/wechatimg1054.jpeg)
+![](assets/wechatimg1054.jpeg)
 
 ## **和弦转化**
 
-和弦切换的时候 需要 先把提前按好品和弹出弦![](.gitbook/assets/ping-mu-kuai-zhao-20180224-xia-wu-8.46.25.png)
+和弦切换的时候 需要 先把提前按好品和弹出弦![](assets/ping-mu-kuai-zhao-20180224-xia-wu-8.46.25.png)
 
 ## 歌词踩点的难度
 
 刚开始节奏感不够强，记清楚每个字对应的弦，硬凑凑多了就会养成节奏感
 
-![](.gitbook/assets/wechatimg4744%20%281%29.jpeg)
+![](assets/wechatimg4744%20%281%29.jpeg)
 
 和弦发声要包含下面的1 3 5
 

@@ -68,7 +68,7 @@ name: PropTypes.string.isRequired
 
 }
 
-## reactjs life cycle![](.gitbook/assets/download%20%281%29.png)
+## reactjs life cycle![](assets/download%20%281%29.png)
 
 ```text
 // 父组件更新子组件的时候 该函数被触发

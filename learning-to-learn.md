@@ -69,7 +69,7 @@ zoombie mode 比如开车的时候用到的那种毫无意识的手脚动作控�
 
 1. 写下睡觉前写下明天的todoList
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20181209-xia-wu-5.53.57.png)
+![](assets/ping-mu-kuai-zhao-20181209-xia-wu-5.53.57.png)
 
 1. **week 1**
 

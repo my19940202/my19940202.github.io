@@ -8,17 +8,17 @@
 
 海洋博 ，琉球村, 美国冲绳基地，美国村
 
-## 入住的海边酒店![](.gitbook/assets/img_2826-min.jpg)
+## 入住的海边酒店![](assets/img_2826-min.jpg)
 
 到酒店的第一晚 就趁着夜色海边沙滩走了，心情激动，后半夜有不少机车暴走族在门前的路上呼啸而过
 
-## 海洋博![](.gitbook/assets/img_2839-min.jpeg)
+## 海洋博![](assets/img_2839-min.jpeg)
 
 75年国际海洋博览会基础上起来， 除了有最大的鲸鲨 还有其他种类的海洋生物，种类繁多, 海边浴场（海水真鸡儿咸 不过算是人生第一次海水浴）
 
-![](.gitbook/assets/img_2897.jpg)
+![](assets/img_2897.jpg)
 
-![](.gitbook/assets/img_2929.jpg)
+![](assets/img_2929.jpg)
 
 市区的其他景区，
 
@@ -26,9 +26,9 @@
 
 鱼市场 算是深度游体验了看着渔民下船卸鱼，冲绳红灯区 citywalk
 
-![](.gitbook/assets/img_3063%20%281%29.jpg)
+![](assets/img_3063%20%281%29.jpg)
 
-![](.gitbook/assets/img_3040.jpeg)
+![](assets/img_3040.jpeg)
 
-![](.gitbook/assets/img_3120.jpg)
+![](assets/img_3120.jpg)
 

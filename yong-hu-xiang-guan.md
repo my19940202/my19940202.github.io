@@ -1,8 +1,8 @@
 # 用户体验相关
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20180813-xia-wu-1.31.00.png)
+![](assets/ping-mu-kuai-zhao-20180813-xia-wu-1.31.00.png)
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20180813-xia-wu-1.37.03.png)
+![](assets/ping-mu-kuai-zhao-20180813-xia-wu-1.37.03.png)
 
 一个互联网产品不需要用户体验做到100%，只要
 

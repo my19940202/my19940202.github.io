@@ -1,6 +1,6 @@
 # 知识点-hadoop
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20171007-xia-wu-5.05.04%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.22%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.47%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180917-xia-wu-2.28.00.png)
+![](assets/ping-mu-kuai-zhao-20171007-xia-wu-5.05.04%20%281%29.png)![](assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.22%20%281%29.png)![](assets/ping-mu-kuai-zhao-20180917-xia-wu-2.27.47%20%281%29.png)![](assets/ping-mu-kuai-zhao-20180917-xia-wu-2.28.00.png)
 
 nameNode\(存放文件的真实地址映射\)
 

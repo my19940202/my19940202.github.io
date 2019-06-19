@@ -20,7 +20,7 @@
 
 ## If you wish to persuade me, you must think my thoughts, feel my feelings, and speak my words.
 
-## ![](.gitbook/assets/monday_quote.jpg)
+## ![](assets/monday_quote.jpg)
 
 ## If you want to go fast, go alone. If you want to go far, go together.
 

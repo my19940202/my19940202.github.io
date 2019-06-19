@@ -4,9 +4,9 @@
 
 下次再刷一遍内网视频，列出一下要点
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-6.51.29%20%281%29.png)![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-7.00.53%20%281%29.png)
+![](assets/ping-mu-kuai-zhao-20180227-xia-wu-6.51.29%20%281%29.png)![](assets/ping-mu-kuai-zhao-20180227-xia-wu-7.00.53%20%281%29.png)
 
-![](.gitbook/assets/ping-mu-kuai-zhao-20180227-xia-wu-6.53.12%20%281%29.png)
+![](assets/ping-mu-kuai-zhao-20180227-xia-wu-6.53.12%20%281%29.png)
 
 ## 准备面试\(一次简单的前端面试准备\)
 

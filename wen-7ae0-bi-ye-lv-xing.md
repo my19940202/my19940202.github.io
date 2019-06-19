@@ -32,7 +32,7 @@
 
 ![image](http://ww1.sinaimg.cn/mw690/b359f54bgw1f64sabh0vzj21kw16oh6d.jpg)
 
-![image](.gitbook/assets/qinghai_1%20%281%29.jpeg)![image](.gitbook/assets/qinghai_3.jpeg)![](.gitbook/assets/qinghai_4.jpeg)
+![image](.gitbook/assets/qinghai_1%20%281%29.jpeg)![image](.gitbook/assets/qinghai_3.jpeg)![](assets/qinghai_4.jpeg)
 
 > 在青海湖玩的一天基本都是在车上度过的，驾车去青海湖二郎剑，逛完再去另外一个青海湖景区沙岛，青海湖北岸漫天遍野的黄沙，稀疏的草地。一天玩下来，还是比较累的,回市区的路上又逛了一个古城和一个炎黄主题的庙宇，我后来直接在后座上睡着了
 
@@ -60,7 +60,7 @@
 
 成都留下的印象很深。宽窄巷子：两条街道的两边的建筑看着都有历史沧桑感，各种本地特色小吃，还有曲艺表演的店面，行人络绎不绝，比杭州的河坊街强太多。路过成都的人民公园，发现公园里面的竹桌竹椅摆满了一大片地方，还有看到有人踢毽子，感受了一把成都人民的生活节奏。顺便还去看了国宝熊猫但是也就那样，懒洋洋的熊猫没有什么特别的感觉。![image](.gitbook/assets/chengdu_1.jpeg)重庆山城 嘉陵江水清 长江索道 洪崖洞
 
-![](.gitbook/assets/chongqing_1%20%281%29.jpg)![](.gitbook/assets/chongqing_0%20%281%29.jpeg)
+![](assets/chongqing_1%20%281%29.jpg)![](assets/chongqing_0%20%281%29.jpeg)
 
 ## 回程
 

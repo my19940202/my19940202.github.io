@@ -44,13 +44,13 @@ h5页面提供了设计图
 
 相关图片素材
 
-[http://pajc.nurunci.com/ba/dashboard\#/![](.gitbook/assets/ba.png)](http://pajc.nurunci.com/ba/dashboard#/)
+[http://pajc.nurunci.com/ba/dashboard\#/![](assets/ba.png)](http://pajc.nurunci.com/ba/dashboard#/)
 
 [https://pajc.nurunci.com/campaign/card/index.html](https://pajc.nurunci.com/campaign/card/index.html)
 
 [https://pajc.nurunci.com/campaign/card/code.html](https://pajc.nurunci.com/campaign/card/code.html)
 
-![](.gitbook/assets/h5_code.png)
+![](assets/h5_code.png)
 
-![](.gitbook/assets/lis.png)
+![](assets/lis.png)
 

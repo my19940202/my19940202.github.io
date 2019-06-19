@@ -8,7 +8,7 @@
 
 [https://mp.weixin.qq.com/s?\_\_biz=MzI1Njc0Nzg2Ng==&mid=2247484025&idx=1&sn=eda51bf2b383fff3ffcb091c3e286b1b&chksm=ea20b24cdd573b5ae79c88c424c4f24f92aa9afeacd08a1ecde836d72f4f3314662e6e024444&token=628845763&lang=zh\_CN\#rd](https://mp.weixin.qq.com/s?__biz=MzI1Njc0Nzg2Ng==&mid=2247484025&idx=1&sn=eda51bf2b383fff3ffcb091c3e286b1b&chksm=ea20b24cdd573b5ae79c88c424c4f24f92aa9afeacd08a1ecde836d72f4f3314662e6e024444&token=628845763&lang=zh_CN#rd)
 
-## 贷款知识相关![](.gitbook/assets/money%20%281%29.png)_**等额本息和等额本金 \(大部分情况下利息是差不多的  \)**_
+## 贷款知识相关![](assets/money%20%281%29.png)_**等额本息和等额本金 \(大部分情况下利息是差不多的  \)**_
 
 **等额本金**
 

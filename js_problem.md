@@ -24,7 +24,7 @@ install、postinstall、prepublish、prepare
 
 ## LRU cache
 
-下面这种场景比较适合的解决办法就是lru cache![](.gitbook/assets/memory.png)
+下面这种场景比较适合的解决办法就是lru cache![](assets/memory.png)
 
 ## requestIdleCallback
 
@@ -54,15 +54,15 @@ how: **由系统来决定回调函数的执行时机 \(如果屏幕刷新60hz，
 * heap: 理解成浏览器专用的内存空间
 * stack: 为 js 准备的一个单线程的执行环境
 
-![](.gitbook/assets/11.png)
+![](assets/11.png)
 
 没有异步操作的情况下 栈结构 先进后出
 
-![](.gitbook/assets/js-stack%20%281%29.gif)
+![](assets/js-stack%20%281%29.gif)
 
 存在异步操作的情况（setTimeout 也是一样的情况）
 
-![](.gitbook/assets/callback%20%281%29.gif)
+![](assets/callback%20%281%29.gif)
 
 ### 函数调用情况
 
@@ -72,7 +72,7 @@ how: **由系统来决定回调函数的执行时机 \(如果屏幕刷新60hz，
 
 总结： 能够显示函数的调用流程
 
-![](.gitbook/assets/chrome_call_stack%20%281%29.png)
+![](assets/chrome_call_stack%20%281%29.png)
 
 ### 闭包问题
 
@@ -139,7 +139,7 @@ addEventListener\('click', function\(\){},true\); // 设置捕获类型
 
 event.preventDefault\(\) //阻止捕获
 
-![](.gitbook/assets/import.png)
+![](assets/import.png)
 
 ## es6相关问题 &gt;\_&lt;
 
@@ -155,7 +155,7 @@ event.preventDefault\(\) //阻止捕获
 
 ### 浏览器解析基本流程
 
-![](.gitbook/assets/3055132361-55169ffa877a0_articlex%20%281%29.png)
+![](assets/3055132361-55169ffa877a0_articlex%20%281%29.png)
 
 ### repaint
 
@@ -178,7 +178,7 @@ event.preventDefault\(\) //阻止捕获
 >
 > [https://segmentfault.com/a/1190000002629708](https://segmentfault.com/a/1190000002629708)
 
-![](.gitbook/assets/v2-b82f2d58aa3356b8b58c69067b828855_b%20%281%29.png)
+![](assets/v2-b82f2d58aa3356b8b58c69067b828855_b%20%281%29.png)
 
 ## await async的理解
 

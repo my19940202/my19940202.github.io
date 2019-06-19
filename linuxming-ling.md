@@ -351,7 +351,7 @@ https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%8
 
 > git commit --amend 注意事项： 有的时候一部小心把 change id 改没了，再去提交就会出现下面的提示（所以amend操作也有分险，公司内网的git有过定制化配置会有changeid输出，外网的github检查了一下没有changeid）
 
-![](.gitbook/assets/git_amend.png)![](.gitbook/assets/git_missing_changeid.png)
+![](assets/git_amend.png)![](assets/git_missing_changeid.png)
 
 ## vim
 
