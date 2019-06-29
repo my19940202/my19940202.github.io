@@ -3,7 +3,7 @@
 * [介绍](README.md)
 * [### 技术相关]
     * [编码注意事项](bian-ma-zhu-yi-shi-xiang.md)
-    * [linux命令](linuxming-ling.md)
+    * [linux命令](linux_cmd.md.md)
     * [snippet-js](js.md)
     * [snippet-python](python.md)
     * [知识点-css](css_problem.md)
