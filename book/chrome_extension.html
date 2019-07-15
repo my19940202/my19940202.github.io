@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>文章-2017总结 · GitBook</title>
+        <title>知识点-chrome extension · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="wen-7ae0-2015-zong-jie.html" />
+    <link rel="next" href="vuexiang-guan-xue-xi.html" />
     
+    
+    <link rel="prev" href="reduxxue-xi-ji-lu.html" />
     
 
     </head>
@@ -257,7 +259,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.12" data-path="chrome_extension.html">
+        <li class="chapter active" data-level="1.2.12" data-path="chrome_extension.html">
             
                 <a href="chrome_extension.html">
             
@@ -490,7 +492,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="wen-7ae0-2017-zong-jie.html">
+        <li class="chapter " data-level="1.4.1" data-path="wen-7ae0-2017-zong-jie.html">
             
                 <a href="wen-7ae0-2017-zong-jie.html">
             
@@ -655,7 +657,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >文章-2017总结</a>
+        <a href="." >知识点-chrome extension</a>
     </h1>
 </div>
 
@@ -670,11 +672,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6587;&#x7AE0;-2017&#x603B;&#x7ED3;">&#x6587;&#x7AE0;-2017&#x603B;&#x7ED3;</h1>
-<h2 id="&#x6709;&#x79CD;&#x65E0;&#x529B;&#x611F;">&#x6709;&#x79CD;&#x65E0;&#x529B;&#x611F;</h2>
-<p>&#x6280;&#x672F;&#x80FD;&#x529B;&#x4E0A; &#x6CA1;&#x6709;&#x592A;&#x5927;&#x7684;&#x8FDB;&#x6B65;</p>
-<p>&#x59B9;&#x5B50;&#x5565;&#x7684;</p>
-<p>&#x672A;&#x6765;&#x76EE;&#x6807;&#xFF08;&#x843D;&#x6237;&#x4E0A;&#x6D77; &#x8FD8;&#x662F;&#x6EDA;&#x56DE;&#x676D;&#x5DDE;&#x5565;&#x7684;&#xFF09;</p>
+                                <h1 id="chrome&#x63D2;&#x4EF6;&#x5F00;&#x53D1;&#x653B;&#x7565;">chrome&#x63D2;&#x4EF6;&#x5F00;&#x53D1;&#x653B;&#x7565;</h1>
+<p><img src="assets/chrome_extension_structure.png" alt="&#x7ED3;&#x6784;&#x5BFC;&#x56FE;"></p>
+<h2 id="manifestjson&#x89E3;&#x6790;">manifest.json&#x89E3;&#x6790;</h2>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;manifest_version&quot;</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;username type collect extension&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;username type collect extension&quot;</span>,
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>,
+    <span class="hljs-comment">// &#x63D2;&#x4EF6;&#x7528;&#x7684;&#x6743;&#x9650;&#xFF08;&#x6BD4;&#x5982;&#x9700;&#x8981;&#x5199;&#x5165;&#x7F13;&#x5B58;&#xFF0C;&#x5219;&#x8981;&#x6C42;&#x914D;&#x7F6E;storage&#xFF09;</span>
+    <span class="hljs-string">&quot;permissions&quot;</span>: [
+        <span class="hljs-string">&quot;tabs&quot;</span>,
+        <span class="hljs-string">&quot;storage&quot;</span>,
+        <span class="hljs-string">&quot;notifications&quot;</span>,
+        <span class="hljs-string">&quot;http://*/*&quot;</span>,<span class="hljs-string">&quot;https://*/*&quot;</span>
+    ],
+    <span class="hljs-comment">// popup&#x7684;icon&#xFF0C;popup&#x5F15;&#x5165;js&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;html&#x5185;&#x90E8;&#x76F4;&#x63A5;script&#x5F15;&#x5165;</span>
+    <span class="hljs-string">&quot;browser_action&quot;</span>: {
+        <span class="hljs-string">&quot;default_icon&quot;</span>: <span class="hljs-string">&quot;icon.png&quot;</span>,
+        <span class="hljs-string">&quot;default_popup&quot;</span>: <span class="hljs-string">&quot;popup.html&quot;</span>
+    },
+    <span class="hljs-comment">// &#x63D2;&#x4EF6;&#x4E00;&#x76F4;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x7684;js</span>
+    <span class="hljs-string">&quot;background&quot;</span>: {
+        <span class="hljs-comment">// &#x5982;&#x4E0B;&#x65B9;&#x5F0F;, &#x53EF;&#x4EE5;&#x4F9D;&#x6B21;&#x5F15;&#x5165;&#x591A;&#x4E2A;js</span>
+        <span class="hljs-string">&quot;scripts&quot;</span>: [<span class="hljs-string">&quot;lib/lodash.min.js&quot;</span>, <span class="hljs-string">&quot;background.js&quot;</span>],
+        <span class="hljs-string">&quot;persistent&quot;</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-comment">// &#x76F4;&#x63A5;&#x63D2;&#x5165;&#x5230;&#x9875;&#x9762;&#x4E2D;&#x7684;js</span>
+    <span class="hljs-string">&quot;content_scripts&quot;</span>: [{
+        <span class="hljs-string">&quot;matches&quot;</span>: [<span class="hljs-string">&quot;http://*/*&quot;</span>,<span class="hljs-string">&quot;https://*/*&quot;</span>],
+        <span class="hljs-string">&quot;js&quot;</span>: [<span class="hljs-string">&quot;constant.js&quot;</span>, <span class="hljs-string">&quot;mockDrag.js&quot;</span>, <span class="hljs-string">&quot;collectData.js&quot;</span>],
+        <span class="hljs-comment">// &#x5B9A;&#x5236;js&#x8FD0;&#x884C;&#x65B9;&#x5F0F;</span>
+        <span class="hljs-string">&quot;run_at&quot;</span>: <span class="hljs-string">&quot;document_end&quot;</span>
+    }]
+}
+</code></pre>
+<h2 id="chrome-runtime-&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x533A;&#x522B;">chrome runtime &#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x533A;&#x522B;</h2>
+<h2 id="&#x4E0D;&#x540C;js&#x7684;&#x4F5C;&#x7528;">&#x4E0D;&#x540C;js&#x7684;&#x4F5C;&#x7528;</h2>
+<h2 id="&#x5176;&#x4ED6;&#x6682;&#x672A;&#x7528;&#x5230;&#x7684;&#x529F;&#x80FD;">&#x5176;&#x4ED6;&#x6682;&#x672A;&#x7528;&#x5230;&#x7684;&#x529F;&#x80FD;</h2>
+<blockquote>
+<p>&#x4E4B;&#x524D;&#x5F00;&#x53D1;&#x7684;&#x722C;&#x53D6;&#x5E10;&#x53F7;&#x4FE1;&#x606F;&#x7684;chrome&#x63D2;&#x4EF6;&#x4EE3;&#x7801;&#xFF1A;<a href="https://github.com/my19940202/ali_passportpage_validate_crx" target="_blank">https://github.com/my19940202/ali_passportpage_validate_crx</a></p>
+<p>&#x7FFB;&#x8BD1;&#x7684;chrome extension&#x6587;&#x6863;&#xFF1A;<a href="https://crxdoc-zh.appspot.com/extensions/overview" target="_blank">https://crxdoc-zh.appspot.com/extensions/overview</a>
+&#x6BD4;&#x8F83;&#x8BE6;&#x7EC6;&#x535A;&#x5BA2;&#xFF1A; <a href="https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html" target="_blank">https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html</a></p>
+</blockquote>
 
                                 
                                 </section>
@@ -702,8 +742,12 @@
 
             
                 
+                <a href="reduxxue-xi-ji-lu.html" class="navigation navigation-prev " aria-label="Previous page: 知识点-redux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="wen-7ae0-2015-zong-jie.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 文章-2015总结">
+                
+                <a href="vuexiang-guan-xue-xi.html" class="navigation navigation-next " aria-label="Next page: vue的一个项目">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -714,7 +758,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文章-2017总结","level":"1.4.1","depth":2,"next":{"title":"文章-2015总结","level":"1.4.2","depth":2,"path":"wen-7ae0-2015-zong-jie.md","ref":"wen-7ae0-2015-zong-jie.md","articles":[]},"previous":{"title":"[### 文章]","level":"1.4","depth":1,"ref":"","articles":[{"title":"文章-2017总结","level":"1.4.1","depth":2,"path":"wen-7ae0-2017-zong-jie.md","ref":"wen-7ae0-2017-zong-jie.md","articles":[]},{"title":"文章-2015总结","level":"1.4.2","depth":2,"path":"wen-7ae0-2015-zong-jie.md","ref":"wen-7ae0-2015-zong-jie.md","articles":[]},{"title":"文章-cookie","level":"1.4.3","depth":2,"path":"wen-7ae0-cookie.md","ref":"wen-7ae0-cookie.md","articles":[]},{"title":"文章-毕业旅行","level":"1.4.4","depth":2,"path":"wen-7ae0-bi-ye-lv-xing.md","ref":"wen-7ae0-bi-ye-lv-xing.md","articles":[]},{"title":"文章-nginx","level":"1.4.5","depth":2,"path":"wen-7ae0-nginx.md","ref":"wen-7ae0-nginx.md","articles":[]},{"title":"文章-尺寸单位","level":"1.4.6","depth":2,"path":"wen-7ae0-chi-cun-dan-wei.md","ref":"wen-7ae0-chi-cun-dan-wei.md","articles":[]},{"title":"文章-租房","level":"1.4.7","depth":2,"path":"wen-7ae0-zu-fang.md","ref":"wen-7ae0-zu-fang.md","articles":[]},{"title":"文章-冲绳","level":"1.4.8","depth":2,"path":"wen-7ae0-chong-sheng.md","ref":"wen-7ae0-chong-sheng.md","articles":[]},{"title":"文章-约旦迪拜行","level":"1.4.9","depth":2,"path":"wen-7ae0-yue-dan-di-bai-xing.md","ref":"wen-7ae0-yue-dan-di-bai-xing.md","articles":[]},{"title":"letter_to_gf","level":"1.4.10","depth":2,"path":"letter_to_gf.md","ref":"letter_to_gf.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"wen-7ae0-2017-zong-jie.md","mtime":"2019-06-22T08:48:31.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T11:48:35.881Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"知识点-chrome extension","level":"1.2.12","depth":2,"next":{"title":"vue的一个项目","level":"1.2.13","depth":2,"path":"vuexiang-guan-xue-xi.md","ref":"vuexiang-guan-xue-xi.md","articles":[]},"previous":{"title":"知识点-redux","level":"1.2.11","depth":2,"path":"reduxxue-xi-ji-lu.md","ref":"reduxxue-xi-ji-lu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chrome_extension.md","mtime":"2019-07-15T11:46:58.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T11:48:35.881Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
