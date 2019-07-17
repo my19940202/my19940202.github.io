@@ -1,12 +1,25 @@
 # 知识点-js
 
+## package-lock的字段的释义
+
+> https://docs.npmjs.com/files/package-lock.json#optional
+
 ## npm install流程
 
 运行install 过程中，其实和 react 的生命周期一样，会经历多个流程
 
-install、postinstall、prepublish、prepare
+install: postinstall => prepublish =>prepare
 
-> codesandbox 例子 [https://codesandbox.io/dashboard](https://codesandbox.io/dashboard)
+实际项目应用
+- 自定义安装过程中做一些自定义操作
+- 项目提交的commit hook
+```json
+"scripts": {
+        "postinstall": "npm dedupe",
+        "commit": "npx git-cz",
+    }
+```
+> codesandbox 例子 [https://codesandbox.io/s/packagejson-scriptzhixingdeshunxu-gsc6u](https://codesandbox.io/s/packagejson-scriptzhixingdeshunxu-gsc6u)
 
 ## **npm** **dedupe作用**（好像是这个npm3版本开始有的新特性）
 
