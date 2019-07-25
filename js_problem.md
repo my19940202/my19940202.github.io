@@ -1,5 +1,8 @@
 # 知识点-js
 
+## typescript的tsconfig字段全释义
+> http://json.schemastore.org/tsconfig
+
 ## package-lock的字段的释义
 
 > https://docs.npmjs.com/files/package-lock.json#optional

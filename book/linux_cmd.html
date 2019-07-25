@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="linux_cmd.md.html">
+        <li class="chapter active" data-level="1.2.2" data-path="linux_cmd.html">
             
-                <a href="linux_cmd.md.html">
+                <a href="linux_cmd.html">
             
                     
                     linux命令
@@ -672,7 +672,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linux&#x547D;&#x4EE4;test">linux&#x547D;&#x4EE4;(test)</h1>
+                                <h1 id="linux&#x547D;&#x4EE4;">linux&#x547D;&#x4EE4;</h1>
+<blockquote>
+<p>linux&#x6BD4;&#x8F83;&#x5B8C;&#x5584;&#x7684;&#x901F;&#x67E5;&#x624B;&#x518C;&#xFF1A;<a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html" target="_blank">https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</a></p>
+</blockquote>
+<h2 id="shell&#x8BED;&#x8A00;&#x5907;&#x5FD8;&#x5F55;">shell&#x8BED;&#x8A00;&#x5907;&#x5FD8;&#x5F55;</h2>
+<h3 id="&#x7CFB;&#x7EDF;&#x5E38;&#x91CF;">&#x7CFB;&#x7EDF;&#x5E38;&#x91CF;</h3>
+<pre><code class="lang-shell"># &#x7279;&#x6B8A;&#x5E38;&#x91CF;
+echo &quot;File Name: $0&quot;
+echo &quot;1st Parameter : $1&quot;
+echo &quot;2nd Parameter : $2&quot;
+echo &quot;all Parameter: $@&quot;
+echo &quot;all Parameter: $*&quot;
+echo &quot;Total Number of Parameters : $#&quot;
+echo &quot;ppid : $$&quot;
+</code></pre>
+<h3 id="&#x53D8;&#x91CF;&#x7C7B;&#x578B;">&#x53D8;&#x91CF;&#x7C7B;&#x578B;</h3>
+<ul>
+<li>&#x6570;&#x7EC4;<pre><code class="lang-shell">query_arr=(&quot;&#x6EE4;&#x82AF;&quot; &quot;&#x51C0;&#x6C34;&#x5668;&#x6EE4;&#x82AF;&quot; &quot;&#x9C9C;&#x82B1;&quot; &quot;&#x7F8E;&#x56FD;&#x79FB;&#x6C11;&quot;)
+</code></pre>
+</li>
+<li><p>&#x5B57;&#x7B26;&#x4E32;</p>
+<ul>
+<li>&#x8D4B;&#x503C;(&#x7B49;&#x53F7;&#x5DE6;&#x53F3;&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x7A7A;&#x683C;,x=&quot;xxx&quot;)</li>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;&#xFF08;&#x4F8B;&#x5B50;&#x5982;&#x4E0B;&#xFF09;</li>
+<li>&#x6CE8;&#x610F;&#x70B9;<ul>
+<li>&#x5355;&#x5F15;&#x53F7;&#x91CC;&#x7684;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x90FD;&#x4F1A;&#x539F;&#x6837;&#x8F93;&#x51FA;&#xFF0C;&#x5355;&#x5F15;&#x53F7;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x65E0;&#x6548;&#x7684;&#xFF1B;</li>
+<li>&#x5355;&#x5F15;&#x53F7;&#x5B57;&#x4E32;&#x4E2D;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x7684;&#x5355;&#x5F15;&#x53F7;&#xFF08;&#x5BF9;&#x5355;&#x5F15;&#x53F7;&#x4F7F;&#x7528;&#x8F6C;&#x4E49;&#x7B26;&#x540E;&#x4E5F;&#x4E0D;&#x884C;&#xFF09;&#xFF0C;&#x4F46;&#x53EF;&#x6210;&#x5BF9;&#x51FA;&#x73B0;&#xFF0C;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x53CC;&#x5F15;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x91CF;&#x66FF;&#x6362;</li>
+<li>&#x53CD;&#x5F15;&#x53F7;&#xFF08;&#x547D;&#x4EE4;&#x66FF;&#x6362;&#xFF09;<pre><code class="lang-shell">x=&quot;fufufufu&quot;
+date=`date -d &apos;yesterday&apos; &apos;+%m%d&apos;`
+echo $x
+echo ${x}
+echo &quot;test-&quot;$x
+echo &quot;this is y ${x}&quot;
+# &#x6CE8;&#x610F;&#xFF1A; &apos;&apos;&#x4E2D;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x8F6C;&#x4E49;
+echo &apos;this is y ${x}&apos;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x6CE8;&#x91CA;</p>
+<ul>
+<li>&#x5355;&#x884C;#</li>
+<li>&#x591A;&#x884C;(&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x6682;&#x65F6;&#x5FFD;&#x7565;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6D41;&#x7A0B;&#x63A7;&#x5236;">&#x6D41;&#x7A0B;&#x63A7;&#x5236;</h3>
+<ul>
+<li>if</li>
+<li>for</li>
+</ul>
+<pre><code class="lang-shell">#-gt&#x662F;&#x5927;&#x4E8E;
+#-lt&#x662F;&#x5C0F;&#x4E8E;
+#-eq&#x662F;&#x7B49;&#x4E8E;
+#-ne&#x662F;&#x4E0D;&#x7B49;&#x4E8E;
+#-ge&#x662F;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;
+#le&#x662F;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;   
+
+if [ -z &quot;$1&quot; ]
+  then
+    echo &quot;No arguments supplied &quot;$1
+  else
+    if [ &quot;$1&quot; -gt 10 ]
+      then
+        echo &quot;&#x53C2;&#x6570;&#x5927;&#x4E8E;10&#xFF1A;&quot;$1
+      else
+        echo &quot;&#x53C2;&#x6570;&#x5C0F;&#x4E8E;10&#xFF1A; &quot;$1
+    fi
+fi
+
+# for i in {1..10}
+# do
+#    echo $i
+# done
+
+# (( ))
+# for((i=1;i&lt;100;i++))
+# do
+#     if((i%10==0))
+#     then
+#         echo $i
+#         continue
+#     fi
+# done
+# 
+
+for File in 1 2 3 4 5
+do
+    echo ${File}&apos;12345&apos;
+done
+</code></pre>
+<hr>
+
 <h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
 <table>
 <thead>
@@ -1062,7 +1157,7 @@ b=1
 <h2 id="&#x89C2;&#x5BDF;bin&#x6709;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x542F;&#x52A8;&#x8D77;&#x6765;&#x7684;&#x65B9;&#x6CD5;">&#x89C2;&#x5BDF;/bin&#x6709;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x542F;&#x52A8;&#x8D77;&#x6765;&#x7684;&#x65B9;&#x6CD5;</h2>
 <ul>
 <li>&#x901A;&#x8FC7;top&#x547D;&#x4EE4; &#x770B;&#x6539;&#x7A0B;&#x5E8F;&#x7684; cpu&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x822C;&#x521A;&#x5F00;&#x59CB;&#x542F;&#x52A8; &#x5360;&#x7528;&#x5F88;&#x9AD8;&#xFF08;&#x505A;&#x5404;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x8F7D;&#x5165;&#x914D;&#x7F6E;&#x7B49;&#x7B49;&#xFF09;</li>
-<li>tailf &#x89C2;&#x5BDF;log&#x76EE;&#x5F55;log&#xFF0C;&#x4E00;&#x822C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E; &#x65E5;&#x5FD7;&#x91CF;&#x5F00;&#x59CB;&#x8BB2;&#x51CF;&#x6162;</li>
+<li>tailf &#x89C2;&#x5BDF;log&#x76EE;&#x5F55;log&#xFF0C;&#x4E00;&#x822C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E; &#x65E5;&#x5FD7;&#x91CF;&#x5F00;&#x59CB;&#x589E;&#x52A0;</li>
 </ul>
 <h2 id="git&#x76F8;&#x5173;">git&#x76F8;&#x5173;</h2>
 <pre><code class="lang-text">&#x201C;&#x5728;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x63D0;&#x4EA4;&#x4E86;&#x597D;&#x591A;&#x6B21;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x6B21;merge master&#x51B2;&#x7A81;&#xFF0C;&#x6700;&#x540E;&#x5408;&#x5165;&#x5931;&#x8D25;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#x5904;&#x7406;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x56DE;&#x6EDA;&#x4E4B;&#x524D;&#x7684;&#x591A;&#x6B21; commit,&#x9002;&#x7528;&#x4E8E;&#x5206;&#x652F;&#x6CA1;&#x6709;push&#x7684;&#x573A;&#x666F;&#xFF09;&#x201D;
@@ -1129,7 +1224,7 @@ console.log(process.env.PORT, &quot;this is port&quot;);
 
 /*
 env PORT=8093 node test.js
-export PORT=8093 
+export PORT=8093
 &amp;
 &amp;
  node test.js
@@ -1184,7 +1279,7 @@ fis server start stop restart
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"整理常用的命令","title":"linux命令","level":"1.2.2","depth":2,"next":{"title":"snippet-js","level":"1.2.3","depth":2,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"编码注意事项","level":"1.2.1","depth":2,"path":"bian-ma-zhu-yi-shi-xiang.md","ref":"bian-ma-zhu-yi-shi-xiang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux_cmd.md.md","mtime":"2019-06-22T12:50:44.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T06:56:54.051Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"整理常用的命令","title":"linux命令","level":"1.2.2","depth":2,"next":{"title":"snippet-js","level":"1.2.3","depth":2,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"编码注意事项","level":"1.2.1","depth":2,"path":"bian-ma-zhu-yi-shi-xiang.md","ref":"bian-ma-zhu-yi-shi-xiang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux_cmd.md","mtime":"2019-07-25T07:22:21.898Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-25T07:23:21.679Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

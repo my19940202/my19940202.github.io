@@ -2,10 +2,98 @@
 description: 整理常用的命令
 ---
 
-# linux命令(test)
+# linux命令
+> linux比较完善的速查手册：https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html
+
+## shell语言备忘录
+### 系统常量
+```shell
+# 特殊常量
+echo "File Name: $0"
+echo "1st Parameter : $1"
+echo "2nd Parameter : $2"
+echo "all Parameter: $@"
+echo "all Parameter: $*"
+echo "Total Number of Parameters : $#"
+echo "ppid : $$"
+```
+### 变量类型
+- 数组
+```shell
+query_arr=("滤芯" "净水器滤芯" "鲜花" "美国移民")
+```
+- 字符串
+    - 赋值(等号左右不允许有空格,x="xxx")
+    - 字符串拼接（例子如下）
+    - 注意点
+        - 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+        - 单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。
+        - 双引号可以变量替换
+        - 反引号（命令替换）
+```shell
+x="fufufufu"
+date=`date -d 'yesterday' '+%m%d'`
+echo $x
+echo ${x}
+echo "test-"$x
+echo "this is y ${x}"
+# 注意： ''中变量不会转义
+echo 'this is y ${x}'
+```
+
+- 注释
+    - 单行#
+    - 多行(比较麻烦暂时忽略)
+
+### 流程控制
+- if
+- for
+
+```shell
+#-gt是大于
+#-lt是小于
+#-eq是等于
+#-ne是不等于
+#-ge是大于等于
+#le是小于等于   
+
+if [ -z "$1" ]
+  then
+    echo "No arguments supplied "$1
+  else
+    if [ "$1" -gt 10 ]
+      then
+        echo "参数大于10："$1
+      else
+        echo "参数小于10： "$1
+    fi
+fi
+
+# for i in {1..10}
+# do
+#    echo $i
+# done
+
+# (( ))
+# for((i=1;i<100;i++))
+# do
+#     if((i%10==0))
+#     then
+#         echo $i
+#         continue
+#     fi
+# done
+# 
+
+for File in 1 2 3 4 5
+do
+    echo ${File}'12345'
+done
+```
+
+<hr/>
 
 ## 常用命令
-
 | 类型 | 命令 | 作用 |
 | :--- | :--- | :--- |
 | 文件操作 | ls 20161_.log_ _ls20160\[1-9\]_.log | 正则方式筛选输出 |
@@ -335,7 +423,7 @@ b=1
 ## 观察/bin有没有完全启动起来的方法
 
 * 通过top命令 看改程序的 cpu占用情况，一般刚开始启动 占用很高（做各种初始化工作，载入配置等等）
-* tailf 观察log目录log，一般启动完成后 日志量开始讲减慢
+* tailf 观察log目录log，一般启动完成后 日志量开始增加
 
 ## git相关
 
@@ -415,7 +503,7 @@ console.log(process.env.PORT, "this is port");
 
 /*
 env PORT=8093 node test.js
-export PORT=8093 
+export PORT=8093
 &
 &
  node test.js
