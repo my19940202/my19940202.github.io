@@ -14,7 +14,7 @@
     * [知识点-react](reactjssi-lu-zheng-li.md)
     * [知识点-redux](reduxxue-xi-ji-lu.md)
     * [知识点-chrome extension](chrome_extension.md)
-    * [vue的一个项目](vuexiang-guan-xue-xi.md)
+    * [VUE项目实践](vue_project.md)
     * [互联网广告](hu-lian-wang-guang-gao.md)
     * [技术其他](extra.md)
     * [做好ppt的方法](zuo-hao-ppt-de-fang-fa.md)

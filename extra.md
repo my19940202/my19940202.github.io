@@ -108,8 +108,12 @@ PhoneListCtrl.$inject = ['$scope', '$http'];
 <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
 </li>
 ```
-
+angular1.x相关blog归档
 > [https://www.runoob.com/angularjs/angularjs-reference.html](https://www.runoob.com/angularjs/angularjs-reference.html)
+> AngularJS入门教程: https://github.com/zensh/AngularjsTutorial_cn
+> 事件相关：https://blog.csdn.net/u010730126/article/details/51785669
+> 官方API(english): https://docs.angularjs.org/api/auto/service/$injector
+
 
 <hr/>
 
