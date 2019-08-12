@@ -1,5 +1,37 @@
 # 知识点-js
 
+## typescript的泛型的理解
+- 官方释义：关键目的是在成员之间提供有意义的约束
+- 我的理解：就是处理类型不确定的情况下，用泛型处理类型不确定相关的依赖
+
+```javascript
+export interface Params<T> {
+    namespace: string;
+    query: T|string;
+    responseRewrite?: Object|string;
+}
+interface Query {
+    name: string;
+    age: number;
+    sex: string;
+}
+function testT(config: Params<Query>) {
+    console.log(config);
+}
+// query字段类型不确定, 可以自定义成Query类型或者字符串
+testT({
+    namespace: 'TEST',
+    query: {
+        name: 'xibobo',
+        age: 25,
+        sex: 'male'
+    }
+});
+```
+
+> 参考文章和更多例子：https://jkchao.github.io/typescript-book-chinese/typings/generices.html#动机和示例
+> https://www.tslang.cn/docs/handbook/generics.html
+
 ## typescript的tsconfig字段全释义
 > http://json.schemastore.org/tsconfig
 

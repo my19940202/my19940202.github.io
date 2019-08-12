@@ -673,6 +673,38 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x77E5;&#x8BC6;&#x70B9;-js">&#x77E5;&#x8BC6;&#x70B9;-js</h1>
+<h2 id="typescript&#x7684;&#x6CDB;&#x578B;&#x7684;&#x7406;&#x89E3;">typescript&#x7684;&#x6CDB;&#x578B;&#x7684;&#x7406;&#x89E3;</h2>
+<ul>
+<li>&#x5B98;&#x65B9;&#x91CA;&#x4E49;&#xFF1A;&#x5173;&#x952E;&#x76EE;&#x7684;&#x662F;&#x5728;&#x6210;&#x5458;&#x4E4B;&#x95F4;&#x63D0;&#x4F9B;&#x6709;&#x610F;&#x4E49;&#x7684;&#x7EA6;&#x675F;</li>
+<li>&#x6211;&#x7684;&#x7406;&#x89E3;&#xFF1A;&#x5C31;&#x662F;&#x5904;&#x7406;&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7528;&#x6CDB;&#x578B;&#x5904;&#x7406;&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;&#x76F8;&#x5173;&#x7684;&#x4F9D;&#x8D56;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> interface Params&lt;T&gt; {
+    namespace: string;
+    query: T|string;
+    responseRewrite?: <span class="hljs-built_in">Object</span>|string;
+}
+interface Query {
+    name: string;
+    age: number;
+    sex: string;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testT</span>(<span class="hljs-params">config: Params&lt;Query&gt;</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(config);
+}
+<span class="hljs-comment">// query&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;, &#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x6210;Query&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32;</span>
+testT({
+    namespace: <span class="hljs-string">&apos;TEST&apos;</span>,
+    query: {
+        name: <span class="hljs-string">&apos;xibobo&apos;</span>,
+        age: <span class="hljs-number">25</span>,
+        sex: <span class="hljs-string">&apos;male&apos;</span>
+    }
+});
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x7AE0;&#x548C;&#x66F4;&#x591A;&#x4F8B;&#x5B50;&#xFF1A;<a href="https://jkchao.github.io/typescript-book-chinese/typings/generices.html#&#x52A8;&#x673A;&#x548C;&#x793A;&#x4F8B;" target="_blank">https://jkchao.github.io/typescript-book-chinese/typings/generices.html#&#x52A8;&#x673A;&#x548C;&#x793A;&#x4F8B;</a>
+<a href="https://www.tslang.cn/docs/handbook/generics.html" target="_blank">https://www.tslang.cn/docs/handbook/generics.html</a></p>
+</blockquote>
 <h2 id="typescript&#x7684;tsconfig&#x5B57;&#x6BB5;&#x5168;&#x91CA;&#x4E49;">typescript&#x7684;tsconfig&#x5B57;&#x6BB5;&#x5168;&#x91CA;&#x4E49;</h2>
 <blockquote>
 <p><a href="http://json.schemastore.org/tsconfig" target="_blank">http://json.schemastore.org/tsconfig</a></p>
@@ -885,7 +917,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.2.6","depth":2,"next":{"title":"知识点-nodejs","level":"1.2.7","depth":2,"path":"chang-jian-nodejs-wen-ti.md","ref":"chang-jian-nodejs-wen-ti.md","articles":[]},"previous":{"title":"知识点-css","level":"1.2.5","depth":2,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2019-07-24T07:56:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-30T11:17:37.884Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"知识点-js","level":"1.2.6","depth":2,"next":{"title":"知识点-nodejs","level":"1.2.7","depth":2,"path":"chang-jian-nodejs-wen-ti.md","ref":"chang-jian-nodejs-wen-ti.md","articles":[]},"previous":{"title":"知识点-css","level":"1.2.5","depth":2,"path":"css_problem.md","ref":"css_problem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js_problem.md","mtime":"2019-08-12T13:59:10.364Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T13:59:55.285Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
