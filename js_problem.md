@@ -86,10 +86,34 @@ how: **由系统来决定回调函数的执行时机 \(如果屏幕刷新60hz，
 >
 > [https://blog.csdn.net/vhwfr2u02q/article/details/79492303](https://blog.csdn.net/vhwfr2u02q/article/details/79492303)
 
-### JS微任务\(Microtasks\) & 宏任务\(task\)
+### JS微任务\(Microtasks\) & 宏任务\(Macrotasks\)
 
-* 宏任务：包括整体代码script，setTimeout，setInterval、setImmediate。
-* 微任务：原生Promise\(有些实现的promise将then方法放到了宏任务中\)、process.nextTick、Object.observe\(已废弃\)、 MutationObserver 记住就行了。
+* Macrotasks: 包括整体代码script，setTimeout，setInterval、setImmediate。
+* Microtasks: 原生Promise\(有些实现的promise将then方法放到了宏任务中,相对少见忽略\)、process.nextTick、Object.observe\(已废弃\)、 MutationObserver 记住就行了。
+执行顺序的小题目
+```
+setTimeout(function(){console.log(4)},0);
+new Promise(function(resolve){
+    console.log(1)
+    for( var i=0 ; i<10000 ; i++ ){
+        i==9999 && resolve()
+    }
+    console.log(2)
+}).then(function(){
+    console.log(5)
+});
+console.log(3);
+// 实际执行顺序  1 2 3 5 4
+// event loop执行顺序：先宏任务，然后在执行这个宏任务中引入的微任务，然后依次往复
+// 1. Macrotasks队列: 第一次全部载入代码script(setTimeout发现也是宏，追加到队列中)
+// 1 2(promise的executor会初始化执行) 3
+// Microtasks队列： promise.then被推进到属于微任务
+// 2. 执行完Macrotasks队列的第一个， 继续Microtasks队列的第一个
+console.log(5)
+3. 再继续执行Macrotasks队列
+setTimeout 4
+```
+
 
 ### event loop（这是 JS执行机制） &  call back（函数调用栈）
 
