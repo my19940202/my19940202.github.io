@@ -97,29 +97,29 @@ done
 | 类型 | 命令 | 作用 |
 | :--- | :--- | :--- |
 | 文件操作 | ls 20161_.log_ _ls20160\[1-9\]_.log | 正则方式筛选输出 |
-| 文件操作 | tar-zcvftarget.tar.gzsourcefile | 压缩 |
-| 文件操作 | gzip-9xx | 会覆盖源文件 |
-| 文件操作 | tar-zxvftarget.tar.gz | 解压缩 |
-| 文件操作 | du-hspath | 查看文件大小（Mb单位） |
+| 文件操作 | tar --exclude="umi-demo/node_modules" -zcvf target.tar.gz sourcefile | 压缩 |
+| 文件操作 | gzip -9 xx | 会覆盖源文件 |
+| 文件操作 | tar -zxvf target.tar.gz | 解压缩 |
+| 文件操作 | du -hs path | 查看文件大小（Mb单位） |
 | 文件操作 | df | 磁盘情况预览 |
-| 文件操作 | cp-rxxyy | 递归方式拷贝（拷贝所有文件和文件夹） |
-| 文件操作 | wget[http://a.com/b.jpg](http://a.com/b.jpg)-P pic/ | wget指定文件存放的目录 |
+| 文件操作 | cp -r xx yy | 递归方式拷贝（拷贝所有文件和文件夹） |
+| 文件操作 | wget http://a.com/b.jpg -P pic/ | wget指定文件存放的目录 |
 | 文件操作 | chmod 755 imgcat chmod +x xx.sh chmod -x xx.sh | imgcat是imgcat.sh去掉了后缀名,可以直接./imgcat\(shimgcat.sh\) |
-| 文件操作 | scp-rusername@servername:/path/filename/target/path | 拷贝别人开发机的文件\(-r拷贝所有文件和文件夹\) |
-| 文件操作 | find.-name'\*.png'-depth2 | 深度为2时查找png文件 |
-| hadoop | hadoopfs-getmerge/app/2016data.txt | 2016目录下的所有文件merge到data.txt中 |
-| hadoop | hadoopfs-cat,-ls,-dus,-rmr | fs类型的多种操作 |
-| 进程 | ps-axps-le¦grepnode | 查看进程,加上grep进行各种过滤 |
-| 字符处理 | iconv-f'utf-8'-t'gbk'a.txt&gt;b.txt | utf8=&gt;gbk |
+| 文件操作 | scp -r username@servername:/path/filename /target/path | 拷贝别人开发机的文件\(-r拷贝所有文件和文件夹\) |
+| 文件操作 | find . -name'\*.png' -depth2 | 深度为2时查找png文件 |
+| hadoop | hadoop fs -getmerge /app/2016data.txt | 2016目录下的所有文件merge到data.txt中 |
+| hadoop | hadoop fs -cat,-ls,-dus,-rmr | fs类型的多种操作 |
+| 进程 | ps -ax ps-le¦grepnode | 查看进程,加上grep进行各种过滤 |
+| 字符处理 | iconv -f 'utf-8' -t 'gbk' a.tx > b.txt | utf8 => gbk |
 | 字符处理 | grep -o 'xxx' data.txt ¦ wc -l grep -r 'name' ./ grep -a1 'name' ./ | data.txt中的xxx的出现次数 查看当前目录下面的所有含有name字符串的文件 输出上下一行\(a1\), 下一行\(A1\) |
-| 字符处理 | sed's/\t/,/g’data.txt | data.txt中的tab=&gt;',' |
+| 字符处理 | sed 's/\t/,/g' data.txt | data.txt中的tab > ',' |
 | 字符处理 | sed -n '5,10p' data.txt sed -n '10p' data.txt cat nohup.out¦ head -n 100 cat nohup.out¦ tail -n 100 | 看5-10行，看第10行,头100，尾100 |
-| sort | sort-n-r-k2-t':'result&gt;result\_sorted | key:value形式的文件按照value进行排序 |
+| sort | sort -n -r -k2 -t':'result > result\_sorted | key:value形式的文件按照value进行排序 |
 | 其他 | date +%Y-%m-%d date -d yesterday +%Y%m%d date -d tomorrow +%Y%m%d date -d '30 days ago' +%Y%m%d | 时间获取 |
-| 其他 | tailfnohup.out | 一旦nohup.out更新就去刷新输出 |
-| 其他 | crontab-e | 定时任务配置 |
-| 其他 | gitremote-v | git查看remote仓库地址 |
-| 其他 | npmlist--depth=12&gt;/dev/null | 查看npm以及目录安装的包（过滤错误信息） |
+| 其他 | tailf nohup.out | 一旦nohup.out更新就去刷新输出 |
+| 其他 | crontab -e | 定时任务配置 |
+| 其他 | git remote -v | git查看remote仓库地址 |
+| 其他 | npm list --depth=12 > /dev/null | 查看npm以及目录安装的包（过滤错误信息） |
 
 ### sort专题
 

@@ -785,22 +785,22 @@ done
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">tar-zcvftarget.tar.gzsourcefile</td>
+<td style="text-align:left">tar --exclude=&quot;umi-demo/node_modules&quot; -zcvf target.tar.gz sourcefile</td>
 <td style="text-align:left">&#x538B;&#x7F29;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">gzip-9xx</td>
+<td style="text-align:left">gzip -9 xx</td>
 <td style="text-align:left">&#x4F1A;&#x8986;&#x76D6;&#x6E90;&#x6587;&#x4EF6;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">tar-zxvftarget.tar.gz</td>
+<td style="text-align:left">tar -zxvf target.tar.gz</td>
 <td style="text-align:left">&#x89E3;&#x538B;&#x7F29;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">du-hspath</td>
+<td style="text-align:left">du -hs path</td>
 <td style="text-align:left">&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF08;Mb&#x5355;&#x4F4D;&#xFF09;</td>
 </tr>
 <tr>
@@ -810,12 +810,12 @@ done
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">cp-rxxyy</td>
+<td style="text-align:left">cp -r xx yy</td>
 <td style="text-align:left">&#x9012;&#x5F52;&#x65B9;&#x5F0F;&#x62F7;&#x8D1D;&#xFF08;&#x62F7;&#x8D1D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;&#xFF09;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">wget<a href="http://a.com/b.jpg" target="_blank">http://a.com/b.jpg</a>-P pic/</td>
+<td style="text-align:left">wget <a href="http://a.com/b.jpg" target="_blank">http://a.com/b.jpg</a> -P pic/</td>
 <td style="text-align:left">wget&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x7684;&#x76EE;&#x5F55;</td>
 </tr>
 <tr>
@@ -825,33 +825,33 @@ done
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">scp-rusername@servername:/path/filename/target/path</td>
+<td style="text-align:left">scp -r username@servername:/path/filename /target/path</td>
 <td style="text-align:left">&#x62F7;&#x8D1D;&#x522B;&#x4EBA;&#x5F00;&#x53D1;&#x673A;&#x7684;&#x6587;&#x4EF6;(-r&#x62F7;&#x8D1D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;)</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</td>
-<td style="text-align:left">find.-name&apos;*.png&apos;-depth2</td>
+<td style="text-align:left">find . -name&apos;*.png&apos; -depth2</td>
 <td style="text-align:left">&#x6DF1;&#x5EA6;&#x4E3A;2&#x65F6;&#x67E5;&#x627E;png&#x6587;&#x4EF6;</td>
 </tr>
 <tr>
 <td style="text-align:left">hadoop</td>
-<td style="text-align:left">hadoopfs-getmerge/app/2016data.txt</td>
+<td style="text-align:left">hadoop fs -getmerge /app/2016data.txt</td>
 <td style="text-align:left">2016&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;merge&#x5230;data.txt&#x4E2D;</td>
 </tr>
 <tr>
 <td style="text-align:left">hadoop</td>
-<td style="text-align:left">hadoopfs-cat,-ls,-dus,-rmr</td>
+<td style="text-align:left">hadoop fs -cat,-ls,-dus,-rmr</td>
 <td style="text-align:left">fs&#x7C7B;&#x578B;&#x7684;&#x591A;&#x79CD;&#x64CD;&#x4F5C;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x8FDB;&#x7A0B;</td>
-<td style="text-align:left">ps-axps-le&#xA6;grepnode</td>
+<td style="text-align:left">ps -ax ps-le&#xA6;grepnode</td>
 <td style="text-align:left">&#x67E5;&#x770B;&#x8FDB;&#x7A0B;,&#x52A0;&#x4E0A;grep&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x8FC7;&#x6EE4;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5B57;&#x7B26;&#x5904;&#x7406;</td>
-<td style="text-align:left">iconv-f&apos;utf-8&apos;-t&apos;gbk&apos;a.txt&gt;b.txt</td>
-<td style="text-align:left">utf8=&gt;gbk</td>
+<td style="text-align:left">iconv -f &apos;utf-8&apos; -t &apos;gbk&apos; a.tx &gt; b.txt</td>
+<td style="text-align:left">utf8 =&gt; gbk</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5B57;&#x7B26;&#x5904;&#x7406;</td>
@@ -860,8 +860,8 @@ done
 </tr>
 <tr>
 <td style="text-align:left">&#x5B57;&#x7B26;&#x5904;&#x7406;</td>
-<td style="text-align:left">sed&apos;s/\t/,/g&#x2019;data.txt</td>
-<td style="text-align:left">data.txt&#x4E2D;&#x7684;tab=&gt;&apos;,&apos;</td>
+<td style="text-align:left">sed &apos;s/\t/,/g&apos; data.txt</td>
+<td style="text-align:left">data.txt&#x4E2D;&#x7684;tab &gt; &apos;,&apos;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5B57;&#x7B26;&#x5904;&#x7406;</td>
@@ -870,7 +870,7 @@ done
 </tr>
 <tr>
 <td style="text-align:left">sort</td>
-<td style="text-align:left">sort-n-r-k2-t&apos;:&apos;result&gt;result_sorted</td>
+<td style="text-align:left">sort -n -r -k2 -t&apos;:&apos;result &gt; result_sorted</td>
 <td style="text-align:left">key:value&#x5F62;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x6309;&#x7167;value&#x8FDB;&#x884C;&#x6392;&#x5E8F;</td>
 </tr>
 <tr>
@@ -880,22 +880,22 @@ done
 </tr>
 <tr>
 <td style="text-align:left">&#x5176;&#x4ED6;</td>
-<td style="text-align:left">tailfnohup.out</td>
+<td style="text-align:left">tailf nohup.out</td>
 <td style="text-align:left">&#x4E00;&#x65E6;nohup.out&#x66F4;&#x65B0;&#x5C31;&#x53BB;&#x5237;&#x65B0;&#x8F93;&#x51FA;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5176;&#x4ED6;</td>
-<td style="text-align:left">crontab-e</td>
+<td style="text-align:left">crontab -e</td>
 <td style="text-align:left">&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x914D;&#x7F6E;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5176;&#x4ED6;</td>
-<td style="text-align:left">gitremote-v</td>
+<td style="text-align:left">git remote -v</td>
 <td style="text-align:left">git&#x67E5;&#x770B;remote&#x4ED3;&#x5E93;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5176;&#x4ED6;</td>
-<td style="text-align:left">npmlist--depth=12&gt;/dev/null</td>
+<td style="text-align:left">npm list --depth=12 &gt; /dev/null</td>
 <td style="text-align:left">&#x67E5;&#x770B;npm&#x4EE5;&#x53CA;&#x76EE;&#x5F55;&#x5B89;&#x88C5;&#x7684;&#x5305;&#xFF08;&#x8FC7;&#x6EE4;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF09;</td>
 </tr>
 </tbody>
@@ -1279,7 +1279,7 @@ fis server start stop restart
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"整理常用的命令","title":"linux命令","level":"1.2.2","depth":2,"next":{"title":"snippet-js","level":"1.2.3","depth":2,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"编码注意事项","level":"1.2.1","depth":2,"path":"bian-ma-zhu-yi-shi-xiang.md","ref":"bian-ma-zhu-yi-shi-xiang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux_cmd.md","mtime":"2019-07-25T07:22:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-25T06:25:15.800Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"整理常用的命令","title":"linux命令","level":"1.2.2","depth":2,"next":{"title":"snippet-js","level":"1.2.3","depth":2,"path":"js.md","ref":"js.md","articles":[]},"previous":{"title":"编码注意事项","level":"1.2.1","depth":2,"path":"bian-ma-zhu-yi-shi-xiang.md","ref":"bian-ma-zhu-yi-shi-xiang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux_cmd.md","mtime":"2019-09-16T14:28:14.063Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-16T14:28:49.530Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
